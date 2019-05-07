@@ -87,4 +87,7 @@ public interface IMenuBar {
 
     MenuBar setBottomLineVisibility(boolean visibility);
 
+    // 获取值
+    String getContent();
+
 }

@@ -2,11 +2,7 @@ package win.zwping.code.review;
 
 import android.content.Context;
 import android.util.AttributeSet;
-
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.List;
-
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,7 +10,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 import win.zwping.code.review.pi.PViewPagerHelper;
+
+import java.util.List;
 
 /**
  * <p>describe：
@@ -34,6 +33,12 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
     public PViewPager(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         helper = new PViewPagerHelper().initAttrs(this, attrs);
+    }
+
+    @Override
+    public PViewPager setAdapterView(List<View> list) {
+        helper.setAdapterView(list);
+        return this;
     }
 
     @Override
@@ -61,7 +66,7 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
     }
 
     public void startAutoPlay(Lifecycle lifecycle, int timeOfSeconds) {
-        helper.startAutoPlay(lifecycle,timeOfSeconds);
+        helper.startAutoPlay(lifecycle, timeOfSeconds);
     }
 
 
@@ -70,10 +75,50 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
         return (FragmentStatePagerAdapter) getAdapter();
     }
 
+    @Override
+    public PViewPager addOnPageChangeListener(OnPageSelected onPageSelected) {
+        addOnPageChangeListener(onPageSelected, null, null);
+        return this;
+    }
+
+    @Override
+    public PViewPager addOnPageChangeListener(OnPageSelected onPageSelected, @Nullable OnPageScrolled onPageScrolled, @Nullable OnPageScrollStateChanged onPageScrollStateChanged) {
+        helper.addOnPageChangeListener(onPageSelected, onPageScrolled, onPageScrollStateChanged);
+        return this;
+    }
+
     ///////////////////////////////////////
 
     public interface OnBannerListener {
         void onPageSelected(int position, int total);
     }
 
+    ////////////////// 分解OnPageChangeListener ///////////////////
+    public interface OnPageScrolled {
+        void onPageScrolled(OnPageScrolledEn en);
+    }
+
+    // 舔一下kt的lambda
+    public static class OnPageScrolledEn {
+        private int position;
+        private float positionOffset;
+        private int positionOffsetPixels;
+
+        public OnPageScrolledEn() {
+        }
+
+        public OnPageScrolledEn(int position, float positionOffset, int positionOffsetPixels) {
+            this.position = position;
+            this.positionOffset = positionOffset;
+            this.positionOffsetPixels = positionOffsetPixels;
+        }
+    }
+
+    public interface OnPageSelected {
+        void onPageSelected(int position);
+    }
+
+    public interface OnPageScrollStateChanged {
+        void onPageScrollStateChanged(int state);
+    }
 }

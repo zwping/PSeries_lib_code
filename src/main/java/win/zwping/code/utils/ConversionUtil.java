@@ -1,6 +1,7 @@
 package win.zwping.code.utils;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,6 +20,7 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
 
+import androidx.core.app.ActivityOptionsCompat;
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 import win.zwping.code.constant.MemoryConstants;
@@ -35,6 +37,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：inputStream outputStream bytes string cov...
  * <p>    note：bytes bitmap drawable view cov...
  * <p>    note：getDistance
+ * <p>    note：getTransitionOj
  * <p>    note：
  * <p>  author：zwp on 2017/9/21 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
@@ -822,6 +825,14 @@ public final class ConversionUtil implements IUtil.INativeUtil {
 
     //地球平均半径
     private static final double EARTH_RADIUS = 6378137;
+    //</editor-fold>
+    //<editor-fold desc="共享元素">
+
+    /*** 获取共享元素对象 --- 方法名过长 ***/
+    public static ActivityOptionsCompat getTransitionOj(Activity ac, View view, String transitionName) {
+        return ActivityOptionsCompat.makeSceneTransitionAnimation(ac, view, transitionName);
+    }
+
     //</editor-fold>
     //<editor-fold desc="私有方法">
 

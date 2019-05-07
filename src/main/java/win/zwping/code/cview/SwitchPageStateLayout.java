@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.annotation.RequiresPermission;
 import com.coder.zzq.smartshow.toast.SmartToast;
 
 import androidx.annotation.LayoutRes;
@@ -15,6 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.ISwitchPageLayout;
+import win.zwping.code.utils.NetworkUtil;
+
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 
 /**
  * <p>describe：页面状态切换布局
@@ -186,6 +190,14 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     @Override
     public final SwitchPageStateLayout showError() {
         show(mErrorResId);
+        return this;
+    }
+
+    @Override
+    @RequiresPermission(ACCESS_NETWORK_STATE)
+    public SwitchPageStateLayout showErrorOfSmart() {
+        if (NetworkUtil.isConnected()) show(mErrorResId);
+        else show(mNetErrorResId);
         return this;
     }
 

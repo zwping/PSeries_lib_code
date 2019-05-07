@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
-
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -279,5 +278,10 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     public MenuBar setBottomLineVisibility(boolean visibility) {
         bottomLineV.setVisibility(visibility ? View.VISIBLE : View.GONE);
         return this;
+    }
+
+    @Override
+    public String getContent() {
+        return contentPtv.getVisibility() == GONE ? contentPet.getContent() : contentPtv.getContent();
     }
 }

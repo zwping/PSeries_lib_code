@@ -141,8 +141,9 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
      * <p>
      * <p>this = {@link #click()}</p>
      */
-    public void setMovementMethod() {
+    public PTextView setMovementMethod() {
         setMovementMethod(LinkMovementMethod.getInstance().setOnChildSpanClickListener(this));
+        return this;
     }
 
     /**

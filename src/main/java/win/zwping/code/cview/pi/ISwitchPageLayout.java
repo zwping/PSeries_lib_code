@@ -31,6 +31,8 @@ public interface ISwitchPageLayout {
 
     SwitchPageStateLayout showError();
 
+    SwitchPageStateLayout showErrorOfSmart();
+
     SwitchPageStateLayout showCusView();
 
     View getContentView();
