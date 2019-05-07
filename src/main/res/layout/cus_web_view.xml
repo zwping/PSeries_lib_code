@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/web_view_from_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="网页由 %s 提供"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:textColor="@color/page_state_text_gray"
+        android:textSize="12dp" />
+
+    <win.zwping.code.cview.OverScrollLayout
+        android:id="@+id/over_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF">
+
+            <win.zwping.code.cview.SwitchPageStateLayout
+                android:id="@+id/web_view_sps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/web_view_container_fl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/web_view_preview_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="优化AS中的预览，WebView加载后会自动隐藏"
+                        android:gravity="center"
+                        android:text="WebView"
+                        android:textColor="@color/page_state_text_gray"
+                        android:textSize="18dp" />
+                </FrameLayout>
+            </win.zwping.code.cview.SwitchPageStateLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_pb"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:progress="1" />
+        </FrameLayout>
+    </win.zwping.code.cview.OverScrollLayout>
+
+</FrameLayout>
