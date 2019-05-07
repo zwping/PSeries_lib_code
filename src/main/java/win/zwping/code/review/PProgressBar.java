@@ -17,6 +17,8 @@ public class PProgressBar extends ProgressBar implements PProgressBarHelper.IPro
 
     private PProgressBarHelper helper;
 
+    // new PProgressBar(getContext(), null, android.R.attr.progressBarStyleHorizontal);
+
     public PProgressBar(Context context) {
         this(context, null);
     }
