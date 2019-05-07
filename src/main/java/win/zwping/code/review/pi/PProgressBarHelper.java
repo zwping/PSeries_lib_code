@@ -32,6 +32,7 @@ public class PProgressBarHelper extends IHelper<PProgressBarHelper, PProgressBar
         PProgressBar setProgressOfAnim(int progress, int duration);
 
         ///////////////// 横向进度 /////////////
+
         PProgressBar setHorizontalParams(int backgroundColor, int progressColor);
 
         PProgressBar setHorizontalParams(int radiusDp, int backgroundColor, int progressColor);

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
+import win.zwping.code.R;
 import win.zwping.code.review.pi.PProgressBarHelper;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
