@@ -98,7 +98,7 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
         void onPageScrolled(OnPageScrolledEn en);
     }
 
-    // 舔一下kt的lambda
+    // 舔一下kt的lambda  '{ it -> }'
     public static class OnPageScrolledEn {
         private int position;
         private float positionOffset;

@@ -1,5 +1,6 @@
 package win.zwping.code.basic;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.coder.zzq.smartshow.toast.SmartToast;
@@ -17,6 +18,12 @@ import win.zwping.code.basic.pi.IAc;
  * <p> @author：zwp on 2019-02-21 16:10:35 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
 public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
+
+    @Override
+    public void initData(@Nullable Intent intent) {
+
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         initData(getIntent()); // before of super.onCreate(savedInstanceState)

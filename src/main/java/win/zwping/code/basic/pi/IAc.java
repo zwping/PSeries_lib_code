@@ -32,7 +32,7 @@ public class IAc {
         /////////////// 需要抽象实现的 /////////////////
 
         /*** before of super.onCreate(savedInstanceState) ***/
-        void initData(@Nullable Intent intent);
+        void initData(@Nullable Intent i);
 
         int bindLayout();
 

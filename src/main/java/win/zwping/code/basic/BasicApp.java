@@ -1,7 +1,7 @@
 package win.zwping.code.basic;
 
-import com.coder.zzq.smartshow.core.SmartShow;
 
+import com.coder.zzq.smartshow.core.SmartShow;
 import win.zwping.code.Util;
 import win.zwping.code.basic.lifecycle.BasicLifeCycleApp;
 import win.zwping.code.basic.pi.IApp;
@@ -19,7 +19,6 @@ public abstract class BasicApp extends BasicLifeCycleApp implements IApp {
         super.onCreate();
 
         Util.init(getApplicationContext());
-//        Hawk.init(this).build();
         SmartShow.init(this);
 
         init();
