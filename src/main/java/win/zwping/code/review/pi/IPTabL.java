@@ -29,7 +29,7 @@ public interface IPTabL {
 
     <B> CViewTC setCViewTC(B statementBean, @LayoutRes int resId, @NonNull OnSupTabUnSelected<B> unselectedListener, @Nullable OnSupTabSelected<B> selectedListener, @Nullable OnSupTabReselected<B> reselectedListener);
 
-    <B> CViewTC<B> getCViewTC();
+    <B> CViewTC getCViewTC();
 
     interface ICViewTC<B> {
         @Nullable
