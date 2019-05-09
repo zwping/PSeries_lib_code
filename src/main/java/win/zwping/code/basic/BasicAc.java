@@ -2,13 +2,11 @@ package win.zwping.code.basic;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.coder.zzq.smartshow.toast.SmartToast;
-import com.gyf.barlibrary.ImmersionBar;
-
 import androidx.annotation.Nullable;
+import com.gyf.barlibrary.ImmersionBar;
 import win.zwping.code.basic.helper.BasicKeyBoardAc;
 import win.zwping.code.basic.pi.IAc;
+import win.zwping.code.utils.ToastUtil;
 
 /**
  * <p>describe：
@@ -50,7 +48,7 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
 
     @Override
     public void showToast(@Nullable Object o) {
-        SmartToast.show(o + "");
+        ToastUtil.showShort(o + "");
     }
 
 }

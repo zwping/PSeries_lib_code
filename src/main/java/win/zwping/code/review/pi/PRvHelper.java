@@ -7,27 +7,24 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.SectionEntity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
-
-import java.util.List;
-
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PRecyclerView;
 import win.zwping.code.review.rv.ConvertSupBean;
 import win.zwping.code.review.rv.OnConvertListener;
+
+import java.util.List;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -145,6 +142,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
         return this;
     }
 
+    // 如果还抢站焦点，在scrollView的根布局下增加 android:descendantFocusability="blocksDescendants"
     public void removeFocus() {
         v.setFocusableInTouchMode(false); // 去除嵌套引发自动获取焦点的bug
         v.requestFocus();

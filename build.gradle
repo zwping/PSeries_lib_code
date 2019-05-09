@@ -33,7 +33,6 @@ dependencies {
     /////////////// 前人种树 ////////////////
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45-androidx'
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-7' // 智能下拉刷新框架
-    api 'com.github.the-pig-of-jungle.smart-show:toast:2.7.4'
     api 'com.gyf.immersionbar:immersionbar:2.3.3'  // 状态栏 导航栏兼容
     api 'com.github.bumptech.glide:glide:4.9.0'
     // annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'

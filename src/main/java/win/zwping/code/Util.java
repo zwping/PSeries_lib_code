@@ -226,7 +226,7 @@ public final class Util {
             mDestroyedListenerMap.remove(activity);
         }
 
-        void addOnActivityDestroyedListener(final Activity activity, final OnActivityDestroyedListener listener) {
+        public void addOnActivityDestroyedListener(final Activity activity, final OnActivityDestroyedListener listener) {
             if (activity == null || listener == null) return;
             Set<OnActivityDestroyedListener> listeners;
             if (!mDestroyedListenerMap.containsKey(activity)) {

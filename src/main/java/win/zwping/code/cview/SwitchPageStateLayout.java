@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.annotation.RequiresPermission;
-import com.coder.zzq.smartshow.toast.SmartToast;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
@@ -17,6 +16,7 @@ import androidx.annotation.Nullable;
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.ISwitchPageLayout;
 import win.zwping.code.utils.NetworkUtil;
+import win.zwping.code.utils.ToastUtil;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 
@@ -204,7 +204,7 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     @Override
     public final SwitchPageStateLayout showCusView() {
         if (0 != mCusResId) show(mCusResId);
-        else SmartToast.show("界面缺失");
+        else ToastUtil.showShort("界面缺失");
         return this;
     }
 

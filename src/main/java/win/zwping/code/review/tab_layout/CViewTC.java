@@ -2,19 +2,17 @@ package win.zwping.code.review.tab_layout;
 
 import android.view.LayoutInflater;
 import android.view.View;
-
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.google.android.material.tabs.TabLayout;
 import win.zwping.code.review.PTabLayout;
 import win.zwping.code.review.pi.IPTabL;
 import win.zwping.code.utils.LogUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 import static win.zwping.code.utils.EmptyUtil.isNotEmptys;

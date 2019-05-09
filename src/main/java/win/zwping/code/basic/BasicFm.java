@@ -2,13 +2,11 @@ package win.zwping.code.basic;
 
 import android.os.Bundle;
 import android.view.View;
-
-import com.coder.zzq.smartshow.toast.SmartToast;
-import com.gyf.barlibrary.ImmersionBar;
-
 import androidx.annotation.Nullable;
+import com.gyf.barlibrary.ImmersionBar;
 import win.zwping.code.basic.helper.BasicLazyFm;
 import win.zwping.code.basic.pi.IFm;
+import win.zwping.code.utils.ToastUtil;
 
 /**
  * <p>describe：
@@ -50,7 +48,7 @@ public abstract class BasicFm extends BasicLazyFm implements IFm.IBasic {
     }
 
     @Override
-    public void showToast(@Nullable Object o) {
-        SmartToast.show(o + "");
+    public void showToast(@Nullable final Object o) {
+        ToastUtil.showShort(o + "");
     }
 }

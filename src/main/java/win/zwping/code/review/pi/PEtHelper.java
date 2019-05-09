@@ -11,12 +11,6 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-
-import com.coder.zzq.smartshow.toast.SmartToast;
-
-import java.lang.reflect.Field;
-import java.util.concurrent.atomic.AtomicReference;
-
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import io.reactivex.Observable;
@@ -27,11 +21,13 @@ import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PEditText;
 import win.zwping.code.utils.ImageUtil;
 import win.zwping.code.utils.RegexUtil;
+import win.zwping.code.utils.ToastUtil;
+
+import java.lang.reflect.Field;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
-import static win.zwping.code.utils.EmptyUtil.isEmpty;
-import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
-import static win.zwping.code.utils.EmptyUtil.isNotEmptys;
+import static win.zwping.code.utils.EmptyUtil.*;
 
 /**
  * <p>describe：
@@ -147,35 +143,35 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
             return true;
         } else {
             if (isEmpty(v.getContent())) {
-                SmartToast.show(v.getHint());
+                ToastUtil.showShort(v.getHint());
                 return false;
             }
             switch (regexType) {
                 case 0: // Phone
                     if (!RegexUtil.isMobileSimple(v.getContent())) {
-                        SmartToast.show("请输入正确的手机号");
+                        ToastUtil.showShort("请输入正确的手机号");
                         return false;
                     }
                     break;
                 case 1: // Simple Psw
                     if (v.getContent().length() < 6) {
-                        SmartToast.show("请输入不低于6位的密码");
+                        ToastUtil.showShort("请输入不低于6位的密码");
                         return false;
                     }
                     if (v.getContent().length() > 18) {
-                        SmartToast.show("请输入不大于18位的密码");
+                        ToastUtil.showShort("请输入不大于18位的密码");
                         return false;
                     }
                     break;
                 case 2: // Simple Verify Code
                     if (v.getContent().length() != verifyCodeLength) {
-                        SmartToast.show("请输入正确的验证码");
+                        ToastUtil.showShort("请输入正确的验证码");
                         return false;
                     }
                     break;
                 case 3: // Non Null
                     if (isEmpty(v.getContent())) {
-                        SmartToast.show(v.getHint());
+                        ToastUtil.showShort(v.getHint());
                         return false;
                     }
                     break;

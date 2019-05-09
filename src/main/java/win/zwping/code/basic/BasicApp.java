@@ -1,11 +1,11 @@
 package win.zwping.code.basic;
 
 
-import com.coder.zzq.smartshow.core.SmartShow;
 import win.zwping.code.Util;
 import win.zwping.code.basic.lifecycle.BasicLifeCycleApp;
 import win.zwping.code.basic.pi.IApp;
 import win.zwping.code.utils.AppUtil;
+import win.zwping.code.utils.LogUtil;
 
 /**
  * <p>describe：App基类，初始化code框架中必备框架
@@ -19,7 +19,7 @@ public abstract class BasicApp extends BasicLifeCycleApp implements IApp {
         super.onCreate();
 
         Util.init(getApplicationContext());
-        SmartShow.init(this);
+        LogUtil.getConfig().setGlobalTag("TAG");
 
         init();
         if (AppUtil.isAppDebug()) debugInit();
