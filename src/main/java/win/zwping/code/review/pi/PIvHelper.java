@@ -1,17 +1,21 @@
 package win.zwping.code.review.pi;
 
 import android.content.res.TypedArray;
+import android.graphics.*;
 import android.util.AttributeSet;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
-
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.request.RequestOptions;
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PImageView;
+
+import java.security.MessageDigest;
+
+import static win.zwping.code.utils.ConversionUtil.dp2px;
 
 /**
  * <p>describe：
@@ -73,7 +77,8 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
         if (0 != option.loadingId) options.placeholder(option.loadingId);
         if (0 != option.errorId) options.error(option.errorId);
         if (option.circle) options.circleCrop();
-        if (option.roundRect) options.centerCrop().transform(new RoundedCorners(option.roundRectRadius));
+        if (option.roundRect || option.roundRectRadius != 0)
+            options.centerCrop().transform(new GlideRoundTransform(option.roundRectRadius == 0 ? dp2px(v.getContext(), 2) : option.roundRectRadius));
         return options;
     }
 
@@ -83,5 +88,52 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
         public boolean circle = false;
         public boolean roundRect = false;
         public int roundRectRadius;
+    }
+
+    //////////////////////////////////////////////////////////////////
+
+    /*** 解决glide 圆角与centerCrop冲突Bug ***/
+    public class GlideRoundTransform extends CenterCrop {
+
+        private float radius = 0f;
+
+        public GlideRoundTransform(int dp) {
+            radius = dp;
+        }
+
+        @Override
+        protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
+            //glide4.0+
+            Bitmap transform = super.transform(pool, toTransform, outWidth, outHeight);
+            return roundCrop(pool, transform);
+            //glide3.0
+            //return roundCrop(pool, toTransform);
+        }
+
+        private Bitmap roundCrop(BitmapPool pool, Bitmap source) {
+            if (source == null) return null;
+
+            Bitmap result = pool.get(source.getWidth(), source.getHeight(), Bitmap.Config.ARGB_8888);
+            if (result == null) {
+                result = Bitmap.createBitmap(source.getWidth(), source.getHeight(), Bitmap.Config.ARGB_8888);
+            }
+
+            Canvas canvas = new Canvas(result);
+            Paint paint = new Paint();
+            paint.setShader(new BitmapShader(source, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
+            paint.setAntiAlias(true);
+            RectF rectF = new RectF(0f, 0f, source.getWidth(), source.getHeight());
+            canvas.drawRoundRect(rectF, radius, radius, paint);
+            return result;
+        }
+
+        public String getId() {
+            return getClass().getName() + Math.round(radius);
+        }
+
+        @Override
+        public void updateDiskCacheKey(MessageDigest messageDigest) {
+
+        }
     }
 }

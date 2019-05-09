@@ -2,11 +2,9 @@ package win.zwping.code.review;
 
 import android.content.Context;
 import android.util.AttributeSet;
-
-import com.google.android.material.tabs.TabLayout;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.google.android.material.tabs.TabLayout;
 import win.zwping.code.R;
 import win.zwping.code.review.pi.IPTabL;
 import win.zwping.code.review.tab_layout.CViewTC;
@@ -51,7 +49,7 @@ public class PTabLayout extends TabLayout implements IPTabL {
     }
 
     @Override
-    public <B> CViewTC<B> setCViewTC(B statementBean, int resId, @NonNull OnSupTabUnSelected<B> unselectedListener, @Nullable OnSupTabSelected<B> selectedListener, @Nullable OnSupTabReselected<B> reselectedListener) {
+    public <B> CViewTC setCViewTC(B statementBean, int resId, @NonNull OnSupTabUnSelected<B> unselectedListener, @Nullable OnSupTabSelected<B> selectedListener, @Nullable OnSupTabReselected<B> reselectedListener) {
         return cViewTC = new CViewTC<B>(this, statementBean, resId, unselectedListener, selectedListener, reselectedListener);
     }
 
