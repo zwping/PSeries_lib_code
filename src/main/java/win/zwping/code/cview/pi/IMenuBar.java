@@ -3,6 +3,7 @@ package win.zwping.code.cview.pi;
 import android.view.View;
 
 import androidx.annotation.DrawableRes;
+
 import win.zwping.code.cview.ArrowView;
 import win.zwping.code.cview.MenuBar;
 import win.zwping.code.review.PEditText;
@@ -57,6 +58,8 @@ public interface IMenuBar {
     MenuBar setTitleIconWH(int whDp);
 
     MenuBar setArrowWH(int whDp);
+
+    MenuBar setBottomLineMargin(int leftDp, int rightDp);
 
     // 设置颜色 / 字号
 

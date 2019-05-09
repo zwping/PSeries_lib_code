@@ -5,9 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.IMenuBar;
 import win.zwping.code.review.PEditText;
@@ -82,6 +84,7 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
                 setArrowVisibility(array.getInt(R.styleable.MenuBar_p_arrow_visibility, 1) == 1); // 默认显示
                 setTopLineVisibility(array.getInt(R.styleable.MenuBar_p_top_line_visibility, 0) == 1); // 默认隐藏
                 setBottomLineVisibility(array.getInt(R.styleable.MenuBar_p_bottom_line_visibility, 1) == 1); // 默认显示
+                setBottomLineMargin(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_bottom_line_margin_left, 0)), px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_bottom_line_margin_right, 0)));
             } finally {
                 array.recycle();
             }
@@ -196,6 +199,13 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     public MenuBar setArrowWH(int whDp) {
         if (whDp == 0) return this;
         ViewUtil.setViewWH(arrowV, whDp, whDp);
+        return this;
+    }
+
+    @Override
+    public MenuBar setBottomLineMargin(int leftDp, int rightDp) {
+        if (leftDp != 0 || rightDp != 0)
+            ViewUtil.setMargins(bottomLineV, leftDp, 0, rightDp, 0);
         return this;
     }
 

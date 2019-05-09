@@ -278,6 +278,8 @@
             <enum name="visibility" value="1" />
         </attr>
         <attr name="p_bottom_line_visibility" />
+        <attr name="p_bottom_line_margin_left" format="dimension" />
+        <attr name="p_bottom_line_margin_right" format="dimension" />
     </declare-styleable>
     <attr name="p_title_txt" format="string" />
     <attr name="p_return_txt" format="string" />
