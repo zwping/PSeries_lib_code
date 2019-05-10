@@ -165,6 +165,7 @@ public class Bar extends ConstraintLayout implements IBar {
     @Override
     public Bar setReturnPivResId(@DrawableRes int resId) {
         if (resId == 0) return this;
+        returnArrow.setVisibility(GONE);
         returnPiv.setImageResource(resId);
         return this;
     }

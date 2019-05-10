@@ -1,16 +1,12 @@
 package win.zwping.code.review.pi;
 
-import com.google.android.material.tabs.TabLayout;
-
 import java.util.List;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import win.zwping.code.review.tab_layout.CViewTC;
-import win.zwping.code.review.tab_layout.OnSupTabReselected;
-import win.zwping.code.review.tab_layout.OnSupTabSelected;
-import win.zwping.code.review.tab_layout.OnSupTabUnSelected;
+import com.google.android.material.tabs.TabLayout;
+import win.zwping.code.review.tab_layout.*;
 
 /**
  * <p>describe：

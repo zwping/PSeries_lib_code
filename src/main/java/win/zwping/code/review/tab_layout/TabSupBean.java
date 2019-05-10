@@ -1,9 +1,9 @@
 package win.zwping.code.review.tab_layout;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.Nullable;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * <p>describe：Tab 的超级 Bean，当使用kt调用时，即可见到super bean

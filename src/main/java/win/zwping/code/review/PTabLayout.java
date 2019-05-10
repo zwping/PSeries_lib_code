@@ -7,10 +7,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.tabs.TabLayout;
 import win.zwping.code.R;
 import win.zwping.code.review.pi.IPTabL;
-import win.zwping.code.review.tab_layout.CViewTC;
-import win.zwping.code.review.tab_layout.OnSupTabReselected;
-import win.zwping.code.review.tab_layout.OnSupTabSelected;
-import win.zwping.code.review.tab_layout.OnSupTabUnSelected;
+import win.zwping.code.review.tab_layout.*;
 
 /**
  * <p>describe：

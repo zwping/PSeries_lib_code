@@ -45,7 +45,6 @@ public class CViewTC<B> implements IPTabL.ICViewTC<B>, TabLayout.OnTabSelectedLi
         tableLayout.addOnTabSelectedListener(this);
     }
 
-
     @Override
     @Nullable
     public List<TabLayout.Tab> getTabs() {
