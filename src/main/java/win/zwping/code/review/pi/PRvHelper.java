@@ -22,6 +22,7 @@ import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PRecyclerView;
 import win.zwping.code.review.rv.ConvertSupBean;
+import win.zwping.code.review.rv.ItemDecoration;
 import win.zwping.code.review.rv.OnConvertListener;
 
 import java.util.List;
@@ -187,9 +188,9 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
     public void setSimpleItemDecoration(int width, int color, Drawable drawable) {
         for (int i = 0; i < v.getItemDecorationCount(); i++)
             v.removeItemDecoration(v.getItemDecorationAt(i));
-        v.addItemDecoration(new win.zwping.code.review.rv.ItemDecoration(1, width, color, drawable));
+        v.addItemDecoration(new ItemDecoration(1, width, color, drawable));
         if (mLayoutManger == 2) // 网格的话需要绘制纵向分割线
-            v.addItemDecoration(new win.zwping.code.review.rv.ItemDecoration(2, width, color, drawable)); // 最右侧不需要绘制分割线
+            v.addItemDecoration(new ItemDecoration(2, width, color, drawable)); // 最右侧不需要绘制分割线
     }
 
     public <B> void setAdapterSup(B b, int layoutId, final OnConvertListener<B> convertListener) {
