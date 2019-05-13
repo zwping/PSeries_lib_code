@@ -4,9 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-
 import androidx.appcompat.widget.AppCompatEditText;
-import win.zwping.code.R;
 import win.zwping.code.comm.ViewStateColor;
 import win.zwping.code.review.pi.OnClearListener;
 import win.zwping.code.review.pi.OnPswToggleListener;
@@ -70,12 +68,25 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
     }
 
     @Override
+    public PEditText setMaxLength(int length) {
+        helper1.setMaxLength(length);
+        return this;
+    }
+
+    @Override
     public int getMaxLength() {
         return helper1.getMaxLength();
     }
 
     public String getContent() {
         return helper1.getContent();
+    }
+
+    /*** 0 phone / 1 psw / 2 verify code / 3 英文键盘 ***/
+    @Override
+    public PEditText setRegexType(int type) {
+        helper1.setRegexType(type);
+        return this;
     }
 
     @Override

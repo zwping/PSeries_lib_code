@@ -39,9 +39,15 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
     //<editor-fold desc="Public Interface API">
 
     public interface IPEt {
+
+        PEditText setMaxLength(int length);
+
         int getMaxLength();
 
         String getContent();
+
+        /*** 0 phone / 1 psw / 2 verify code / 3 英文键盘 ***/
+        PEditText setRegexType(int type);
 
         boolean getCommRegex();
 
@@ -99,18 +105,7 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
         if (null != attrs) {
             TypedArray array = v.getContext().obtainStyledAttributes(attrs, R.styleable.PEditText);
             try {
-                regexType = array.getInt(R.styleable.PEditText_p_regexType, -1);
-                switch (regexType) {
-                    case 0: // Phone
-                    case 2: // Verify Code
-                        v.setInputType(InputType.TYPE_CLASS_PHONE);
-                        break;
-                    case 1: // Psw
-                        v.setMaxLines(1);
-                        v.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                        v.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                        break;
-                }
+                setRegexType(array.getInt(R.styleable.PEditText_p_regexType, -1));
                 verifyCodeLength = array.getInt(R.styleable.PEditText_p_verify_code_length, 4);
 
                 clearTextEnable = array.getBoolean(R.styleable.PEditText_p_clear_text_enable, false);
@@ -131,9 +126,27 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
         if (clearTextEnable) setClearIconResId(clearDrawable);
         if (pswToggleEnable) setPswToggleIconResId(showPswDrawable, hidePswDrawable);
         if (clearTextEnable || pswToggleEnable) initialPr = v.getPaddingRight();
-
-
         return this;
+    }
+
+    public void setRegexType(int type) {
+        regexType = type;
+        switch (regexType) {
+            case 0: // Phone
+            case 2: // Verify Code
+                v.setMaxLines(1);
+                v.setInputType(InputType.TYPE_CLASS_PHONE);
+                break;
+            case 1: // Psw
+                v.setMaxLines(1);
+                v.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                v.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                break;
+            case 3: // 英文键盘
+                v.setMaxLines(1);
+                v.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                break;
+        }
     }
 
 
@@ -178,6 +191,11 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
             }
             return true;
         }
+    }
+
+    public void setMaxLength(int length) {
+        if (length < 1) return;
+        v.setFilters(new InputFilter[]{new InputFilter.LengthFilter(length)});
     }
 
     @SuppressLint("CheckResult")

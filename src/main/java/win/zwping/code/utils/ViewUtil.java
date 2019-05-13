@@ -78,4 +78,17 @@ public final class ViewUtil implements IUtil.INativeUtil {
         view.setLayoutParams(params);
     }
 
+    /*** 设置隐藏 ***/
+    public static void setGone(View... views) {
+        for (View view : views) {
+            view.setVisibility(View.GONE);
+        }
+    }
+    /*** 设置显示 ***/
+    public static void setVisible(View... views) {
+        for (View view : views) {
+            view.setVisibility(View.VISIBLE);
+        }
+    }
+
 }

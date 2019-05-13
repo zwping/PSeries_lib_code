@@ -65,9 +65,6 @@ public class Bar extends ConstraintLayout implements IBar {
             try {
                 setTitle(array.getString(R.styleable.Bar_p_title_txt));
                 setReturnTxt(array.getString(R.styleable.Bar_p_return_txt));
-                setReturnPivResId(array.getResourceId(R.styleable.Bar_p_return_piv_res_id, 0));
-                int menuPivResId = array.getResourceId(R.styleable.Bar_p_menu_piv_res_id, 0);
-                if (menuPivResId != 0) setMenuPivResId(menuPivResId);
                 setMenuTxt(array.getString(R.styleable.Bar_p_menu_txt));
                 setTitlePadding(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_title_padding, dp2px(getContext(), 50)))); // 默认50
                 setReturnPadding(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_return_padding, dp2px(getContext(), 12)))); // 默认12
@@ -78,15 +75,18 @@ public class Bar extends ConstraintLayout implements IBar {
                 setTitleColor(array.getColor(R.styleable.Bar_p_title_color, Color.BLACK)); // 默认黑色
                 setTitleSize(px2dp(getContext(), array.getColor(R.styleable.Bar_p_title_size, dp2px(getContext(), 15)))); // 默认15dp
                 setReturnTxtColor(array.getColor(R.styleable.Bar_p_return_txt_color, Color.BLACK)); // 默认黑色
-                setReturnTxtSize(px2dp(getContext(), array.getColor(R.styleable.Bar_p_return_txt_size, dp2px(getContext(), 12)))); // 默认12dp
+                setReturnTxtSize(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_return_txt_size, dp2px(getContext(), 12)))); // 默认12dp
                 setMenuTxtColor(array.getColor(R.styleable.Bar_p_menu_txt_color, Color.BLACK)); // 默认黑色
-                setMenuTxtSize(px2dp(getContext(), array.getColor(R.styleable.Bar_p_menu_txt_size, dp2px(getContext(), 12)))); // 默认12dp
+                setMenuTxtSize(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_menu_txt_size, dp2px(getContext(), 12)))); // 默认12dp
                 setReturnArrowColor(array.getColor(R.styleable.Bar_p_return_arrow_color, Color.GRAY)); // 默认灰色
                 setBottomLineColor(array.getColor(R.styleable.Bar_p_bottom_line_color, Color.parseColor("#dedede"))); // 默认#dedede
                 setReturnVisibility(array.getInt(R.styleable.Bar_p_return_visibility, 1) == 1);
                 setReturnArrowVisibility(array.getInt(R.styleable.Bar_p_return_arrow_visibility, 1) == 1);
                 setMenuVisibility(array.getInt(R.styleable.Bar_p_menu_visibility, 1) == 1);
                 setBottomLineVisibility(array.getInt(R.styleable.Bar_p_bottom_line_visibility, 1) == 1);
+                setReturnPivResId(array.getResourceId(R.styleable.Bar_p_return_piv_res_id, 0));
+                int menuPivResId = array.getResourceId(R.styleable.Bar_p_menu_piv_res_id, 0);
+                if (menuPivResId != 0) setMenuPivResId(menuPivResId);
             } finally {
                 array.recycle();
             }
