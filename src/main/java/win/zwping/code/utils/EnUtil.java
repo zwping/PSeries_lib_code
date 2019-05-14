@@ -2,11 +2,10 @@ package win.zwping.code.utils;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-
-import java.io.Serializable;
-
 import win.zwping.code.basic.IUtil;
 import win.zwping.code.comm.Bean;
+
+import java.io.Serializable;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
 
@@ -20,6 +19,10 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
 public final class EnUtil implements IUtil.INativeUtil {
 
     //<editor-fold desc="Bundle装箱">
+
+    public static Bundle covBundle(String key, Object v) {
+        return covBundle(new Bean(key, v));
+    }
 
     public static Bundle covBundle(Bean... beans) {
         Bundle bundle = new Bundle();
