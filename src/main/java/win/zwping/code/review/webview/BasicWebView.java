@@ -284,7 +284,7 @@ public class BasicWebView extends WebView {
     /**
      * //销毁WebView
      * //在关闭了Activity时，如果WebView的音乐或视频，还在播放。就必须销毁WebView
-     * //但是注意：webView调用desTory时,webView仍绑定在Activity上
+     * //但是注意：webView调用destroy时,webView仍绑定在Activity上
      * //这是由于自定义webView构建时传入了该Activity的context对象
      * //因此需要先从父容器中移除webView,然后再销毁webView:
      */

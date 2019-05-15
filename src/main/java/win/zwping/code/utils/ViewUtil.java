@@ -1,8 +1,10 @@
 package win.zwping.code.utils;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import androidx.annotation.LayoutRes;
 import win.zwping.code.basic.IUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
@@ -13,6 +15,15 @@ import static win.zwping.code.utils.ConversionUtil.dp2px;
  * <p>  author：zwp on 2018-07-09 16:27:21 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
 public final class ViewUtil implements IUtil.INativeUtil {
+
+
+    public static View inflate(Context context, @LayoutRes int id) {
+        return LayoutInflater.from(context).inflate(id, null, false);
+    }
+
+    public static View inflate(Context context, @LayoutRes int id, ViewGroup root) {
+        return LayoutInflater.from(context).inflate(id, root, false);
+    }
 
     /**
      * 获取测量视图宽度
@@ -84,6 +95,7 @@ public final class ViewUtil implements IUtil.INativeUtil {
             view.setVisibility(View.GONE);
         }
     }
+
     /*** 设置显示 ***/
     public static void setVisible(View... views) {
         for (View view : views) {

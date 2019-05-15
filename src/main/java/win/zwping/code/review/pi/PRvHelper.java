@@ -190,7 +190,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             v.removeItemDecoration(v.getItemDecorationAt(i));
         v.addItemDecoration(new ItemDecoration(1, width, color, drawable));
         if (mLayoutManger == 2) // 网格的话需要绘制纵向分割线
-            v.addItemDecoration(new ItemDecoration(2, width, color, drawable)); // 最右侧不需要绘制分割线
+            v.addItemDecoration(new ItemDecoration(2, width + (width / (mSpanCount - 2)), color, drawable)); // 最右侧不需要绘制分割线
     }
 
     public <B> void setAdapterSup(B b, int layoutId, final OnConvertListener<B> convertListener) {

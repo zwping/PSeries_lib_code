@@ -57,10 +57,11 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         if (mOrientation == 1) {
             drawHorizontalDivider(c, parent, state);
         } else {
+            // todo 横向的列表
             GridLayoutManager gridLm = (GridLayoutManager) parent.getLayoutManager();
             int count = gridLm.getSpanCount();
             for (int i = 0; i < parent.getChildCount(); i++) {
-                if ((i + 1) % count != 0) // 最右侧的竖行分割线不需要绘制
+                if ((i + 1) % count != 0) // 最右侧的竖行分割线不需要绘制 // todo 这样会导致最后一个item宽度 = 本身宽度+竖线宽度
                     drawVerticalDivider(c, parent, state);
             }
         }
