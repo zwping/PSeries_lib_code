@@ -3,13 +3,18 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatEditText;
 import win.zwping.code.comm.ViewStateColor;
 import win.zwping.code.review.pi.OnClearListener;
 import win.zwping.code.review.pi.OnPswToggleListener;
 import win.zwping.code.review.pi.PEtHelper;
 import win.zwping.code.review.pi.ViewStateColorSwitchHelper;
+import win.zwping.code.utils.AcUtil;
+import win.zwping.code.utils.KeyboardUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
 
@@ -183,4 +188,24 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
         helper.setVStateTextColor(stateColor);
         return this;
     }
+
+    public PEditText setOnEditorActionSearchListener(final OnEditorActionSearchListener lis) {
+        setOnEditorActionListener(new OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
+                    lis.onSearch(getContent());
+                }
+                return false;
+            }
+        });
+        return this;
+    }
+
+    ///////////////////////////////////////
+    public interface OnEditorActionSearchListener {
+        void onSearch(String txt);
+    }
+
 }

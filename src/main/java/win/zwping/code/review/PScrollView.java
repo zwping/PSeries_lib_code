@@ -44,8 +44,8 @@ public class PScrollView extends NestedScrollView {
             }
         }
         if (banSliding) touchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        setHorizontalFadingEdgeEnabled(false); //ScrollView配OverScrollView使用，所以默认禁用这个衰变阴影
-        setFillViewport(true); //默认开启，能够规避一些莫名的Bug
+        setHorizontalFadingEdgeEnabled(false); // ScrollView配OverScrollView使用，所以默认禁用这个衰变阴影
+        setFillViewport(true); // 默认开启，能够规避一些莫名的Bug
     }
 
     public void scrollDown() {

@@ -3,23 +3,8 @@ package win.zwping.code.utils;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
+import android.graphics.*;
 import android.graphics.Bitmap.CompressFormat;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.os.Build;
@@ -27,28 +12,15 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
+import androidx.annotation.*;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 import win.zwping.code.constant.MemoryConstants;
+
+import java.io.*;
 
 /**
  * <p>describe：Image 工具类
@@ -401,6 +373,18 @@ public final class ImageUtil implements IUtil.INativeUtil {
                               final boolean recycle) {
         if (isEmptyBitmap(src)) return null;
         Bitmap ret = Bitmap.createBitmap(src, x, y, width, height);
+        if (recycle && !src.isRecycled()) src.recycle();
+        return ret;
+    }
+
+    public static Bitmap clip(final Bitmap src,
+                              final int x,
+                              final int y,
+                              final float srcWPer,
+                              final float srcHPer,
+                              final boolean recycle) {
+        if (isEmptyBitmap(src)) return null;
+        Bitmap ret = Bitmap.createBitmap(src, x, y, (int) (src.getWidth() * srcWPer), (int) (src.getHeight() * srcHPer));
         if (recycle && !src.isRecycled()) src.recycle();
         return ret;
     }
