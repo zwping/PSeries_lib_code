@@ -2,6 +2,7 @@ package win.zwping.code.review;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -12,10 +13,6 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
@@ -24,6 +21,9 @@ import win.zwping.code.R;
 import win.zwping.code.comm.ViewStateColor;
 import win.zwping.code.review.pi.ViewStateColorSwitchHelper;
 import win.zwping.code.review.re.LinkMovementMethod;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
 
@@ -65,10 +65,17 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
         if (null != attrs) {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.PTextView);
             try {
+                if (array.getBoolean(R.styleable.PTextView_p_strike_through, false))
+                    setStrikeThrough();
             } finally {
                 array.recycle();
             }
         }
+    }
+
+    public PTextView setStrikeThrough() {
+        setPaintFlags(getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        return this;
     }
 
     @Override
@@ -179,6 +186,12 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
     public String getContent() {
         return getText().toString().trim();
+    }
+
+    /*** 简化代码，直接在xml中预填%s ***/
+    public PTextView setFormat(String... args) {
+        setText(String.format(getContent(), args));
+        return this;
     }
     //</editor-fold>
     //<editor-fold desc="html加载本地图片">
