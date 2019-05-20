@@ -5,11 +5,9 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
-
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.IMenuBar;
 import win.zwping.code.review.PEditText;
@@ -63,8 +61,7 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
                 setTitleIconPivResId(array.getResourceId(R.styleable.MenuBar_p_title_icon, 0));
                 setTitleTxt(array.getString(R.styleable.MenuBar_p_title_txt));
                 setContentTxt(array.getString(R.styleable.MenuBar_p_content_txt));
-                setContentInputTxt(array.getString(R.styleable.MenuBar_p_content_input_txt));
-                setContentInputHintTxt(array.getString(R.styleable.MenuBar_p_content_input_hint_txt));
+                setContentHintTxt(array.getString(R.styleable.MenuBar_p_content_hint_txt));
                 setTitleIconMarginLeft(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_title_icon_margin_left, dp2px(getContext(), 12))));
                 setTitleMarginLeft(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_title_margin_left, dp2px(getContext(), 6))));
                 setArrowMarginRight(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_arrow_margin_right, dp2px(getContext(), 12))));
@@ -85,6 +82,8 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
                 setTopLineVisibility(array.getInt(R.styleable.MenuBar_p_top_line_visibility, 0) == 1); // 默认隐藏
                 setBottomLineVisibility(array.getInt(R.styleable.MenuBar_p_bottom_line_visibility, 1) == 1); // 默认显示
                 setBottomLineMargin(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_bottom_line_margin_left, 0)), px2dp(getContext(), array.getDimensionPixelSize(R.styleable.MenuBar_p_bottom_line_margin_right, 0)));
+                if (array.getBoolean(R.styleable.MenuBar_p_title_bold, false)) setTitleBold();
+                if (array.getBoolean(R.styleable.MenuBar_p_content_bold, false)) setContentBold();
             } finally {
                 array.recycle();
             }
@@ -148,18 +147,14 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     @Override
     public MenuBar setContentTxt(CharSequence txt) {
         contentPtv.setText(txt);
+        contentPet.setText(txt);
         return this;
     }
 
     @Override
-    public MenuBar setContentInputHintTxt(CharSequence txt) {
+    public MenuBar setContentHintTxt(CharSequence txt) {
         contentPet.setHint(txt);
-        return this;
-    }
-
-    @Override
-    public MenuBar setContentInputTxt(CharSequence hint) {
-        contentPet.setText(hint);
+        contentPtv.setHint(txt);
         return this;
     }
 
@@ -231,6 +226,7 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     @Override
     public MenuBar setContentHintColor(int color) {
         contentPet.setHintTextColor(color);
+        contentPtv.setHintTextColor(color);
         return this;
     }
 
@@ -256,6 +252,19 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     @Override
     public MenuBar setBottomLineColor(int color) {
         bottomLineV.setBackgroundColor(color);
+        return this;
+    }
+
+    @Override
+    public MenuBar setTitleBold() {
+        titlePtv.setBold();
+        return this;
+    }
+
+    @Override
+    public MenuBar setContentBold() {
+        contentPtv.setBold();
+        contentPet.setBold();
         return this;
     }
 

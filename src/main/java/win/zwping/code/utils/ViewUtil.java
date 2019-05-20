@@ -25,6 +25,27 @@ public final class ViewUtil implements IUtil.INativeUtil {
         return LayoutInflater.from(context).inflate(id, root, false);
     }
 
+    public static int getYOnScreen(View v) {
+        int[] l = new int[2];
+        v.getLocationOnScreen(l);
+        return l[1];
+    }
+    public static int getXOnScreen(View v) {
+        int[] l = new int[2];
+        v.getLocationOnScreen(l);
+        return l[0];
+    }
+    public static int getYOnWindow(View v) {
+        int[] l = new int[2];
+        v.getLocationInWindow(l);
+        return l[1];
+    }
+    public static int getXOnWindow(View v) {
+        int[] l = new int[2];
+        v.getLocationInWindow(l);
+        return l[0];
+    }
+
     /**
      * 获取测量视图宽度
      *

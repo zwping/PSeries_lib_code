@@ -78,6 +78,11 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
         return this;
     }
 
+    public PTextView setBold() {
+        setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        return this;
+    }
+
     @Override
     public boolean performClick() {
         if (mClickableSpanClickEvent) {
@@ -189,7 +194,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
     }
 
     /*** 简化代码，直接在xml中预填%s ***/
-    public PTextView setFormat(String... args) {
+    public PTextView setFormat(Object... args) {
         setText(String.format(getContent(), args));
         return this;
     }

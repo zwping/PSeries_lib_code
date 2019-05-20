@@ -80,6 +80,9 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
 
         PEditText setOnPswToggleListener(OnPswToggleListener listener);
 
+        //////////////
+        PEditText setBold();
+
     }
     //</editor-fold>
 

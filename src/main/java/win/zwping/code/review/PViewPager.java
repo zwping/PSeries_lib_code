@@ -69,6 +69,10 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
         helper.startAutoPlay(lifecycle, timeOfSeconds);
     }
 
+    @Override
+    public boolean canScrollHorizontally(int direction) {
+        return super.canScrollHorizontally(direction);
+    }
 
     @Override
     public FragmentStatePagerAdapter getAdapterFm() {

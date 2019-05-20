@@ -250,8 +250,7 @@
         <attr name="p_title_icon" format="reference"/>
         <attr name="p_title_txt"/>
         <attr name="p_content_txt" format="string"/>
-        <attr name="p_content_input_txt" format="string"/>
-        <attr name="p_content_input_hint_txt" format="string"/>
+        <attr name="p_content_hint_txt" format="string"/>
         <attr name="p_title_icon_margin_left" format="dimension"/>
         <attr name="p_title_margin_left" format="dimension"/>
         <attr name="p_content_margin_right" format="dimension"/>
@@ -282,6 +281,8 @@
         <attr name="p_bottom_line_visibility"/>
         <attr name="p_bottom_line_margin_left" format="dimension"/>
         <attr name="p_bottom_line_margin_right" format="dimension"/>
+        <attr name="p_title_bold" format="boolean"/>
+        <attr name="p_content_bold" format="boolean"/>
     </declare-styleable>
     <attr name="p_title_txt" format="string"/>
     <attr name="p_return_txt" format="string"/>

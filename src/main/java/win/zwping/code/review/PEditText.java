@@ -2,6 +2,7 @@ package win.zwping.code.review;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -173,6 +174,12 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
     @Override
     public PEditText setOnPswToggleListener(OnPswToggleListener listener) {
         helper1.onPswToggleListener = listener;
+        return this;
+    }
+
+    @Override
+    public PEditText setBold() {
+        setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         return this;
     }
 
