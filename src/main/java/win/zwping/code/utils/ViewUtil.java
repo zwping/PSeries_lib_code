@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
 import win.zwping.code.basic.IUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
@@ -30,16 +31,19 @@ public final class ViewUtil implements IUtil.INativeUtil {
         v.getLocationOnScreen(l);
         return l[1];
     }
+
     public static int getXOnScreen(View v) {
         int[] l = new int[2];
         v.getLocationOnScreen(l);
         return l[0];
     }
+
     public static int getYOnWindow(View v) {
         int[] l = new int[2];
         v.getLocationInWindow(l);
         return l[1];
     }
+
     public static int getXOnWindow(View v) {
         int[] l = new int[2];
         v.getLocationInWindow(l);
@@ -103,7 +107,8 @@ public final class ViewUtil implements IUtil.INativeUtil {
     }
 
     /*** 设置View的宽高 ***/
-    public static void setViewWH(final View view, final int wDp, final int hDp) {
+    public static void setViewWH(@Nullable final View view, final int wDp, final int hDp) {
+        if (view == null) return;
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (0 != hDp) params.height = dp2px(view.getContext(), hDp);
         if (0 != wDp) params.width = dp2px(view.getContext(), wDp);

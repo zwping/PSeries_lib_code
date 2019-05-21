@@ -2,7 +2,6 @@ package win.zwping.code.cview.pi;
 
 import android.view.View;
 import android.widget.RelativeLayout;
-
 import androidx.annotation.DrawableRes;
 import win.zwping.code.cview.ArrowView;
 import win.zwping.code.cview.Bar;
@@ -80,6 +79,12 @@ public interface IBar {
     Bar setReturnArrowColor(int color);
 
     Bar setBottomLineColor(int color);
+
+    Bar setReturnTxtBold();
+
+    Bar setTitleTxtBold();
+
+    Bar setMenuTxtBold();
 
     // 设置显示隐藏
     Bar setReturnVisibility(boolean visibility);

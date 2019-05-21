@@ -14,24 +14,15 @@ import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Display;
-import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
-import android.view.Surface;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-
-import java.lang.reflect.Method;
-
+import android.view.*;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
+
+import java.lang.reflect.Method;
 
 import static android.Manifest.permission.EXPAND_STATUS_BAR;
 import static android.Manifest.permission.WRITE_SETTINGS;
@@ -327,6 +318,20 @@ public final class ScreenUtil implements IUtil.INativeUtil {
      */
     public static int getScreenWidth() {
         WindowManager wm = (WindowManager) Util.getApp().getSystemService(Context.WINDOW_SERVICE);
+        if (wm == null) {
+            return Util.getApp().getResources().getDisplayMetrics().widthPixels;
+        }
+        Point point = new Point();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            wm.getDefaultDisplay().getRealSize(point);
+        } else {
+            wm.getDefaultDisplay().getSize(point);
+        }
+        return point.x;
+    }
+
+    public static int getScreenWidth(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         if (wm == null) {
             return Util.getApp().getResources().getDisplayMetrics().widthPixels;
         }

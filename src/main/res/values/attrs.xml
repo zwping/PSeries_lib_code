@@ -245,6 +245,9 @@
         <attr name="p_return_arrow_visibility"/>
         <attr name="p_menu_visibility"/>
         <attr name="p_bottom_line_visibility"/>
+        <attr name="p_return_txt_bold" format="boolean"/>
+        <attr name="p_title_txt_bold" format="boolean"/>
+        <attr name="p_menu_txt_bold" format="boolean"/>
     </declare-styleable>
     <declare-styleable name="MenuBar">
         <attr name="p_title_icon" format="reference"/>

@@ -8,14 +8,12 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
-
 import androidx.annotation.DrawableRes;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.IBar;
 import win.zwping.code.review.PImageView;
 import win.zwping.code.review.PTextView;
-import win.zwping.code.utils.ToastUtil;
 import win.zwping.code.utils.ViewUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
@@ -88,6 +86,9 @@ public class Bar extends ConstraintLayout implements IBar {
                 setReturnPivResId(array.getResourceId(R.styleable.Bar_p_return_piv_res_id, 0));
                 int menuPivResId = array.getResourceId(R.styleable.Bar_p_menu_piv_res_id, 0);
                 if (menuPivResId != 0) setMenuPivResId(menuPivResId);
+                if (array.getBoolean(R.styleable.Bar_p_return_txt_bold, false)) setReturnTxtBold();
+                if (array.getBoolean(R.styleable.Bar_p_title_txt_bold, false)) setTitleTxtBold();
+                if (array.getBoolean(R.styleable.Bar_p_menu_txt_bold, false)) setMenuTxtBold();
             } finally {
                 array.recycle();
             }
@@ -283,6 +284,24 @@ public class Bar extends ConstraintLayout implements IBar {
     @Override
     public Bar setBottomLineColor(int color) {
         bottomLineV.setBackgroundColor(color);
+        return this;
+    }
+
+    @Override
+    public Bar setReturnTxtBold() {
+        returnPtv.setBold();
+        return this;
+    }
+
+    @Override
+    public Bar setTitleTxtBold() {
+        titlePTv.setBold();
+        return this;
+    }
+
+    @Override
+    public Bar setMenuTxtBold() {
+        menuPtv.setBold();
         return this;
     }
 
