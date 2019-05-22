@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-
 import androidx.core.widget.NestedScrollView;
 import win.zwping.code.R;
 
@@ -44,8 +43,8 @@ public class PScrollView extends NestedScrollView {
             }
         }
         if (banSliding) touchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        setFillViewport(true); // 默认开启，能够规避一些莫名的Bug
         setHorizontalFadingEdgeEnabled(false); // ScrollView配OverScrollView使用，所以默认禁用这个衰变阴影
+        setFillViewport(true); // 默认开启，能够规避一些莫名的Bug
     }
 
     public void scrollDown() {
@@ -55,11 +54,6 @@ public class PScrollView extends NestedScrollView {
                 fullScroll(FOCUS_DOWN);
             }
         });
-    }
-
-    @Override
-    public void setOnTouchListener(View.OnTouchListener l) {
-        super.setOnTouchListener(l);
     }
 
     @Override

@@ -94,7 +94,6 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
     }
 
     ///////////////////////////////////////
@@ -110,9 +109,9 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
 
     // 舔一下kt的lambda  '{ it -> }'
     public static class OnPageScrolledEn {
-        private int position;
-        private float positionOffset;
-        private int positionOffsetPixels;
+        public int position;
+        public float positionOffset;
+        public int positionOffsetPixels;
 
         public OnPageScrolledEn() {
         }
