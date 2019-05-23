@@ -26,6 +26,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
+import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 
 /**
  * <p>describe：
@@ -142,7 +143,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
     }
 
     public void setHtmlText(String htmlText) {
-        setHtmlText(htmlText, false);
+        if (isNotEmpty(htmlText)) setHtmlText(htmlText, false);
     }
 
     /**
