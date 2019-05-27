@@ -3,6 +3,7 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Typeface;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -197,6 +198,9 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
     }
 
     public PEditText setOnEditorActionSearchListener(final OnEditorActionSearchListener lis) {
+        setMaxLines(1);
+        setInputType(InputType.TYPE_CLASS_TEXT);
+        setImeOptions(EditorInfo.IME_ACTION_SEARCH);
         setOnEditorActionListener(new OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
