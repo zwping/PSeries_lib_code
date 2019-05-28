@@ -58,11 +58,13 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
             drawHorizontalDivider(c, parent, state);
         } else {
             // todo 横向的列表
-            GridLayoutManager gridLm = (GridLayoutManager) parent.getLayoutManager();
-            int count = gridLm.getSpanCount();
-            for (int i = 0; i < parent.getChildCount(); i++) {
-                if ((i + 1) % count != 0) // 最右侧的竖行分割线不需要绘制 // todo 这样会导致最后一个item宽度 = 本身宽度+竖线宽度
-                    drawVerticalDivider(c, parent, state);
+            if(parent.getLayoutManager() instanceof GridLayoutManager) {
+                GridLayoutManager gridLm = (GridLayoutManager) parent.getLayoutManager();
+                int count = gridLm.getSpanCount();
+                for (int i = 0; i < parent.getChildCount(); i++) {
+                    if ((i + 1) % count != 0) // 最右侧的竖行分割线不需要绘制 // todo 这样会导致最后一个item宽度 = 本身宽度+竖线宽度
+                        drawVerticalDivider(c, parent, state);
+                }
             }
         }
     }
@@ -74,10 +76,12 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         if (mOrientation == 1) {
             outRect.set(0, 0, 0, mDividerWidth);
         } else {
-            GridLayoutManager gridLm = (GridLayoutManager) parent.getLayoutManager();
-            int count = gridLm.getSpanCount();
-            for (int i = 0; i < parent.getChildCount(); i++) {
-                outRect.set(0, 0, (i + 1) % count != 0 ? mDividerWidth : 0, 0); // 最右侧的竖行分割线不需要绘制
+            if(parent.getLayoutManager() instanceof GridLayoutManager) {
+                GridLayoutManager gridLm = (GridLayoutManager) parent.getLayoutManager();
+                int count = gridLm.getSpanCount();
+                for (int i = 0; i < parent.getChildCount(); i++) {
+                    outRect.set(0, 0, (i + 1) % count != 0 ? mDividerWidth : 0, 0); // 最右侧的竖行分割线不需要绘制
+                }
             }
         }
     }

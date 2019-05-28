@@ -113,6 +113,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
     @Override
     public PRvHelper initAttrs(PRecyclerView view, @Nullable AttributeSet attrs) {
         v = view;
+        boolean simpleDecoration = false;
         if (null != attrs) {
             TypedArray array = v.getContext().obtainStyledAttributes(attrs, R.styleable.PRecyclerView);
             try {
@@ -121,14 +122,13 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
                 }
                 mLayoutManger = array.getInt(R.styleable.PRecyclerView_p_layout_manager, 1); //默认列表
                 mOrientation = array.getInt(R.styleable.PRecyclerView_p_orientation, 1); // 默认竖向
-                mSpanCount = array.getInt(R.styleable.PRecyclerView_p_spanCount, 1);
+                mSpanCount = array.getInt(R.styleable.PRecyclerView_p_spanCount, 2);
                 mNoScroll = array.getInt(R.styleable.PRecyclerView_p_noScroll, -1);
                 adapterLayoutId = array.getResourceId(R.styleable.PRecyclerView_p_item_layout_id, 0);
                 mDecorationColor = array.getColor(R.styleable.PRecyclerView_p_decoration_color, Color.GRAY);
                 mDecorationWidth = array.getDimensionPixelSize(R.styleable.PRecyclerView_p_decoration_width, dp2px(v.getContext(), 1));
                 mDecorationDrawable = array.getDrawable(R.styleable.PRecyclerView_p_decoration_drawable);
-                if (array.getBoolean(R.styleable.PRecyclerView_p_simple_decoration_enable, false))
-                    setSimpleItemDecoration();
+                simpleDecoration = array.getBoolean(R.styleable.PRecyclerView_p_simple_decoration_enable, false);
             } finally {
                 array.recycle();
             }
@@ -140,6 +140,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             setLinearLayoutManager(mOrientation != 1 ? HORIZONTAL : VERTICAL, mNoScroll == 1 || mNoScroll == 3, mNoScroll == 2 || mNoScroll == 3);
         if (mLayoutManger == 2)
             setGridLayoutManager(mOrientation != 1 ? HORIZONTAL : VERTICAL, mSpanCount, mNoScroll == 1 || mNoScroll == 3, mNoScroll == 2 || mNoScroll == 3);
+        if (simpleDecoration) setSimpleItemDecoration();
         return this;
     }
 
@@ -190,7 +191,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             v.removeItemDecoration(v.getItemDecorationAt(i));
         v.addItemDecoration(new ItemDecoration(1, width, color, drawable));
         if (mLayoutManger == 2) // 网格的话需要绘制纵向分割线
-            v.addItemDecoration(new ItemDecoration(2, width + (width / (mSpanCount - 2)), color, drawable)); // 最右侧不需要绘制分割线
+            v.addItemDecoration(new ItemDecoration(2, width, color, drawable)); // 最右侧不需要绘制分割线
     }
 
     public <B> void setAdapterSup(B b, int layoutId, final OnConvertListener<B> convertListener) {

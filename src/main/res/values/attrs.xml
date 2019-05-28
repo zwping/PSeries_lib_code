@@ -71,6 +71,17 @@
         <attr name="p_cusView"/>
         <attr name="p_default_show_loading"/>
     </declare-styleable>
+    <attr name="p_progress_radius" format="dimension"/>
+    <attr name="p_progress_background_color" format="color"/>
+    <attr name="p_progress_color" format="color"/>
+    <attr name="p_second_progress_color" format="color"/>
+    <declare-styleable name="PSeekBar">
+        <attr name="p_progress_radius"/>
+        <attr name="p_progress_background_color"/>
+        <attr name="p_progress_color"/>
+        <attr name="p_second_progress_color"/>
+        <attr name="p_sliding_block_pure_color" format="color"/>
+    </declare-styleable>
     <attr name="p_strike_through" format="boolean"/>
     <declare-styleable name="PTextView">
         <attr name="p_strike_through"/>
