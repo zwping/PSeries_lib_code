@@ -203,6 +203,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
     }
 
     public <B> void setAdapterSup(B b, OnConvertListener<B> convertListener) {
+        if (adapterLayoutId == 0) throw new NullPointerException();
         setAdapterSup(b, adapterLayoutId, convertListener);
     }
 

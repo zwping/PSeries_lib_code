@@ -72,7 +72,7 @@ public class Bar extends ConstraintLayout implements IBar {
                 setReturnPivWH(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_return_piv_wh, 0)));
                 setMenuPivWH(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_menu_piv_wh, 0)));
                 setTitleColor(array.getColor(R.styleable.Bar_p_title_color, Color.BLACK)); // 默认黑色
-                setTitleSize(px2dp(getContext(), array.getColor(R.styleable.Bar_p_title_size, dp2px(getContext(), 15)))); // 默认15dp
+                setTitleSize(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_title_size, dp2px(getContext(), 15)))); // 默认15dp
                 setReturnTxtColor(array.getColor(R.styleable.Bar_p_return_txt_color, Color.BLACK)); // 默认黑色
                 setReturnTxtSize(px2dp(getContext(), array.getDimensionPixelSize(R.styleable.Bar_p_return_txt_size, dp2px(getContext(), 12)))); // 默认12dp
                 setMenuTxtColor(array.getColor(R.styleable.Bar_p_menu_txt_color, Color.BLACK)); // 默认黑色
