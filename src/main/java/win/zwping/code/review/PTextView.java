@@ -196,9 +196,14 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
     /*** 简化代码，直接在xml中预填%s ***/
     public PTextView setFormat(Object... args) {
-        setText(String.format(getContent(), args));
+        if(tempFormatValue == null) tempFormatValue = getContent();
+        setText(String.format(tempFormatValue, args));
         return this;
     }
+
+    /*** 重互利用%s ***/
+    private String tempFormatValue = null;
+
     //</editor-fold>
     //<editor-fold desc="html加载本地图片">
 
