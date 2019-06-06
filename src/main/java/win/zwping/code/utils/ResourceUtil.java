@@ -1,6 +1,7 @@
 package win.zwping.code.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -23,6 +24,9 @@ public final class ResourceUtil  implements IUtil.INativeUtil{
 
     public static int getColor(@ColorRes int colorId) {
         return ContextCompat.getColor(Util.getApp(), colorId);
+    }
+    public static int getColor(Context context, @ColorRes int colorId) {
+        return ContextCompat.getColor(context, colorId);
     }
 
     public static String getString(@StringRes int stringId) {
