@@ -1,344 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="p_radius" format="dimension"/>
+    <attr name="p_radius" format="dimension" />
     <declare-styleable name="PImageView">
         <!--加载中图片资源-->
-        <attr name="p_loadingImg" format="reference"/>
+        <attr name="p_loadingImg" format="reference" />
         <!--错误图片资源-->
-        <attr name="p_errorImg" format="reference"/>
+        <attr name="p_errorImg" format="reference" />
         <!--处理图片的类型-->
         <attr name="p_processorType">
-            <enum name="circle" value="0"/> <!--圆形-->
-            <enum name="roundRect" value="1"/> <!--圆角矩形-->
+            <enum name="circle" value="0" /> <!--圆形-->
+            <enum name="roundRect" value="1" /> <!--圆角矩形-->
         </attr>
         <!--图片处理的角度-->
-        <attr name="p_radius"/>
-        <attr name="p_default_show_loading"/>
+        <attr name="p_radius" />
+        <attr name="p_default_show_loading" />
     </declare-styleable>
 
-    <attr name="p_setDefaultConfig" format="boolean"/>
-    <attr name="p_setProgressBar" format="boolean"/>
-    <attr name="p_nestedScrollView" format="boolean"/>
-    <attr name="p_fromTitle" format="boolean"/>
-    <attr name="p_slideOver" format="boolean"/>
-    <attr name="p_setTransitionView" format="boolean"/>
-    <attr name="p_enable" format="boolean"/>
-    <attr name="p_setTransitionLoadingView" format="boolean"/>
-    <attr name="p_loadingView" format="reference"/>
-    <attr name="p_errorView" format="reference"/>
-    <attr name="p_countEnable" format="boolean"/>
-    <attr name="p_inputCountEnable" format="boolean"/>
-    <attr name="p_countOffBottom" format="dimension"/>
-    <attr name="p_countOffRight" format="dimension"/>
-    <attr name="p_countTextSize" format="dimension"/>
-    <attr name="p_countTextColor" format="color"/>
-    <attr name="p_emptyView" format="reference"/>
-    <attr name="p_netErrorView" format="reference"/>
-    <attr name="p_cusView" format="reference"/>
-    <attr name="p_default_show_loading" format="boolean"/>
+    <attr name="p_setDefaultConfig" format="boolean" />
+    <attr name="p_setProgressBar" format="boolean" />
+    <attr name="p_nestedScrollView" format="boolean" />
+    <attr name="p_fromTitle" format="boolean" />
+    <attr name="p_slideOver" format="boolean" />
+    <attr name="p_setTransitionView" format="boolean" />
+    <attr name="p_enable" format="boolean" />
+    <attr name="p_setTransitionLoadingView" format="boolean" />
+    <attr name="p_loadingView" format="reference" />
+    <attr name="p_errorView" format="reference" />
+    <attr name="p_countEnable" format="boolean" />
+    <attr name="p_inputCountEnable" format="boolean" />
+    <attr name="p_countOffBottom" format="dimension" />
+    <attr name="p_countOffRight" format="dimension" />
+    <attr name="p_countTextSize" format="dimension" />
+    <attr name="p_countTextColor" format="color" />
+    <attr name="p_emptyView" format="reference" />
+    <attr name="p_netErrorView" format="reference" />
+    <attr name="p_cusView" format="reference" />
+    <attr name="p_default_show_loading" format="boolean" />
     <declare-styleable name="BasicWebView">
-        <attr name="p_setDefaultConfig"/>
-        <attr name="p_nestedScrollView"/>
+        <attr name="p_setDefaultConfig" />
+        <attr name="p_nestedScrollView" />
     </declare-styleable>
     <declare-styleable name="PWebView">
-        <attr name="p_setDefaultConfig"/>
-        <attr name="p_setProgressBar"/>
-        <attr name="p_nestedScrollView"/>
-        <attr name="p_enableOverSv" format="boolean"/>
-        <attr name="p_fromTitle"/>
-        <attr name="p_enableLoadingView" format="boolean"/>
-        <attr name="p_enableErrorView" format="boolean"/>
-        <attr name="p_loadingView"/>
-        <attr name="p_errorView"/>
+        <attr name="p_setDefaultConfig" />
+        <attr name="p_setProgressBar" />
+        <attr name="p_nestedScrollView" />
+        <attr name="p_enableOverSv" format="boolean" />
+        <attr name="p_fromTitle" />
+        <attr name="p_enableLoadingView" format="boolean" />
+        <attr name="p_enableErrorView" format="boolean" />
+        <attr name="p_loadingView" />
+        <attr name="p_errorView" />
     </declare-styleable>
 
     <declare-styleable name="EtWordCountLayout">
-        <attr name="p_inputCountEnable"/>
-        <attr name="p_singleInputCountEnable" format="boolean"/>
-        <attr name="p_countOffBottom"/>
-        <attr name="p_countOffRight"/>
-        <attr name="p_countTextSize"/>
-        <attr name="p_countTextColor"/>
+        <attr name="p_inputCountEnable" />
+        <attr name="p_singleInputCountEnable" format="boolean" />
+        <attr name="p_countOffBottom" />
+        <attr name="p_countOffRight" />
+        <attr name="p_countTextSize" />
+        <attr name="p_countTextColor" />
     </declare-styleable>
     <declare-styleable name="OverScrollLayout">
-        <attr name="p_enable"/>
+        <attr name="p_enable" />
     </declare-styleable>
     <declare-styleable name="SwitchPageStateLayout">
-        <attr name="p_loadingView"/>
-        <attr name="p_emptyView"/>
-        <attr name="p_netErrorView"/>
-        <attr name="p_errorView"/>
-        <attr name="p_cusView"/>
-        <attr name="p_default_show_loading"/>
+        <attr name="p_loadingView" />
+        <attr name="p_emptyView" />
+        <attr name="p_netErrorView" />
+        <attr name="p_errorView" />
+        <attr name="p_cusView" />
+        <attr name="p_default_show_loading" />
     </declare-styleable>
-    <attr name="p_progress_radius" format="dimension"/>
-    <attr name="p_progress_background_color" format="color"/>
-    <attr name="p_progress_color" format="color"/>
-    <attr name="p_second_progress_color" format="color"/>
+    <attr name="p_progress_radius" format="dimension" />
+    <attr name="p_progress_background_color" format="color" />
+    <attr name="p_progress_color" format="color" />
+    <attr name="p_second_progress_color" format="color" />
     <declare-styleable name="PSeekBar">
-        <attr name="p_progress_radius"/>
-        <attr name="p_progress_background_color"/>
-        <attr name="p_progress_color"/>
-        <attr name="p_second_progress_color"/>
-        <attr name="p_sliding_block_pure_color" format="color"/>
+        <attr name="p_progress_radius" />
+        <attr name="p_progress_background_color" />
+        <attr name="p_progress_color" />
+        <attr name="p_second_progress_color" />
+        <attr name="p_sliding_block_pure_color" format="color" />
     </declare-styleable>
-    <attr name="p_strike_through" format="boolean"/>
+    <attr name="p_strike_through" format="boolean" />
     <declare-styleable name="PTextView">
-        <attr name="p_strike_through"/>
+        <attr name="p_strike_through" />
         <!--<attr name="state_enable" format="color"/>-->
         <!--<attr name="state_pressed" format="color"/>-->
         <!--<attr name="state_focused" format="color"/>-->
         <!--<attr name="state_selected" format="color"/>-->
         <!--<attr name="background_radius" format="dimension"/>-->
-        <attr name="p_unable_bg_color"/>
-        <attr name="p_selected_bg_color"/>
-        <attr name="p_pressed_bg_color"/>
-        <attr name="p_focused_bg_color"/>
-        <attr name="p_checked_bg_color"/>
-        <attr name="p_normal_bg_color"/>
-        <attr name="p_unable_text_color"/>
-        <attr name="p_selected_text_color"/>
-        <attr name="p_pressed_text_color"/>
-        <attr name="p_focused_text_color"/>
-        <attr name="p_checked_text_color"/>
-        <attr name="p_normal_text_color"/>
+        <attr name="p_unable_bg_color" />
+        <attr name="p_selected_bg_color" />
+        <attr name="p_pressed_bg_color" />
+        <attr name="p_focused_bg_color" />
+        <attr name="p_checked_bg_color" />
+        <attr name="p_normal_bg_color" />
+        <attr name="p_unable_text_color" />
+        <attr name="p_selected_text_color" />
+        <attr name="p_pressed_text_color" />
+        <attr name="p_focused_text_color" />
+        <attr name="p_checked_text_color" />
+        <attr name="p_normal_text_color" />
     </declare-styleable>
 
     <declare-styleable name="PCardView">
-        <attr name="p_unable_bg_color"/>
-        <attr name="p_selected_bg_color"/>
-        <attr name="p_pressed_bg_color"/>
-        <attr name="p_focused_bg_color"/>
-        <attr name="p_checked_bg_color"/>
-        <attr name="p_normal_bg_color"/>
+        <attr name="p_unable_bg_color" />
+        <attr name="p_selected_bg_color" />
+        <attr name="p_pressed_bg_color" />
+        <attr name="p_focused_bg_color" />
+        <attr name="p_checked_bg_color" />
+        <attr name="p_normal_bg_color" />
     </declare-styleable>
 
     <declare-styleable name="SupBgLayout">
-        <attr name="p_top_left_radius" format="dimension"/>
-        <attr name="p_top_right_radius" format="dimension"/>
-        <attr name="p_bottom_left_radius" format="dimension"/>
-        <attr name="p_bottom_right_radius" format="dimension"/>
-        <attr name="p_radius"/>
-        <attr name="p_circle" format="boolean"/>
-        <attr name="p_border_color" format="color"/>
-        <attr name="p_border_width" format="dimension"/>
+        <attr name="p_top_left_radius" format="dimension" />
+        <attr name="p_top_right_radius" format="dimension" />
+        <attr name="p_bottom_left_radius" format="dimension" />
+        <attr name="p_bottom_right_radius" format="dimension" />
+        <attr name="p_radius" />
+        <attr name="p_circle" format="boolean" />
+        <attr name="p_border_color" format="color" />
+        <attr name="p_border_width" format="dimension" />
     </declare-styleable>
     <declare-styleable name="PRecyclerView">
-        <attr name="p_removeFocus" format="boolean"/>
+        <attr name="p_removeFocus" format="boolean" />
         <attr name="p_layout_manager">
-            <enum name="linearLayoutManager" value="1"/>
-            <enum name="gridLayoutManager" value="2"/>
+            <enum name="linearLayoutManager" value="1" />
+            <enum name="gridLayoutManager" value="2" />
         </attr>
         <attr name="p_orientation">
-            <flag name="vertically" value="1"/>
-            <flag name="horizontally" value="2"/>
+            <flag name="vertically" value="1" />
+            <flag name="horizontally" value="2" />
         </attr>
-        <attr name="p_spanCount" format="integer"/>
+        <attr name="p_spanCount" format="integer" />
         <attr name="p_noScroll">
-            <flag name="vertically" value="1"/>
-            <flag name="horizontally" value="2"/>
+            <flag name="vertically" value="1" />
+            <flag name="horizontally" value="2" />
         </attr>
-        <attr name="p_item_layout_id" format="reference"/>
-        <attr name="p_simple_decoration_enable" format="boolean"/>
-        <attr name="p_decoration_width" format="dimension"/>
-        <attr name="p_decoration_color" format="color"/>
-        <attr name="p_decoration_drawable" format="reference"/>
+        <attr name="p_item_layout_id" format="reference" />
+        <attr name="p_simple_decoration_enable" format="boolean" />
+        <attr name="p_decoration_width" format="dimension" />
+        <attr name="p_decoration_color" format="color" />
+        <attr name="p_decoration_drawable" format="reference" />
     </declare-styleable>
     <declare-styleable name="PEditText">
         <attr name="p_regexType">
-            <enum name="phone" value="0"/>
-            <enum name="psw_simple" value="1"/>
-            <enum name="verify_code" value="2"/>
-            <enum name="non_null" value="3"/>
+            <enum name="phone" value="0" />
+            <enum name="psw_simple" value="1" />
+            <enum name="verify_code" value="2" />
+            <enum name="non_null" value="3" />
         </attr>
-        <attr name="p_verify_code_length" format="integer"/>
-        <attr name="p_unable_bg_color"/>
-        <attr name="p_selected_bg_color"/>
-        <attr name="p_pressed_bg_color"/>
-        <attr name="p_focused_bg_color"/>
-        <attr name="p_checked_bg_color"/>
-        <attr name="p_normal_bg_color"/>
-        <attr name="p_unable_text_color"/>
-        <attr name="p_selected_text_color"/>
-        <attr name="p_pressed_text_color"/>
-        <attr name="p_focused_text_color"/>
-        <attr name="p_checked_text_color"/>
-        <attr name="p_normal_text_color"/>
-        <attr name="p_clear_text_enable"/>
-        <attr name="p_psw_toggle_enable"/>
-        <attr name="p_clear_drawable"/>
-        <attr name="p_show_psw_drawable"/>
-        <attr name="p_hide_psw_drawable"/>
-        <attr name="p_clear_icon_padding"/>
-        <attr name="p_psw_icon_padding"/>
-        <attr name="p_clear_icon_tint"/>
-        <attr name="p_psw_icon_tint"/>
+        <attr name="p_verify_code_length" format="integer" />
+        <attr name="p_unable_bg_color" />
+        <attr name="p_selected_bg_color" />
+        <attr name="p_pressed_bg_color" />
+        <attr name="p_focused_bg_color" />
+        <attr name="p_checked_bg_color" />
+        <attr name="p_normal_bg_color" />
+        <attr name="p_unable_text_color" />
+        <attr name="p_selected_text_color" />
+        <attr name="p_pressed_text_color" />
+        <attr name="p_focused_text_color" />
+        <attr name="p_checked_text_color" />
+        <attr name="p_normal_text_color" />
+        <attr name="p_clear_text_enable" />
+        <attr name="p_psw_toggle_enable" />
+        <attr name="p_clear_drawable" />
+        <attr name="p_show_psw_drawable" />
+        <attr name="p_hide_psw_drawable" />
+        <attr name="p_clear_icon_padding" />
+        <attr name="p_psw_icon_padding" />
+        <attr name="p_clear_icon_tint" />
+        <attr name="p_psw_icon_tint" />
     </declare-styleable>
-    <attr name="p_clear_text_enable" format="boolean"/>
-    <attr name="p_psw_toggle_enable" format="boolean"/>
-    <attr name="p_clear_drawable" format="reference"/>
-    <attr name="p_show_psw_drawable" format="reference"/>
-    <attr name="p_hide_psw_drawable" format="reference"/>
-    <attr name="p_clear_icon_padding" format="dimension"/>
-    <attr name="p_psw_icon_padding" format="dimension"/>
-    <attr name="p_clear_icon_tint" format="color"/>
-    <attr name="p_psw_icon_tint" format="color"/>
+    <attr name="p_clear_text_enable" format="boolean" />
+    <attr name="p_psw_toggle_enable" format="boolean" />
+    <attr name="p_clear_drawable" format="reference" />
+    <attr name="p_show_psw_drawable" format="reference" />
+    <attr name="p_hide_psw_drawable" format="reference" />
+    <attr name="p_clear_icon_padding" format="dimension" />
+    <attr name="p_psw_icon_padding" format="dimension" />
+    <attr name="p_clear_icon_tint" format="color" />
+    <attr name="p_psw_icon_tint" format="color" />
     <declare-styleable name="PScrollView">
-        <attr name="p_ban_sliding" format="boolean"/>
+        <attr name="p_ban_sliding" format="boolean" />
     </declare-styleable>
     <declare-styleable name="PButton">
         <attr name="p_model">
-            <enum name="non" value="0"/>
-            <enum name="count_down" value="1"/>
+            <enum name="non" value="0" />
+            <enum name="count_down" value="1" />
         </attr>
-        <attr name="p_cd_default_txt" format="string"/>
-        <attr name="p_cd_hint_txt" format="string"/>
-        <attr name="p_cd_re_get_txt" format="string"/>
-        <attr name="p_cd_time" format="integer"/>
-        <attr name="p_unable_bg_color"/>
-        <attr name="p_selected_bg_color"/>
-        <attr name="p_pressed_bg_color"/>
-        <attr name="p_focused_bg_color"/>
-        <attr name="p_checked_bg_color"/>
-        <attr name="p_normal_bg_color"/>
-        <attr name="p_unable_text_color"/>
-        <attr name="p_selected_text_color"/>
-        <attr name="p_pressed_text_color"/>
-        <attr name="p_focused_text_color"/>
-        <attr name="p_checked_text_color"/>
-        <attr name="p_normal_text_color"/>
+        <attr name="p_cd_default_txt" format="string" />
+        <attr name="p_cd_hint_txt" format="string" />
+        <attr name="p_cd_re_get_txt" format="string" />
+        <attr name="p_cd_time" format="integer" />
+        <attr name="p_unable_bg_color" />
+        <attr name="p_selected_bg_color" />
+        <attr name="p_pressed_bg_color" />
+        <attr name="p_focused_bg_color" />
+        <attr name="p_checked_bg_color" />
+        <attr name="p_normal_bg_color" />
+        <attr name="p_unable_text_color" />
+        <attr name="p_selected_text_color" />
+        <attr name="p_pressed_text_color" />
+        <attr name="p_focused_text_color" />
+        <attr name="p_checked_text_color" />
+        <attr name="p_normal_text_color" />
     </declare-styleable>
-    <attr name="p_unable_bg_color" format="color"/>
-    <attr name="p_selected_bg_color" format="color"/>
-    <attr name="p_pressed_bg_color" format="color"/>
-    <attr name="p_focused_bg_color" format="color"/>
-    <attr name="p_checked_bg_color" format="color"/>
-    <attr name="p_normal_bg_color" format="color"/>
+    <attr name="p_unable_bg_color" format="color" />
+    <attr name="p_selected_bg_color" format="color" />
+    <attr name="p_pressed_bg_color" format="color" />
+    <attr name="p_focused_bg_color" format="color" />
+    <attr name="p_checked_bg_color" format="color" />
+    <attr name="p_normal_bg_color" format="color" />
 
-    <attr name="p_unable_text_color" format="color"/>
-    <attr name="p_selected_text_color" format="color"/>
-    <attr name="p_pressed_text_color" format="color"/>
-    <attr name="p_focused_text_color" format="color"/>
-    <attr name="p_checked_text_color" format="color"/>
-    <attr name="p_normal_text_color" format="color"/>
-    <attr name="p_arrow_color" format="color"/>
+    <attr name="p_unable_text_color" format="color" />
+    <attr name="p_selected_text_color" format="color" />
+    <attr name="p_pressed_text_color" format="color" />
+    <attr name="p_focused_text_color" format="color" />
+    <attr name="p_checked_text_color" format="color" />
+    <attr name="p_normal_text_color" format="color" />
+    <attr name="p_arrow_color" format="color" />
     <declare-styleable name="ArrowView">
-        <attr name="p_arrow_color"/>
+        <attr name="p_arrow_color" />
         <attr name="p_direction">
-            <enum name="up" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="down" value="2"/>
-            <enum name="left" value="3"/>
+            <enum name="up" value="0" />
+            <enum name="right" value="1" />
+            <enum name="down" value="2" />
+            <enum name="left" value="3" />
         </attr>
-        <attr name="p_arrow_width" format="dimension"/>
+        <attr name="p_arrow_width" format="dimension" />
     </declare-styleable>
     <declare-styleable name="Bar">
-        <attr name="p_title_txt"/>
-        <attr name="p_return_txt"/>
-        <attr name="p_return_piv_res_id"/>
-        <attr name="p_menu_piv_res_id"/>
-        <attr name="p_menu_txt"/>
-        <attr name="p_title_padding"/>
-        <attr name="p_return_padding"/>
-        <attr name="p_menu_padding"/>
-        <attr name="p_return_arrow_wh"/>
-        <attr name="p_return_piv_wh"/>
-        <attr name="p_menu_piv_wh"/>
-        <attr name="p_title_color"/>
-        <attr name="p_title_size"/>
-        <attr name="p_return_txt_color"/>
-        <attr name="p_return_txt_size"/>
-        <attr name="p_menu_txt_color"/>
-        <attr name="p_menu_txt_size"/>
-        <attr name="p_return_arrow_color"/>
-        <attr name="p_bottom_line_color"/>
-        <attr name="p_return_visibility"/>
-        <attr name="p_return_arrow_visibility"/>
-        <attr name="p_menu_visibility"/>
-        <attr name="p_bottom_line_visibility"/>
-        <attr name="p_return_txt_bold" format="boolean"/>
-        <attr name="p_title_txt_bold" format="boolean"/>
-        <attr name="p_menu_txt_bold" format="boolean"/>
+        <attr name="p_title_txt" />
+        <attr name="p_return_txt" />
+        <attr name="p_return_piv_res_id" />
+        <attr name="p_menu_piv_res_id" />
+        <attr name="p_menu_txt" />
+        <attr name="p_title_padding" />
+        <attr name="p_return_padding" />
+        <attr name="p_menu_padding" />
+        <attr name="p_return_arrow_wh" />
+        <attr name="p_return_piv_wh" />
+        <attr name="p_menu_piv_wh" />
+        <attr name="p_title_color" />
+        <attr name="p_title_size" />
+        <attr name="p_return_txt_color" />
+        <attr name="p_return_txt_size" />
+        <attr name="p_menu_txt_color" />
+        <attr name="p_menu_txt_size" />
+        <attr name="p_return_arrow_color" />
+        <attr name="p_bottom_line_color" />
+        <attr name="p_return_visibility" />
+        <attr name="p_return_arrow_visibility" />
+        <attr name="p_menu_visibility" />
+        <attr name="p_bottom_line_visibility" />
+        <attr name="p_return_txt_bold" format="boolean" />
+        <attr name="p_title_txt_bold" format="boolean" />
+        <attr name="p_menu_txt_bold" format="boolean" />
     </declare-styleable>
     <declare-styleable name="MenuBar">
-        <attr name="p_title_icon" format="reference"/>
-        <attr name="p_title_txt"/>
-        <attr name="p_content_txt" format="string"/>
-        <attr name="p_content_hint_txt" format="string"/>
-        <attr name="p_title_icon_margin_left" format="dimension"/>
-        <attr name="p_title_margin_left" format="dimension"/>
-        <attr name="p_content_margin_right" format="dimension"/>
-        <attr name="p_arrow_margin_right" format="dimension"/>
-        <attr name="p_title_icon_wh" format="dimension"/>
-        <attr name="p_arrow_wh" format="dimension"/>
-        <attr name="p_title_color"/>
-        <attr name="p_title_size"/>
-        <attr name="p_content_hint_color" format="color"/>
-        <attr name="p_content_color" format="color"/>
-        <attr name="p_content_size" format="dimension"/>
-        <attr name="p_arrow_color"/>
-        <attr name="p_top_line_color" format="color"/>
-        <attr name="p_bottom_line_color"/>
-        <attr name="p_content_is_text_or_input" format="boolean"/>
+        <attr name="p_title_icon" format="reference" />
+        <attr name="p_title_txt" />
+        <attr name="p_content_txt" format="string" />
+        <attr name="p_content_hint_txt" format="string" />
+        <attr name="p_title_icon_margin_left" format="dimension" />
+        <attr name="p_title_margin_left" format="dimension" />
+        <attr name="p_content_margin_right" format="dimension" />
+        <attr name="p_arrow_margin_right" format="dimension" />
+        <attr name="p_title_icon_wh" format="dimension" />
+        <attr name="p_arrow_wh" format="dimension" />
+        <attr name="p_title_color" />
+        <attr name="p_title_size" />
+        <attr name="p_content_hint_color" format="color" />
+        <attr name="p_content_color" format="color" />
+        <attr name="p_content_size" format="dimension" />
+        <attr name="p_arrow_color" />
+        <attr name="p_top_line_color" format="color" />
+        <attr name="p_bottom_line_color" />
+        <attr name="p_content_is_text_or_input" format="boolean" />
         <attr name="p_title_icon_visibility">
-            <enum name="gone" value="0"/>
-            <enum name="visibility" value="1"/>
+            <enum name="gone" value="0" />
+            <enum name="visibility" value="1" />
         </attr>
         <attr name="p_arrow_visibility">
-            <enum name="gone" value="0"/>
-            <enum name="visibility" value="1"/>
+            <enum name="gone" value="0" />
+            <enum name="visibility" value="1" />
         </attr>
         <attr name="p_top_line_visibility">
-            <enum name="gone" value="0"/>
-            <enum name="visibility" value="1"/>
+            <enum name="gone" value="0" />
+            <enum name="visibility" value="1" />
         </attr>
-        <attr name="p_bottom_line_visibility"/>
-        <attr name="p_bottom_line_margin_left" format="dimension"/>
-        <attr name="p_bottom_line_margin_right" format="dimension"/>
-        <attr name="p_title_bold" format="boolean"/>
-        <attr name="p_content_bold" format="boolean"/>
+        <attr name="p_bottom_line_visibility" />
+        <attr name="p_bottom_line_margin_left" format="dimension" />
+        <attr name="p_bottom_line_margin_right" format="dimension" />
+        <attr name="p_title_bold" format="boolean" />
+        <attr name="p_content_bold" format="boolean" />
     </declare-styleable>
-    <attr name="p_title_txt" format="string"/>
-    <attr name="p_return_txt" format="string"/>
-    <attr name="p_return_piv_res_id" format="reference"/>
-    <attr name="p_menu_piv_res_id" format="reference"/>
-    <attr name="p_menu_txt" format="string"/>
-    <attr name="p_title_padding" format="dimension"/>
-    <attr name="p_return_padding" format="dimension"/>
-    <attr name="p_menu_padding" format="dimension"/>
-    <attr name="p_return_arrow_wh" format="dimension"/>
-    <attr name="p_return_piv_wh" format="dimension"/>
-    <attr name="p_menu_piv_wh" format="dimension"/>
-    <attr name="p_title_color" format="color"/>
-    <attr name="p_title_size" format="dimension"/>
-    <attr name="p_return_txt_color" format="color"/>
-    <attr name="p_return_txt_size" format="dimension"/>
-    <attr name="p_menu_txt_color" format="color"/>
-    <attr name="p_menu_txt_size" format="dimension"/>
-    <attr name="p_return_arrow_color" format="color"/>
-    <attr name="p_bottom_line_color" format="color"/>
+    <attr name="p_title_txt" format="string" />
+    <attr name="p_return_txt" format="string" />
+    <attr name="p_return_piv_res_id" format="reference" />
+    <attr name="p_menu_piv_res_id" format="reference" />
+    <attr name="p_menu_txt" format="string" />
+    <attr name="p_title_padding" format="dimension" />
+    <attr name="p_return_padding" format="dimension" />
+    <attr name="p_menu_padding" format="dimension" />
+    <attr name="p_return_arrow_wh" format="dimension" />
+    <attr name="p_return_piv_wh" format="dimension" />
+    <attr name="p_menu_piv_wh" format="dimension" />
+    <attr name="p_title_color" format="color" />
+    <attr name="p_title_size" format="dimension" />
+    <attr name="p_return_txt_color" format="color" />
+    <attr name="p_return_txt_size" format="dimension" />
+    <attr name="p_menu_txt_color" format="color" />
+    <attr name="p_menu_txt_size" format="dimension" />
+    <attr name="p_return_arrow_color" format="color" />
+    <attr name="p_bottom_line_color" format="color" />
     <attr name="p_return_visibility">
-        <enum name="gone" value="0"/>
-        <enum name="visibility" value="1"/>
+        <enum name="gone" value="0" />
+        <enum name="visibility" value="1" />
     </attr>
     <attr name="p_return_arrow_visibility">
-        <enum name="gone" value="0"/>
-        <enum name="visibility" value="1"/>
+        <enum name="gone" value="0" />
+        <enum name="visibility" value="1" />
     </attr>
     <attr name="p_menu_visibility">
-        <enum name="gone" value="0"/>
-        <enum name="visibility" value="1"/>
+        <enum name="gone" value="0" />
+        <enum name="visibility" value="1" />
     </attr>
     <attr name="p_bottom_line_visibility">
-        <enum name="gone" value="0"/>
-        <enum name="visibility" value="1"/>
+        <enum name="gone" value="0" />
+        <enum name="visibility" value="1" />
     </attr>
     <declare-styleable name="PProgressBar">
-        <attr name="p_circle_color" format="color"/>
-        <attr name="p_horizontal_radius" format="dimension"/>
-        <attr name="p_horizontal_background_color" format="color"/>
-        <attr name="p_horizontal_progress_color" format="color"/>
-        <attr name="p_horizontal_secondary_progress_color" format="color"/>
+        <attr name="p_circle_color" format="color" />
+        <attr name="p_horizontal_radius" format="dimension" />
+        <attr name="p_horizontal_background_color" format="color" />
+        <attr name="p_horizontal_progress_color" format="color" />
+        <attr name="p_horizontal_secondary_progress_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="BadgeLayout">
+        <attr name="p_badge_number" format="boolean" />
+        <attr name="p_badge_text" format="integer" />
+        <attr name="p_badge_text_color" format="color" />
+        <attr name="p_badge_text_size" format="dimension" />
+        <attr name="p_badge_text_max" format="integer" />
+        <attr name="p_badge_gravity">
+            <enum name="top2left" value="0" />
+            <enum name="top2right" value="2" />
+            <enum name="bottom2left" value="3" />
+            <enum name="bottom2right" value="5" />
+        </attr>
+        <attr name="p_badge_offset_y" format="dimension"/>
+        <attr name="p_badge_offset_x" format="dimension"/>
+        <attr name="p_badge_bg_color" format="color"/>
+        <attr name="p_badge_visibility">
+            <enum name="gone" value="0" />
+            <enum name="visibility" value="1" />
+        </attr>
     </declare-styleable>
     <!--每一个发生要定义format指定其类型，类型包括
           reference   表示引用，参考某一资源ID

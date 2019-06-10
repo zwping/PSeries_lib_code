@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<win.zwping.code.review.PCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/badge_view_pcd"
+    android:layout_height="match_parent">
+
+    <win.zwping.code.review.PTextView
+        android:layout_width="match_parent"
+        android:id="@+id/badge_view_ptv"
+        android:layout_height="match_parent" />
+
+
+</win.zwping.code.review.PCardView>
