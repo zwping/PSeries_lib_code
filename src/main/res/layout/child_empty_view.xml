@@ -17,8 +17,10 @@
 
         <win.zwping.code.review.PImageView
                 android:id="@+id/empty_v"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:src="@mipmap/empty_icon"
                 app:layout_constraintBottom_toTopOf="@id/empty_tv"
                 app:layout_constraintLeft_toLeftOf="parent"
