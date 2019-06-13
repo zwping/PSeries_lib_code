@@ -28,7 +28,12 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
         super.onCreate(savedInstanceState);
         setContentView(bindLayout());
         initView(savedInstanceState);
-        doBusiness();
+        getWindow().getDecorView().findViewById(android.R.id.content).post(new Runnable() {
+            @Override
+            public void run() {
+                doBusiness();
+            }
+        });
     }
 
     private ImmersionBar imBar;
