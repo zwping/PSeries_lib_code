@@ -11,12 +11,13 @@ import androidx.annotation.Nullable;
  */
 public class ConvertSupBean<T> {
     private BaseViewHolder helper;
+    @Nullable
     private T item;
 
     public ConvertSupBean() {
     }
 
-    public ConvertSupBean(BaseViewHolder helper, T item) {
+    public ConvertSupBean(BaseViewHolder helper, @Nullable T item) {
         this.helper = helper;
         this.item = item;
     }
@@ -29,11 +30,12 @@ public class ConvertSupBean<T> {
         this.helper = helper;
     }
 
+    @Nullable
     public T getItem() {
         return item;
     }
 
-    public void setItem(T item) {
+    public void setItem(@Nullable T item) {
         this.item = item;
     }
 }
