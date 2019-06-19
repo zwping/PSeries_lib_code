@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.CycleInterpolator;
 
+import androidx.annotation.Nullable;
 import win.zwping.code.basic.IUtil;
 
 /**
@@ -118,7 +119,7 @@ public final class AnimatorUtil implements IUtil.INativeUtil {
      * @param duration
      * @param animatorListener
      */
-    public static void translationY(View v, float fromY, float toY, int duration, TimeInterpolator interpolator, Animator.AnimatorListener
+    public static void translationY(View v, float fromY, float toY, int duration, @Nullable TimeInterpolator interpolator, Animator.AnimatorListener
             animatorListener) {
         ObjectAnimator animator = ObjectAnimator.ofFloat(v, View.TRANSLATION_Y, fromY, toY);
         animator.setDuration(duration);
