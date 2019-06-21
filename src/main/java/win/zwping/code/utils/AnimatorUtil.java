@@ -372,7 +372,7 @@ public final class AnimatorUtil implements IUtil.INativeUtil {
         ObjectAnimator animator_x = ObjectAnimator.ofFloat(view, "scaleX", 1.5f, 1.2f, 1f, 0.5f, 0.7f, 1f);
         ObjectAnimator animator_y = ObjectAnimator.ofFloat(view, "scaleY", 1.5f, 1.2f, 1f, 0.5f, 0.7f, 1f);
         set.play(animator_x).with(animator_y);
-        //设置他的持续时间
+        //设置他的继续时间
         set.setDuration(500);
         //启动动画
         set.start();
@@ -385,7 +385,7 @@ public final class AnimatorUtil implements IUtil.INativeUtil {
         ObjectAnimator animator_x = ObjectAnimator.ofFloat(view, "scaleX", 1.5f, 1.2f, 1f, 0.5f, 0.7f, 1f);
         ObjectAnimator animator_y = ObjectAnimator.ofFloat(view, "scaleY", 1.5f, 1.2f, 1f, 0.5f, 0.7f, 1f);
         set.play(animator_x).with(animator_y);
-        //设置他的持续时间
+        //设置他的继续时间
         set.setDuration(500);
         set.addListener(listener);
         //启动动画
