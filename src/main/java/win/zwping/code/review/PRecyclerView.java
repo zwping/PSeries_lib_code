@@ -95,7 +95,7 @@ public class PRecyclerView extends RecyclerView implements PRvHelper.IPRv {
 
     @Override
     public <B> BaseQuickAdapter<B, BaseViewHolder> getAdapterSup(B declaredBean) {
-        return (BaseQuickAdapter<B, BaseViewHolder>) super.getAdapter();
+        return helper.supAdapter != null ? helper.supAdapter : (BaseQuickAdapter<B, BaseViewHolder>) super.getAdapter();
     }
 
     @Override

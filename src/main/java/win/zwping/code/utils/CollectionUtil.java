@@ -1,9 +1,11 @@
 package win.zwping.code.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import win.zwping.code.basic.IUtil;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
@@ -37,14 +39,11 @@ public final class CollectionUtil implements IUtil.INativeUtil {
      * @param splitX
      * @return
      */
+    @Nullable
     public static List<String> splitList(String s, String splitX) {
         String[] strings = split(s, splitX);
         if (isEmpty(strings)) return null;
-        List<String> list = new ArrayList<>();
-        for (String string : strings) {
-            list.add(string);
-        }
-        return list;
+        return new ArrayList<>(Arrays.asList(strings));
     }
 
     /*** 根据长度切割字符串 ***/

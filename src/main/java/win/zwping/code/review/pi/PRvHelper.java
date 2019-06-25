@@ -194,8 +194,10 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             v.addItemDecoration(new ItemDecoration(2, width, color, drawable)); // 最右侧不需要绘制分割线
     }
 
+    public BaseQuickAdapter supAdapter;
+
     public <B> void setAdapterSup(B b, int layoutId, final OnConvertListener<B> convertListener) {
-        v.setAdapter(new BaseQuickAdapter<B, BaseViewHolder>(layoutId, null) {
+        v.setAdapter(supAdapter = new BaseQuickAdapter<B, BaseViewHolder>(layoutId, null) {
             protected void convert(BaseViewHolder helper, B item) {
                 convertListener.convert(new ConvertSupBean<B>(helper, item));
             }

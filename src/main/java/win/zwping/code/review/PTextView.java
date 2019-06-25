@@ -14,6 +14,7 @@ import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 import win.zwping.code.BuildConfig;
@@ -128,7 +129,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
      * @param htmlText           网页格式的文本
      * @param loadLocalResources 是否支持加载本地图片资源 eg： <img src="drawableName">
      */
-    public void setHtmlText(String htmlText, boolean loadLocalResources) {
+    public void setHtmlText(@Nullable String htmlText, boolean loadLocalResources) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             setText(loadLocalResources ?
                     Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY, new ResourcesImageGetter(getContext()), null)
@@ -142,7 +143,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
         }
     }
 
-    public void setHtmlText(String htmlText) {
+    public void setHtmlText(@Nullable String htmlText) {
         if (isNotEmpty(htmlText)) setHtmlText(htmlText, false);
     }
 
@@ -196,7 +197,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
     /*** 简化代码，直接在xml中预填%s ***/
     public PTextView setFormat(Object... args) {
-        if(tempFormatValue == null) tempFormatValue = getContent();
+        if (tempFormatValue == null) tempFormatValue = getContent();
         setText(String.format(tempFormatValue, args));
         return this;
     }
