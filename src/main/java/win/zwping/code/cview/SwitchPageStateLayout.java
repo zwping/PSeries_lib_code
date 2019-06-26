@@ -164,31 +164,31 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     }
 
     @Override
-    public final SwitchPageStateLayout showContent() {
+    public SwitchPageStateLayout showContent() {
         show(mContentResId);
         return this;
     }
 
     @Override
-    public final SwitchPageStateLayout showLoading() {
+    public SwitchPageStateLayout showLoading() {
         show(mLoadingResId);
         return this;
     }
 
     @Override
-    public final SwitchPageStateLayout showEmpty() {
+    public SwitchPageStateLayout showEmpty() {
         show(mEmptyResId);
         return this;
     }
 
     @Override
-    public final SwitchPageStateLayout showNetErrorWork() {
+    public SwitchPageStateLayout showNetErrorWork() {
         show(mNetErrorResId);
         return this;
     }
 
     @Override
-    public final SwitchPageStateLayout showError() {
+    public SwitchPageStateLayout showError() {
         show(mErrorResId);
         return this;
     }
@@ -202,7 +202,7 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     }
 
     @Override
-    public final SwitchPageStateLayout showCusView() {
+    public SwitchPageStateLayout showCusView() {
         if (0 != mCusResId) show(mCusResId);
         else ToastUtil.showShort("界面缺失");
         return this;
@@ -211,6 +211,7 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     @Override
     /*** 设置重试点击事件 ***/
     public SwitchPageStateLayout setOnRetryClickListener(OnClickListener onRetryClickListener) {
+        showLoading();
         this.mOnRetryClickListener = onRetryClickListener;
         return this;
     }
