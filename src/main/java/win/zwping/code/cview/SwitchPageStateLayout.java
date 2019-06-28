@@ -123,9 +123,21 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
         if (null != mOnRetryClickListener && (resId == mErrorResId || resId == mNetErrorResId)) {
             View v = view.findViewById(R.id.page_state_retry); // 如果布局中没有R.id.page_state_retry，则整个布局都可点击
             if (v != null)
-                v.setOnClickListener(mOnRetryClickListener);
+                v.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showLoading();
+                        mOnRetryClickListener.onClick(v);
+                    }
+                });
             else
-                view.setOnClickListener(mOnRetryClickListener);
+                view.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showLoading();
+                        mOnRetryClickListener.onClick(v);
+                    }
+                });
         }
         return view;
     }
@@ -211,7 +223,6 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
     @Override
     /*** 设置重试点击事件 ***/
     public SwitchPageStateLayout setOnRetryClickListener(OnClickListener onRetryClickListener) {
-        showLoading();
         this.mOnRetryClickListener = onRetryClickListener;
         return this;
     }
