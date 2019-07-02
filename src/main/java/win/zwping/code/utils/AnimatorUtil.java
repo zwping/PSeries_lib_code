@@ -51,8 +51,9 @@ public final class AnimatorUtil implements IUtil.INativeUtil {
      * @param duration
      * @param animatorListener
      */
-    public static void alpha(View v, float fromAlpha, float toAlpha, int duration, Animator.AnimatorListener
+    public static void alpha(@Nullable View v, float fromAlpha, float toAlpha, int duration, Animator.AnimatorListener
             animatorListener) {
+        if (v == null) return;
         ObjectAnimator animator = ObjectAnimator.ofFloat(v, View.ALPHA, fromAlpha, toAlpha);
         animator.setDuration(duration);
         if (animatorListener != null) {

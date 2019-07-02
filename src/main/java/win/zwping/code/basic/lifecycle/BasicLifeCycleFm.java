@@ -53,6 +53,11 @@ public class BasicLifeCycleFm extends Fragment implements IFm.IBasicLifeCycle {
 
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) { // 判断其是否可见
+        super.setUserVisibleHint(isVisibleToUser);
+    }
+
+    @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
     }
