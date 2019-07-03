@@ -1,5 +1,6 @@
 package win.zwping.code.review.pi;
 
+import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -31,7 +32,10 @@ public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
 
     //<editor-fold desc="公共API">
     public interface IPBtn {
-        PButton startCountDown(LifecycleOwner owner);
+        PButton startCountDown(@Nullable LifecycleOwner owner);
+
+        PButton stopCountDown();
+
     }
     //</editor-fold>
 
@@ -70,38 +74,39 @@ public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
         }
     }
 
-    public void startCountDown(LifecycleOwner owner) {
-        if (model == 1 && (null == countDownRx || countDownRx.isDisposed()))
-            countDownRx = Observable.intervalRange(0, cdTime + 1, 0, 1, TimeUnit.SECONDS)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .as(AutoDisposeUtil.bindLifecycle(owner))
-                    .subscribe(new Consumer<Long>() {
-                        @Override
-                        public void accept(Long aLong) throws Exception {
-                            v.setText(String.format(cdHintTxt, cdTime - aLong));
-                        }
-                    }, new Consumer<Throwable>() {
-                        @Override
-                        public void accept(Throwable throwable) throws Exception {
-                            LogUtil.i("倒计时模式下定时器的错误：" + throwable.getMessage());
-                            initCountDown();
-                        }
-                    }, new Action() {
-                        @Override
-                        public void run() throws Exception {
-                            stopCountDown();
-                            v.setText(cdReGetTxt);
-                        }
-                    }, new Consumer<Disposable>() {
-                        @Override
-                        public void accept(Disposable disposable) throws Exception {
-                            v.setEnabled(false);
-                        }
-                    });
+    public void startCountDown(@Nullable LifecycleOwner owner) {
+        if (model == 1 && (null == countDownRx || countDownRx.isDisposed())) {
+            Observable<Long> ob = Observable.intervalRange(0, cdTime + 1, 0, 1, TimeUnit.SECONDS)
+                    .observeOn(AndroidSchedulers.mainThread());
+            if (null != owner) ob.as(AutoDisposeUtil.bindLifecycle(owner));
+            countDownRx = ob.subscribe(new Consumer<Long>() {
+                @Override
+                public void accept(Long aLong) throws Exception {
+                    v.setText(String.format(cdHintTxt, cdTime - aLong));
+                }
+            }, new Consumer<Throwable>() {
+                @Override
+                public void accept(Throwable throwable) throws Exception {
+                    LogUtil.i("倒计时模式下定时器的错误：" + throwable.getMessage());
+                    initCountDown();
+                }
+            }, new Action() {
+                @Override
+                public void run() throws Exception {
+                    stopCountDown();
+                    v.setText(cdReGetTxt);
+                }
+            }, new Consumer<Disposable>() {
+                @Override
+                public void accept(Disposable disposable) throws Exception {
+                    v.setEnabled(false);
+                }
+            });
+        }
     }
 
 
-    private void stopCountDown() {
+    public void stopCountDown() {
         v.setEnabled(true);
         if (null != countDownRx) countDownRx.dispose();
     }

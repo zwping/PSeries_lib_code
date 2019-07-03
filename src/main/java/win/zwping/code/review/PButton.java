@@ -3,6 +3,7 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.LifecycleOwner;
 import win.zwping.code.comm.ViewStateColor;
@@ -35,8 +36,14 @@ public class PButton extends AppCompatButton implements PBtnHelper.IPBtn, ViewSt
     }
 
     @Override
-    public PButton startCountDown(LifecycleOwner owner) {
+    public PButton startCountDown(@Nullable LifecycleOwner owner) {
         helper1.startCountDown(owner);
+        return this;
+    }
+
+    @Override
+    public PButton stopCountDown() {
+        helper1.stopCountDown();
         return this;
     }
 

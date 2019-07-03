@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 
 import java.lang.reflect.Field;
 
+import androidx.annotation.Nullable;
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 
@@ -94,7 +95,8 @@ public final class KeyboardUtil implements IUtil.INativeUtil {
      *
      * @param view 视图
      */
-    public static void hideSoftInput(final View view) {
+    public static void hideSoftInput(@Nullable final View view) {
+        if(null == view) return;
         View parentView = (View) view.getParent();
         if (null != parentView) transferFocus(parentView);
 
