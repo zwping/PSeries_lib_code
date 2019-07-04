@@ -475,7 +475,7 @@ public final class ConversionUtil implements IUtil.INativeUtil {
      *                  <li>precision = 2, return 天, 小时</li>
      *                  <li>precision = 3, return 天, 小时, 分钟</li>
      *                  <li>precision = 4, return 天, 小时, 分钟, 秒</li>
-     *                  <li>precision &gt;= 5，return 天, 小时, 分钟, 秒, 毫秒</li>
+     *                  <li>precision = 5，return 天, 小时, 分钟, 秒, 毫秒</li>
      *                  </ul>
      * @return fit time span
      */
