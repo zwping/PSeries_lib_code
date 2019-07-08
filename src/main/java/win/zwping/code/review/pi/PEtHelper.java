@@ -83,6 +83,8 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
         //////////////
         PEditText setBold();
 
+        PEditText setGone(boolean visible);
+
     }
     //</editor-fold>
 

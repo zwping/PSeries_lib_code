@@ -17,6 +17,8 @@ public class PTvHelper extends IHelper<PTvHelper,PTextView> {
 
     public interface IPTv {
 
+        PTextView setGone(boolean visible);
+
     }
     //</editor-fold>
 

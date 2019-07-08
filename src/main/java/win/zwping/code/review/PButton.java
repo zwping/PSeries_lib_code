@@ -3,6 +3,7 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.LifecycleOwner;
@@ -44,6 +45,12 @@ public class PButton extends AppCompatButton implements PBtnHelper.IPBtn, ViewSt
     @Override
     public PButton stopCountDown() {
         helper1.stopCountDown();
+        return this;
+    }
+
+    @Override
+    public PButton setGone(boolean visible) {
+        setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 

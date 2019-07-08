@@ -7,6 +7,7 @@ import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -181,6 +182,12 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
     @Override
     public PEditText setBold() {
         setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        return this;
+    }
+
+    @Override
+    public PEditText setGone(boolean visible) {
+        setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 

@@ -36,6 +36,7 @@ public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
 
         PButton stopCountDown();
 
+        PButton setGone(boolean visible);
     }
     //</editor-fold>
 

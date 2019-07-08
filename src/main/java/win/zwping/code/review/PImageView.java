@@ -3,6 +3,7 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import android.view.View;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -62,6 +63,12 @@ public class PImageView extends AppCompatImageView implements PIvHelper.IPIv {
     public PImageView setRoundRect(int radiusDp) {
         helper.option.roundRect = true;
         helper.option.roundRectRadius = dp2px(getContext(), radiusDp);
+        return this;
+    }
+
+    @Override
+    public PImageView setGone(boolean visible) {
+        setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 }

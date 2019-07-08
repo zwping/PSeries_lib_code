@@ -13,6 +13,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -205,6 +206,11 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
     /*** 重互利用%s ***/
     private String tempFormatValue = null;
 
+
+    public PTextView setGone(boolean visible){
+        setVisibility(visible ? View.VISIBLE : View.GONE);
+        return this;
+    }
     //</editor-fold>
     //<editor-fold desc="html加载本地图片">
 

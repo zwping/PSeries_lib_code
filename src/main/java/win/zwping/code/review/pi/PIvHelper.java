@@ -36,6 +36,8 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
         PImageView setCircle();
 
         PImageView setRoundRect(int radiusDp);
+
+        PImageView setGone(boolean visible);
     }
 
     //</editor-fold>
