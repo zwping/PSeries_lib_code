@@ -3,6 +3,7 @@ package win.zwping.code.review;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -35,6 +36,11 @@ public class PCardView extends CardView implements PCardViewHelper.IVSwitchStatu
     @Override
     public PCardView setVStateBgColor(ViewStateColor stateColor) {
         helper.setVStateBgColor(stateColor);
+        return this;
+    }
+
+    public PCardView setGone(Boolean visible) {
+        setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 }

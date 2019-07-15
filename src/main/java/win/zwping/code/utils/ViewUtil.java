@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import win.zwping.code.basic.IUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
+import static win.zwping.code.utils.ConversionUtil.px2dp;
 
 /**
  * <p>describe：View 工具类
@@ -113,6 +114,10 @@ public final class ViewUtil implements IUtil.INativeUtil {
         if (0 != hDp) params.height = dp2px(view.getContext(), hDp);
         if (0 != wDp) params.width = dp2px(view.getContext(), wDp);
         view.setLayoutParams(params);
+    }
+
+    public static void setViewWHPx(@Nullable final View view, final int wPx, final int hPx) {
+        setViewWH(view, px2dp(wPx), px2dp(hPx));
     }
 
     /*** 设置隐藏 ***/
