@@ -414,13 +414,13 @@ public final class ConversionUtil implements IUtil.INativeUtil {
         if (byteSize < 0) {
             return "shouldn't be less than zero!";
         } else if (byteSize < MemoryConstants.KB) {
-            return String.format("%.3fB", (double) byteSize);
+            return String.format("%.2fB", (double) byteSize);
         } else if (byteSize < MemoryConstants.MB) {
-            return String.format("%.3fKB", (double) byteSize / MemoryConstants.KB);
+            return String.format("%.2fKB", (double) byteSize / MemoryConstants.KB);
         } else if (byteSize < MemoryConstants.GB) {
-            return String.format("%.3fMB", (double) byteSize / MemoryConstants.MB);
+            return String.format("%.2fMB", (double) byteSize / MemoryConstants.MB);
         } else {
-            return String.format("%.3fGB", (double) byteSize / MemoryConstants.GB);
+            return String.format("%.2fGB", (double) byteSize / MemoryConstants.GB);
         }
     }
 

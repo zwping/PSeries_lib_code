@@ -24,12 +24,9 @@ public abstract class BasicFm extends BasicLazyFm implements IFm.IBasic {
         super.onCreateViewLazy(savedInstanceState);
         setContentView(mContextView = inflater.inflate(bindLayout(), null));
         if (null != mContextView)
-            mContextView.post(new Runnable() {
-                @Override
-                public void run() {
-                    initView(savedInstanceState);
-                    doBusiness();
-                }
+            mContextView.post(() -> {
+                initView(savedInstanceState);
+                doBusiness();
             });
     }
 
