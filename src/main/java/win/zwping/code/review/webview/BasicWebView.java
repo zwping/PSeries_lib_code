@@ -183,7 +183,7 @@ public class BasicWebView extends WebView {
         webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
         webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
 
-        //防止root窃取/databases/webview.db中的密码
+        //防止root窃取/databases/webView.db中的密码
         webSettings.setSavePassword(false);
 
         //5.1以上默认禁止了https和http混用 开启混用模式
@@ -194,6 +194,7 @@ public class BasicWebView extends WebView {
         //如果访问的页面中要与Javascript交互，则webView必须设置支持Javascript
         //需要注意，为防止WebView远程代码执行经典Bug，应当在对应的Js调用Java的方法上添加@JavascriptInterface https://www.jianshu.com/p/93cea79a2443
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true); // 一些vue的界面无法加载，需要开启DOM和关闭重定向
 
         // 若加载的 html 里有JS 在执行动画等操作，会造成资源浪费（CPU、电量）
         // 在 onStop 和 onResume 里分别把 setJavaScriptEnabled() 给设置成 false 和 true 即可

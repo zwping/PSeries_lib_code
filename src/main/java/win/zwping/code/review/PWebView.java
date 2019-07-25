@@ -111,12 +111,7 @@ public class PWebView extends FrameLayout {
                 array.recycle();
             }
         }
-        post(new Runnable() {
-            @Override
-            public void run() {
-                previewTv.setVisibility(GONE);
-            }
-        });
+        post(() -> previewTv.setVisibility(GONE));
     }
 
     public SwitchPageStateLayout getSwitchPageStatesView() {
@@ -201,8 +196,7 @@ public class PWebView extends FrameLayout {
         }
 
         private void init() {
-            if (pWebView.defaultConfig)
-                webView.setDefaultWebSetting();  // 默认加载默认配置
+            if (pWebView.defaultConfig) webView.setDefaultWebSetting();  // 默认加载默认配置
             addListener();
         }
 

@@ -166,7 +166,7 @@ public final class AcUtil implements IUtil.INativeUtil {
      */
     public static void startActivity(@NonNull final Bundle extras,
                                      @NonNull final Class<?> clz,
-                                     @NonNull final Bundle options) {
+                                     @Nullable final Bundle options) {
         Context context = getActivityOrApp();
         startActivity(context, extras, context.getPackageName(), clz.getName(), options);
     }
