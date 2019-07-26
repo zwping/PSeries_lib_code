@@ -20,6 +20,7 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityOptionsCompat;
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
@@ -27,6 +28,7 @@ import win.zwping.code.constant.MemoryConstants;
 import win.zwping.code.constant.TimeConstants;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
+import static win.zwping.code.utils.EmptyUtil.isEmptysII;
 
 /**
  * <p>describe：转换相关
@@ -829,7 +831,8 @@ public final class ConversionUtil implements IUtil.INativeUtil {
     //<editor-fold desc="共享元素">
 
     /*** 获取共享元素对象 --- 方法名过长 ***/
-    public static ActivityOptionsCompat getTransitionOj(Activity ac, View view, String transitionName) {
+    public static ActivityOptionsCompat getTransitionOj(@Nullable Activity ac, @Nullable View view, @Nullable String transitionName) {
+        if (isEmptysII(ac, view, transitionName)) return null;
         return ActivityOptionsCompat.makeSceneTransitionAnimation(ac, view, transitionName);
     }
 
