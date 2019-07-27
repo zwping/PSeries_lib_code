@@ -111,7 +111,13 @@ public class PWebView extends FrameLayout {
                 array.recycle();
             }
         }
-        post(() -> previewTv.setVisibility(GONE));
+        post(new Runnable() {
+            @Override
+            public void run() {
+                previewTv.setVisibility(GONE);
+            }
+        });
+//        post(() -> previewTv.setVisibility(GONE));
     }
 
     public SwitchPageStateLayout getSwitchPageStatesView() {

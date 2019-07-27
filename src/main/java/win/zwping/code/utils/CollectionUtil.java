@@ -41,6 +41,7 @@ public final class CollectionUtil implements IUtil.INativeUtil {
      */
     @Nullable
     public static List<String> splitList(String s, String splitX) {
+        if (isEmpty(s)) return null;
         String[] strings = split(s, splitX);
         if (isEmpty(strings)) return null;
         return new ArrayList<>(Arrays.asList(strings));

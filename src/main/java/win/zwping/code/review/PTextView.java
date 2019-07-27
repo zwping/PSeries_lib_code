@@ -14,6 +14,7 @@ import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -23,6 +24,7 @@ import win.zwping.code.R;
 import win.zwping.code.comm.ViewStateColor;
 import win.zwping.code.review.pi.ViewStateColorSwitchHelper;
 import win.zwping.code.review.re.LinkMovementMethod;
+import win.zwping.code.utils.ResourceUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -183,6 +185,10 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
         setText(spannableString);
     }
 
+    public void setDrawableLeft(@DrawableRes int resId) {
+        setCompoundDrawablesRelativeWithIntrinsicBounds(resId == 0 ? null : ResourceUtil.getDrawable(resId), null, null, null);
+    }
+
     /**
      * 设置最大字符长度
      *
@@ -207,7 +213,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
     private String tempFormatValue = null;
 
 
-    public PTextView setGone(boolean visible){
+    public PTextView setGone(boolean visible) {
         setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
