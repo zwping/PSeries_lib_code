@@ -113,7 +113,7 @@ public final class ViewUtil implements IUtil.INativeUtil {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (0 != hDp) params.height = dp2px(view.getContext(), hDp);
         if (0 != wDp) params.width = dp2px(view.getContext(), wDp);
-        view.setLayoutParams(params);
+        view.post(() -> view.setLayoutParams(params));
     }
 
     public static void setViewWHPx(@Nullable final View view, final int wPx, final int hPx) {

@@ -6,7 +6,7 @@
                                                    android:orientation="vertical">
 
     <win.zwping.code.review.PTextView
-            android:id="@+id/title_ptv"
+            android:id="@+id/bar_title_ptv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -19,7 +19,7 @@
             android:textSize="15dp"/>
 
     <RelativeLayout
-            android:id="@+id/return_rl"
+            android:id="@+id/bar_return_rl"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -30,7 +30,7 @@
             android:paddingRight="12dp">
 
         <win.zwping.code.review.PTextView
-                android:id="@+id/return_txt_ptv"
+                android:id="@+id/bar_return_txt_ptv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -39,13 +39,13 @@
                 android:textSize="12dp"/>
 
         <win.zwping.code.review.PImageView
-                android:id="@+id/return_img_piv"
+                android:id="@+id/bar_return_img_piv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"/>
 
         <win.zwping.code.cview.ArrowView
-                android:id="@+id/return_arrow"
+                android:id="@+id/bar_return_arrow"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_centerInParent="true"
@@ -54,7 +54,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-            android:id="@+id/menu_rl"
+            android:id="@+id/bar_menu_rl"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground"
@@ -64,7 +64,7 @@
             app:layout_constraintRight_toRightOf="parent">
 
         <win.zwping.code.review.PTextView
-                android:id="@+id/menu_txt_ptv"
+                android:id="@+id/bar_menu_txt_ptv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -73,7 +73,7 @@
                 android:textSize="12dp"/>
 
         <win.zwping.code.review.PImageView
-                android:id="@+id/menu_img_piv"
+                android:id="@+id/bar_menu_img_piv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"/>
@@ -81,7 +81,7 @@
     </RelativeLayout>
 
     <View
-            android:id="@+id/bottom_line_v"
+            android:id="@+id/bar_bottom_line_v"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="#dedede"

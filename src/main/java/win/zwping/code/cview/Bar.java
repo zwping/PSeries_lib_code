@@ -49,15 +49,15 @@ public class Bar extends ConstraintLayout implements IBar {
 
     private void initView(AttributeSet attrs) {
         inflate(getContext(), R.layout.cview_bar, this);
-        returnRl = findViewById(R.id.return_rl);
-        menuRl = findViewById(R.id.menu_rl);
-        titlePTv = findViewById(R.id.title_ptv);
-        returnPtv = findViewById(R.id.return_txt_ptv);
-        menuPtv = findViewById(R.id.menu_txt_ptv);
-        returnPiv = findViewById(R.id.return_img_piv);
-        menuPiv = findViewById(R.id.menu_img_piv);
-        returnArrow = findViewById(R.id.return_arrow);
-        bottomLineV = findViewById(R.id.bottom_line_v);
+        returnRl = findViewById(R.id.bar_return_rl);
+        menuRl = findViewById(R.id.bar_menu_rl);
+        titlePTv = findViewById(R.id.bar_title_ptv);
+        returnPtv = findViewById(R.id.bar_return_txt_ptv);
+        menuPtv = findViewById(R.id.bar_menu_txt_ptv);
+        returnPiv = findViewById(R.id.bar_return_img_piv);
+        menuPiv = findViewById(R.id.bar_menu_img_piv);
+        returnArrow = findViewById(R.id.bar_return_arrow);
+        bottomLineV = findViewById(R.id.bar_bottom_line_v);
 
         if (null != attrs) {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.Bar);
@@ -95,14 +95,13 @@ public class Bar extends ConstraintLayout implements IBar {
         }
 
         // setReturnClickListener会自动拦截该方法
-        returnRl.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Activity activity = (Activity) getContext();
-                    if (null != activity) activity.finish();
-                } catch (ClassCastException e) {
-                }
+        returnRl.setOnClickListener(v -> {
+            try {
+                Activity activity = (Activity) getContext();
+                if (null != activity) activity.finish();
+            } catch (ClassCastException e) {
+                e.printStackTrace();
+                System.out.println("bar return layout onclick finish exception");
             }
         });
     }

@@ -13,10 +13,12 @@ import win.zwping.code.cview.pi.IMenuBar;
 import win.zwping.code.review.PEditText;
 import win.zwping.code.review.PImageView;
 import win.zwping.code.review.PTextView;
+import win.zwping.code.utils.ToastUtil;
 import win.zwping.code.utils.ViewUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
 import static win.zwping.code.utils.ConversionUtil.px2dp;
+import static win.zwping.code.utils.EmptyUtil.isEmpty;
 
 /**
  * <p>describe：自定义菜单栏
@@ -47,13 +49,13 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
 
     private void initView(AttributeSet attrs) {
         inflate(getContext(), R.layout.cview_menu_bar, this);
-        titleIconPiv = findViewById(R.id.title_icon_piv);
-        titlePtv = findViewById(R.id.title_ptv);
-        contentPtv = findViewById(R.id.content_ptv);
-        contentPet = findViewById(R.id.content_input_ptv);
-        arrowV = findViewById(R.id.arrow_v);
-        topLineV = findViewById(R.id.top_line_v);
-        bottomLineV = findViewById(R.id.bottom_line_v);
+        titleIconPiv = findViewById(R.id.mb_title_icon_piv);
+        titlePtv = findViewById(R.id.mb_title_ptv);
+        contentPtv = findViewById(R.id.mb_content_ptv);
+        contentPet = findViewById(R.id.mb_content_input_ptv);
+        arrowV = findViewById(R.id.mb_arrow_v);
+        topLineV = findViewById(R.id.mb_top_line_v);
+        bottomLineV = findViewById(R.id.mb_bottom_line_v);
 
         if (null != attrs) {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.MenuBar);
@@ -302,5 +304,13 @@ public class MenuBar extends ConstraintLayout implements IMenuBar {
     @Override
     public String getContent() {
         return contentPtv.getVisibility() == GONE ? contentPet.getContent() : contentPtv.getContent();
+    }
+
+    public Boolean getContentRegex() {
+        if (isEmpty(getContent())) {
+            ToastUtil.showShort(contentPtv.getHint());
+            return false;
+        }
+        return true;
     }
 }
