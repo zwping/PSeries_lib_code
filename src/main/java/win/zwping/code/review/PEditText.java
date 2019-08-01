@@ -208,15 +208,26 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
         setMaxLines(1);
         setInputType(InputType.TYPE_CLASS_TEXT);
         setImeOptions(EditorInfo.IME_ACTION_SEARCH);
-        setOnEditorActionListener(new OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
-                    lis.onSearch(getContent());
-                }
-                return false;
+        setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
+                lis.onSearch(getContent());
             }
+            return false;
+        });
+        return this;
+    }
+
+    public PEditText setOnEditorActionSendListener(final OnEditorActionSearchListener lis) {
+        setMaxLines(1);
+        setInputType(InputType.TYPE_CLASS_TEXT);
+        setImeOptions(EditorInfo.IME_ACTION_SEND);
+        setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEND) {
+                KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
+                lis.onSearch(getContent());
+            }
+            return false;
         });
         return this;
     }

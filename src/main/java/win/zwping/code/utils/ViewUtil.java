@@ -109,15 +109,15 @@ public final class ViewUtil implements IUtil.INativeUtil {
 
     /*** 设置View的宽高 ***/
     public static void setViewWH(@Nullable final View view, final int wDp, final int hDp) {
-        if (view == null) return;
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        if (0 != hDp) params.height = dp2px(view.getContext(), hDp);
-        if (0 != wDp) params.width = dp2px(view.getContext(), wDp);
-        view.post(() -> view.setLayoutParams(params));
+        setViewWHPx(view, dp2px(wDp), dp2px(hDp));
     }
 
     public static void setViewWHPx(@Nullable final View view, final int wPx, final int hPx) {
-        setViewWH(view, px2dp(wPx), px2dp(hPx));
+        if (view == null) return;
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (0 != wPx) params.width = wPx;
+        if (0 != hPx) params.height = hPx;
+        view.post(() -> view.setLayoutParams(params));
     }
 
     /*** 设置隐藏 ***/

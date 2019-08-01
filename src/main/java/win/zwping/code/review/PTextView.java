@@ -189,6 +189,10 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
         setCompoundDrawablesRelativeWithIntrinsicBounds(resId == 0 ? null : ResourceUtil.getDrawable(resId), null, null, null);
     }
 
+    public void setDrawableTop(@DrawableRes int resId) {
+        setCompoundDrawablesRelativeWithIntrinsicBounds(null, resId == 0 ? null : ResourceUtil.getDrawable(resId), null, null);
+    }
+
     /**
      * 设置最大字符长度
      *
