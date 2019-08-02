@@ -224,7 +224,7 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
         setImeOptions(EditorInfo.IME_ACTION_SEND);
         setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEND) {
-                KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
+                // KeyboardUtil.hideSoftInput(AcUtil.getTopActivity());
                 lis.onSearch(getContent());
             }
             return false;
