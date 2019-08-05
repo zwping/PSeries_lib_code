@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
@@ -41,6 +42,9 @@ public class BasicWebView extends WebView {
 
     /*** 嵌套滑动 ***/
     private boolean nestedScrollView;
+    /*** 嵌套协调器布局滑动 ***/
+    private Boolean nestedCoordinatorLayoutEnable = false;
+    private PNestedCoordinatorLayoutProxy nestedCoordinatorLayoutProxy;
 
     private OnPageStartedListener onPageStartedListener;
     private OnPageFinishedListener onPageFinishedListener;
@@ -54,10 +58,11 @@ public class BasicWebView extends WebView {
     //<editor-fold desc="构造函数">
 
 
-    public BasicWebView(Context context, @NonNull Boolean nestedScrollView) {
+    public BasicWebView(Context context, @NonNull Boolean nestedScrollView, @NonNull Boolean nestedCoordinatorLayout) {
         super(context);
-        initView(null);
         this.nestedScrollView = nestedScrollView;
+        this.nestedCoordinatorLayoutEnable = nestedCoordinatorLayout;
+        initView(null);
     }
 
     public BasicWebView(Context context, @Nullable AttributeSet attrs) {
@@ -76,14 +81,18 @@ public class BasicWebView extends WebView {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.BasicWebView);
             try {
                 nestedScrollView = array.getBoolean(R.styleable.BasicWebView_p_nestedScrollView, false);
+                nestedCoordinatorLayoutEnable = array.getBoolean(R.styleable.BasicWebView_p_nested_coordinator_layout, false);
                 if (array.getBoolean(R.styleable.BasicWebView_p_setDefaultConfig, false))
                     setDefaultWebSetting();
             } finally {
                 array.recycle();
             }
         }
+        if (nestedCoordinatorLayoutEnable)
+            nestedCoordinatorLayoutProxy = new PNestedCoordinatorLayoutProxy().init(this);
         setListener();
     }
+
 
     /*** 启用监听 ***/
     private void setListener() {
@@ -148,6 +157,17 @@ public class BasicWebView extends WebView {
             mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
         else mExpandSpec = heightMeasureSpec;
         super.onMeasure(widthMeasureSpec, mExpandSpec);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (null != nestedCoordinatorLayoutProxy)
+            return nestedCoordinatorLayoutProxy.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    public boolean superOnTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 
     @Override

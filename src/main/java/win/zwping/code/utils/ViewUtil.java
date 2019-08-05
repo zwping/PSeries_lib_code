@@ -108,8 +108,22 @@ public final class ViewUtil implements IUtil.INativeUtil {
     }
 
     /*** 设置View的宽高 ***/
+    public static void setViewPostWH(@Nullable final View view, final int wDp, final int hDp) {
+        if(null == view)return;
+        setViewWHPx(view, dp2px(view.getContext(),wDp), dp2px(view.getContext(),hDp));
+    }
+
+    public static void setViewPostWHPx(@Nullable final View view, final int wPx, final int hPx) {
+        if (view == null) return;
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (0 != wPx) params.width = wPx;
+        if (0 != hPx) params.height = hPx;
+        view.post(() -> view.setLayoutParams(params));
+    }
+
     public static void setViewWH(@Nullable final View view, final int wDp, final int hDp) {
-        setViewWHPx(view, dp2px(wDp), dp2px(hDp));
+        if (null == view) return;
+        setViewWHPx(view, dp2px(view.getContext(), wDp), dp2px(view.getContext(),hDp));
     }
 
     public static void setViewWHPx(@Nullable final View view, final int wPx, final int hPx) {
@@ -117,7 +131,7 @@ public final class ViewUtil implements IUtil.INativeUtil {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (0 != wPx) params.width = wPx;
         if (0 != hPx) params.height = hPx;
-        view.post(() -> view.setLayoutParams(params));
+        view.setLayoutParams(params);
     }
 
     /*** 设置隐藏 ***/

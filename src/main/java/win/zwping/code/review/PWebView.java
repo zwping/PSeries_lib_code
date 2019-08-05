@@ -54,8 +54,8 @@ public class PWebView extends FrameLayout {
     private SwitchPageStateLayout switchWebViewSps;
     private ProgressBar progressPb;
 
-    // 默认配置 进度条 来源Title loading/error界面 loading界面 兼容嵌套滑动
-    private Boolean defaultConfig, showPb, showFromTitle, enableOverSv, enableLoadingView, enableErrorView, nestedScrollView;
+    // 默认配置 进度条 来源Title loading/error界面 loading界面 兼容嵌套滑动 嵌套协调器布局滑动
+    private Boolean defaultConfig, showPb, showFromTitle, enableOverSv, enableLoadingView, enableErrorView, nestedScrollView, nestedCoordinatorLayoutEnable;
 
     public PWebView(@NonNull Context context) {
         super(context);
@@ -101,6 +101,7 @@ public class PWebView extends FrameLayout {
                 fromTitleTv.setVisibility(showFromTitle ? VISIBLE : GONE); // 默认不显示来源Title
 
                 nestedScrollView = array.getBoolean(R.styleable.PWebView_p_nestedScrollView, false);
+                nestedCoordinatorLayoutEnable = array.getBoolean(R.styleable.PWebView_p_nested_coordinator_layout, false);
 
                 switchWebViewSps.setLoadingResId(array.getResourceId(R.styleable.PWebView_p_loadingView, R.layout.child_web_view_loading));
                 switchWebViewSps.setErrorResId(array.getResourceId(R.styleable.PWebView_p_errorView, R.layout.child_web_view_error));
@@ -111,13 +112,7 @@ public class PWebView extends FrameLayout {
                 array.recycle();
             }
         }
-        post(new Runnable() {
-            @Override
-            public void run() {
-                previewTv.setVisibility(GONE);
-            }
-        });
-//        post(() -> previewTv.setVisibility(GONE));
+        post(() -> previewTv.setVisibility(GONE));
     }
 
     public SwitchPageStateLayout getSwitchPageStatesView() {
@@ -139,7 +134,7 @@ public class PWebView extends FrameLayout {
 
     public Builder builder() {
         if (null == builder) {
-            builder = new Builder(new BasicWebView(getContext(), nestedScrollView), this);
+            builder = new Builder(new BasicWebView(getContext(), nestedScrollView, nestedCoordinatorLayoutEnable), this);
             containerFl.addView(builder.webView);
         }
         return builder;

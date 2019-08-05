@@ -19,6 +19,7 @@
     <attr name="p_setDefaultConfig" format="boolean" />
     <attr name="p_setProgressBar" format="boolean" />
     <attr name="p_nestedScrollView" format="boolean" />
+    <attr name="p_nested_coordinator_layout" format="boolean"/>
     <attr name="p_fromTitle" format="boolean" />
     <attr name="p_slideOver" format="boolean" />
     <attr name="p_setTransitionView" format="boolean" />
@@ -39,11 +40,13 @@
     <declare-styleable name="BasicWebView">
         <attr name="p_setDefaultConfig" />
         <attr name="p_nestedScrollView" />
+        <attr name="p_nested_coordinator_layout" />
     </declare-styleable>
     <declare-styleable name="PWebView">
         <attr name="p_setDefaultConfig" />
         <attr name="p_setProgressBar" />
         <attr name="p_nestedScrollView" />
+        <attr name="p_nested_coordinator_layout" />
         <attr name="p_enableOverSv" format="boolean" />
         <attr name="p_fromTitle" />
         <attr name="p_enableLoadingView" format="boolean" />

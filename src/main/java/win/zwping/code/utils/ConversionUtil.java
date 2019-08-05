@@ -184,7 +184,8 @@ public final class ConversionUtil implements IUtil.INativeUtil {
 
     /*** xml预览 ***/
 
-    public static int dp2px(Context context, float dp) {
+    public static int dp2px(@Nullable Context context, float dp) {
+        if(context == null) return 0;
         return (int) (dipToPx(context, dp) + 0.5f);
     }
 
