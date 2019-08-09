@@ -33,6 +33,7 @@ import win.zwping.code.review.webview.OnReceivedErrorListener;
 import win.zwping.code.review.webview.OnReceivedSslErrorListener;
 import win.zwping.code.review.webview.OnReceivedTitleListener;
 import win.zwping.code.review.webview.OnUrlLoadingListener;
+import win.zwping.code.utils.LogUtil;
 
 import static win.zwping.code.utils.CollectionUtil.split;
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
@@ -210,6 +211,16 @@ public class PWebView extends FrameLayout {
 
         public Builder loadUrl(String url, Boolean nonJudgeHttp) {
             webView.loadUrl(url, nonJudgeHttp);
+            return this;
+        }
+
+        /**
+         *
+         * @param method save()
+         * @return
+         */
+        public Builder loadUrlJsMethod(String method) {
+            webView.loadUrl("javascript:" + method, true);
             return this;
         }
 

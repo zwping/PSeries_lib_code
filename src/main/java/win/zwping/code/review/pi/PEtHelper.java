@@ -148,8 +148,8 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
                 v.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 break;
             case 3: // 英文键盘
-                v.setMaxLines(1);
-                v.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                 v.setMaxLines(1);
+                 v.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                 break;
         }
     }
