@@ -216,6 +216,10 @@ public class BasicWebView extends WebView {
         //需要注意，为防止WebView远程代码执行经典Bug，应当在对应的Js调用Java的方法上添加@JavascriptInterface https://www.jianshu.com/p/93cea79a2443
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true); // 一些vue的界面无法加载，需要开启DOM和关闭重定向
+        webSettings.setAppCacheMaxSize(1024 * 1024 * 8);//存储的最大容量
+        webSettings.setAppCachePath(getContext().getCacheDir().getAbsolutePath());
+        webSettings.setAllowFileAccess(true);
+        webSettings.setAppCacheEnabled(true);
 
         // 若加载的 html 里有JS 在执行动画等操作，会造成资源浪费（CPU、电量）
         // 在 onStop 和 onResume 里分别把 setJavaScriptEnabled() 给设置成 false 和 true 即可

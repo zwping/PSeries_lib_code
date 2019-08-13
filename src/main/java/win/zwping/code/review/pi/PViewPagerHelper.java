@@ -199,7 +199,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
     /////////////////////// 定时器 ///////////////////////////
 
     public void setLifecycle(@Nullable Lifecycle l) {
-        if (l != null) LifecycleUtil.setLifecycleListener(l, this);
+//        if (l != null) LifecycleUtil.setLifecycleListener(l, this);
     }
 
 
@@ -217,13 +217,10 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
             timerRx = Observable.timer(time, TimeUnit.SECONDS)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Consumer<Long>() {
-                        @Override
-                        public void accept(Long aLong) throws Exception {
-                            int next = v.getCurrentItem() + 1;
-                            v.setCurrentItem(next >= v.getAdapterFm().getCount() - 3 ? 0 : next);
-                            System.out.println(v.getCurrentItem() + "-----" + v.getAdapterFm().getCount() + "----");
-                        }
+                    .subscribe(aLong -> {
+                        int next = v.getCurrentItem() + 1;
+                        v.setCurrentItem(next >= v.getAdapterFm().getCount() - 3 ? 0 : next);
+                        System.out.println(v.getCurrentItem() + "-----" + v.getAdapterFm().getCount() + "----");
                     });
     }
 
