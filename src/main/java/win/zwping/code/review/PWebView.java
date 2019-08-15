@@ -8,6 +8,7 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -18,10 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
+import androidx.annotation.*;
 import win.zwping.code.R;
 import win.zwping.code.cview.OverScrollLayout;
 import win.zwping.code.cview.SwitchPageStateLayout;
@@ -35,6 +33,7 @@ import win.zwping.code.review.webview.OnReceivedTitleListener;
 import win.zwping.code.review.webview.OnUrlLoadingListener;
 import win.zwping.code.utils.LogUtil;
 
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static win.zwping.code.utils.CollectionUtil.split;
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
 import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
@@ -56,7 +55,7 @@ public class PWebView extends FrameLayout {
     private ProgressBar progressPb;
 
     // 默认配置 进度条 来源Title loading/error界面 loading界面 兼容嵌套滑动 嵌套协调器布局滑动
-    private Boolean defaultConfig, showPb, showFromTitle, enableOverSv, enableLoadingView, enableErrorView, nestedScrollView, nestedCoordinatorLayoutEnable;
+    private Boolean defaultConfig, showPb, showFromTitle, enableOverSv, defaultShowLoading, enableLoadingView, enableErrorView, nestedScrollView, nestedCoordinatorLayoutEnable;
 
     public PWebView(@NonNull Context context) {
         super(context);
@@ -104,16 +103,16 @@ public class PWebView extends FrameLayout {
                 nestedScrollView = array.getBoolean(R.styleable.PWebView_p_nestedScrollView, false);
                 nestedCoordinatorLayoutEnable = array.getBoolean(R.styleable.PWebView_p_nested_coordinator_layout, false);
 
-                switchWebViewSps.setLoadingResId(array.getResourceId(R.styleable.PWebView_p_loadingView, R.layout.child_web_view_loading));
-                switchWebViewSps.setErrorResId(array.getResourceId(R.styleable.PWebView_p_errorView, R.layout.child_web_view_error));
                 enableLoadingView = array.getBoolean(R.styleable.PWebView_p_enableLoadingView, false);
                 enableErrorView = array.getBoolean(R.styleable.PWebView_p_enableErrorView, true);
+                switchWebViewSps.setLoadingResId(array.getResourceId(R.styleable.PWebView_p_loadingView, -1));
                 if (enableLoadingView) switchWebViewSps.showLoading();
             } finally {
                 array.recycle();
             }
         }
         post(() -> previewTv.setVisibility(GONE));
+        switchWebViewSps.setOnRetryClickListener(v -> builder.webView.reload());
     }
 
     public SwitchPageStateLayout getSwitchPageStatesView() {
@@ -157,6 +156,11 @@ public class PWebView extends FrameLayout {
 
     public void destroy() {
         if (null != builder) builder.webView.removeWebView();
+    }
+
+    public boolean onBackPressed() {
+        if (null != builder) return builder.webView.onBackPressed();
+        return true;
     }
 
     public boolean onKeyDownGoBack(int keyCode) {
@@ -215,7 +219,6 @@ public class PWebView extends FrameLayout {
         }
 
         /**
-         *
          * @param method save()
          * @return
          */
@@ -313,6 +316,7 @@ public class PWebView extends FrameLayout {
                 }
 
                 @Override
+                @RequiresPermission(ACCESS_NETWORK_STATE)
                 public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                     webView.setTag("WebView");
                     if (null != onReceivedErrorListener)
@@ -320,7 +324,7 @@ public class PWebView extends FrameLayout {
                     TextView tv = pWebView.switchWebViewSps.getErrorView().findViewById(R.id.error_tv);
                     if (isNotEmpty(tv) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                         tv.setText(String.format("网页加载失败(%s)", error.getErrorCode()));
-                    if (pWebView.enableErrorView) pWebView.switchWebViewSps.showError();
+                    if (pWebView.enableErrorView) pWebView.switchWebViewSps.showErrorOfSmart();
                 }
 
                 @Override

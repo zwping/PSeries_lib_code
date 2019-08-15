@@ -286,6 +286,14 @@ public class BasicWebView extends WebView {
     }
 
 
+    public boolean onBackPressed() {
+        if (canGoBack()) {
+            this.goBack();
+            return false;
+        }
+        return true;
+    }
+
     /**
      * 消费activity back事件
      *

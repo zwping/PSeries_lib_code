@@ -89,12 +89,6 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
         View view = getChildAt(0);
         setContentView(view);
         if (defaultShowLoading) show(mLoadingResId);
-//            post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    show(mLoadingResId);
-//                }
-//            });
     }
 
     private void setContentView(View view) {
@@ -142,7 +136,7 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
 
     @Override
     public SwitchPageStateLayout setLoadingResId(@LayoutRes int loadingResId) {
-        this.mLoadingResId = loadingResId;
+        if (loadingResId != -1) this.mLoadingResId = loadingResId;
         return this;
     }
 

@@ -190,6 +190,7 @@ public final class EncodeUtil implements IUtil.INativeUtil {
      * @return Base64 解码后的字符串
      */
     public static byte[] base64Decode(final String input) {
+        if (isEmpty(input)) return null;
         return Base64.decode(input, Base64.NO_WRAP);
     }
 
