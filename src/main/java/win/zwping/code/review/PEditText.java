@@ -102,6 +102,10 @@ public class PEditText extends AppCompatEditText implements ViewStateColorSwitch
         return helper1.getCommRegex();
     }
 
+    public boolean getDefCommRegex(){
+        return helper1.getDefCommRegex();
+    }
+
     @Override
     public PEditText clearContent() {
         helper1.clearContent();

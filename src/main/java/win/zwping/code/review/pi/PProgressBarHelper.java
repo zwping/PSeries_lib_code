@@ -92,7 +92,7 @@ public class PProgressBarHelper extends IHelper<PProgressBarHelper, PProgressBar
     }
 
     public void setProgressOfAnim(int progress, int duration) {
-        ValueAnimator animator = ValueAnimator.ofInt(0, progress);
+        ValueAnimator animator = ValueAnimator.ofInt(v.getProgress(), progress);
         animator.setDuration(duration);
         animator.start();
         animator.addUpdateListener(valueAnimator -> {

@@ -198,6 +198,14 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
         }
     }
 
+    public boolean getDefCommRegex(){
+        if (isEmpty(v.getContent())) {
+            ToastUtil.showShort(v.getHint());
+            return false;
+        }
+        return true;
+    }
+
     public void setMaxLength(int length) {
         if (length < 1) return;
         v.setFilters(new InputFilter[]{new InputFilter.LengthFilter(length)});
