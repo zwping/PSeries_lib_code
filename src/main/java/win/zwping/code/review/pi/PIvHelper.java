@@ -1,11 +1,14 @@
 package win.zwping.code.review.pi;
 
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.*;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
@@ -67,11 +70,20 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
     }
 
     public void display(String url) {
-        Glide.with(v.getContext()).load(url).apply(getOptions()).into(v);
+        glide(Glide.with(v.getContext()).load(url));
     }
 
     public void display(int id) {
-        Glide.with(v.getContext()).load(id).apply(getOptions()).into(v);
+        glide(Glide.with(v.getContext()).load(id));
+    }
+
+    private void glide(RequestBuilder<Drawable> builder) {
+        builder.apply(getOptions()).into(v);
+        if (option.roundRect || option.roundRectRadius != 0) {
+            if (0 != option.loadingId) builder.thumbnail(loadTransform(option.loadingId, option.roundRectRadius));
+            if (0 != option.errorId) builder.thumbnail(loadTransform(option.errorId, option.roundRectRadius));
+        }
+        builder.into(v);
     }
 
     private RequestOptions getOptions() {
@@ -94,12 +106,21 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
 
     //////////////////////////////////////////////////////////////////
 
+
+    /*** 解决glide 占位图 圆角失效 ***/
+    private RequestBuilder<Drawable> loadTransform(@DrawableRes int placeholderId, int radius) {
+        return Glide.with(v.getContext())
+                .load(placeholderId)
+                .apply(new RequestOptions().centerCrop()
+                        .transform(new GlideRoundTransform(radius)));
+    }
+
     /*** 解决glide 圆角与centerCrop冲突Bug ***/
     public class GlideRoundTransform extends CenterCrop {
 
         private float radius = 0f;
 
-        public GlideRoundTransform(int dp) {
+        GlideRoundTransform(int dp) {
             radius = dp;
         }
 
