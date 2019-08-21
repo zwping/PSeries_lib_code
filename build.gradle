@@ -29,9 +29,9 @@ android {
 }
 
 dependencies {
-    api "androidx.appcompat:appcompat:$cfg.appcompat"
-    api "androidx.constraintlayout:constraintlayout:$cfg.constraintlayout"// 推荐该布局 (性能/便捷)
-    api "com.google.android.material:material:$cfg.material"
+    api "androidx.appcompat:appcompat:${cfg.appcompat}"
+    api "androidx.constraintlayout:constraintlayout:${cfg.constraintlayout}"// 推荐该布局 (性能/便捷)
+    api "com.google.android.material:material:${cfg.material}"
 
     api "io.reactivex.rxjava2:rxjava:2.2.6"
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
