@@ -14,6 +14,7 @@ import win.zwping.code.constant.RegexConstants;
  * <p>    note：
  * <p>    note：isMobileSimple / isMobileExact / isTel / isIDCard15 / isIDCard18 / isEmail / isUrl / isZh / isUsername / isDate / isIp
  * <p>    note：isMatch / getMatches / getSplits / getReplaceFirst / getReplaceAll
+ * <p>    note：https://deerchao.net/tutorials/regex/regex.htm#mission
  * <p>    note：
  * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */

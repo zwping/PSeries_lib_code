@@ -4,6 +4,8 @@ package win.zwping.code.constant;
 /**
  * <p>describe：正则 常量
  * <p>    note：
+ * <p>    note：https://deerchao.net/tutorials/regex/regex.htm#mission
+ * <p>    note：
  * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
 public final class RegexConstants {
