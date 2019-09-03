@@ -29,7 +29,7 @@ import java.util.List;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
-import static androidx.recyclerview.widget.OrientationHelper.HORIZONTAL;
+import static androidx.recyclerview.widget.RecyclerView.HORIZONTAL;
 import static androidx.recyclerview.widget.RecyclerView.VERTICAL;
 import static win.zwping.code.utils.ConversionUtil.dp2px;
 import static win.zwping.code.utils.EmptyUtil.isEmpty;

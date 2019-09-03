@@ -1,5 +1,11 @@
 package win.zwping.code.utils;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -67,6 +73,20 @@ public final class CollectionUtil implements IUtil.INativeUtil {
     /*** List 2 [] ***/
     public static String[] covStrings(List<String> list) {
         return (list.toArray(new String[list.size()]));
+    }
+
+    /*** src instanceof Serializable ***/
+    public static <T> List<T> deepCopy(List<T> src) throws IOException, ClassNotFoundException {
+        if(src == null) return null;
+        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+        ObjectOutputStream out = new ObjectOutputStream(byteOut);
+        out.writeObject(src);
+
+        ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+        ObjectInputStream in = new ObjectInputStream(byteIn);
+        @SuppressWarnings("unchecked")
+        List<T> dest = (List<T>) in.readObject();
+        return dest;
     }
 
 }
