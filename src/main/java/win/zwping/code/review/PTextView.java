@@ -30,6 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
+import static win.zwping.code.utils.EmptyUtil.isEmptys;
 import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 
 /**
@@ -208,6 +209,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
     /*** 简化代码，直接在xml中预填%s ***/
     public PTextView setFormat(Object... args) {
+        if(isEmptys(args)) return this;
         if (tempFormatValue == null) tempFormatValue = getContent();
         setText(String.format(tempFormatValue, args));
         return this;
