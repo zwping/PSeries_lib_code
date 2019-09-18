@@ -11,11 +11,10 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
-import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Predicate;
+
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PEditText;
@@ -148,8 +147,8 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
                 v.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 break;
             case 3: // 英文键盘
-                 v.setMaxLines(1);
-                 v.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                v.setMaxLines(1);
+                v.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                 break;
         }
     }
@@ -198,7 +197,7 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
         }
     }
 
-    public boolean getDefCommRegex(){
+    public boolean getDefCommRegex() {
         if (isEmpty(v.getContent())) {
             ToastUtil.showShort(v.getHint());
             return false;
@@ -214,33 +213,20 @@ public class PEtHelper extends IHelper<PEtHelper, PEditText> {
     @SuppressLint("CheckResult")
     public int getMaxLength() {
         final AtomicReference<Integer> length = new AtomicReference<>(0);
-        Observable.fromArray(v.getFilters())
-                .filter(new Predicate<InputFilter>() {
-                    @Override
-                    public boolean test(InputFilter inputFilter) throws Exception {
-                        return inputFilter.getClass().getName().equals("android.text.InputFilter$LengthFilter");
+        for (InputFilter filter : v.getFilters()) {
+            if (filter.getClass().getName().equals("android.text.InputFilter$LengthFilter")) {
+                for (Field field : filter.getClass().getDeclaredFields()){
+                    if(field.getName().equals("mMax")){
+                        field.setAccessible(true);
+                        try {
+                            length.set((Integer) field.get(filter));
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
                     }
-                })
-                .subscribe(new Consumer<InputFilter>() {
-                               @Override
-                               public void accept(final InputFilter inputFilter) throws Exception {
-                                   Observable.fromArray(inputFilter.getClass().getDeclaredFields())
-                                           .filter(new Predicate<Field>() {
-                                               @Override
-                                               public boolean test(Field field) throws Exception {
-                                                   return field.getName().equals("mMax");
-                                               }
-                                           })
-                                           .subscribe(new Consumer<Field>() {
-                                               @Override
-                                               public void accept(Field field) throws Exception {
-                                                   field.setAccessible(true);
-                                                   length.set((Integer) field.get(inputFilter));
-                                               }
-                                           });
-                               }
-                           }
-                );
+                }
+            }
+        }
         return length.get();
     }
 

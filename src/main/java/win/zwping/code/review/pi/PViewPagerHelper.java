@@ -13,11 +13,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PViewPager;
 import win.zwping.code.utils.LifecycleUtil;
@@ -204,7 +199,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
 
     private Boolean isAutoPlay = false;
-    private Disposable timerRx;
+//    private Disposable timerRx;
     private int time;
     private Lifecycle lifecycle;
 
@@ -213,19 +208,19 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         isAutoPlay = true;
         this.time = timeOfSeconds;
         this.lifecycle = lifecycle;
-        if (timerRx == null || timerRx.isDisposed())
-            timerRx = Observable.timer(time, TimeUnit.SECONDS)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(aLong -> {
-                        int next = v.getCurrentItem() + 1;
-                        v.setCurrentItem(next >= v.getAdapterFm().getCount() - 3 ? 0 : next);
-                        System.out.println(v.getCurrentItem() + "-----" + v.getAdapterFm().getCount() + "----");
-                    });
+//        if (timerRx == null || timerRx.isDisposed())
+//            timerRx = Observable.timer(time, TimeUnit.SECONDS)
+//                    .subscribeOn(Schedulers.io())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .subscribe(aLong -> {
+//                        int next = v.getCurrentItem() + 1;
+//                        v.setCurrentItem(next >= v.getAdapterFm().getCount() - 3 ? 0 : next);
+//                        System.out.println(v.getCurrentItem() + "-----" + v.getAdapterFm().getCount() + "----");
+//                    });
     }
 
     public void stopPlay() {
-        if (timerRx != null) timerRx.dispose();
+//        if (timerRx != null) timerRx.dispose();
     }
 
     @Override

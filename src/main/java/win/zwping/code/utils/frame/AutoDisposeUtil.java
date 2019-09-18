@@ -1,9 +1,6 @@
 package win.zwping.code.utils.frame;
 
 import androidx.lifecycle.Lifecycle;
-import com.uber.autodispose.AutoDispose;
-import com.uber.autodispose.AutoDisposeConverter;
-import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
 import androidx.lifecycle.LifecycleOwner;
 import win.zwping.code.basic.IUtil;
@@ -16,8 +13,8 @@ import win.zwping.code.basic.IUtil;
  */
 public class AutoDisposeUtil implements IUtil.IFrameUtil {
 
-    public static AutoDisposeConverter<Long> bindLifecycle(LifecycleOwner lifecycleOwner) {
-        return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(lifecycleOwner, Lifecycle.Event.ON_DESTROY));
-    }
+//    public static AutoDisposeConverter<Long> bindLifecycle(LifecycleOwner lifecycleOwner) {
+//        return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(lifecycleOwner, Lifecycle.Event.ON_DESTROY));
+//    }
 
 }

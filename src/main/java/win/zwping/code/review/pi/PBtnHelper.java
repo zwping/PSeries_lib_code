@@ -2,22 +2,24 @@ package win.zwping.code.review.pi;
 
 import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleableRes;
+import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
+
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
-import win.zwping.code.utils.frame.AutoDisposeUtil;
+import win.zwping.code.comm.CommCallback;
+import win.zwping.code.review.re.TimerSup;
 import win.zwping.code.review.PButton;
 import win.zwping.code.utils.LogUtil;
 
@@ -62,11 +64,12 @@ public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
     // 当前Btn模式，0 -> non 1 -> 倒计时cd
     private int model = 0;
     ///////////////// 倒计时功能 //////////////////////
-    private Disposable countDownRx;
     private int cdTime; // 60
     private String cdDefaultTxt; // "获取验证码"
     private String cdHintTxt; // "剩余%sS"
     private String cdReGetTxt; // "重新获取验证码"
+
+    private TimerSup timer;
 
     private void initCountDown() {
         if (model == 1) {
@@ -76,40 +79,23 @@ public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
     }
 
     public void startCountDown(@Nullable LifecycleOwner owner) {
-        if (model == 1 && (null == countDownRx || countDownRx.isDisposed())) {
-            Observable<Long> ob = Observable.intervalRange(0, cdTime + 1, 0, 1, TimeUnit.SECONDS)
-                    .observeOn(AndroidSchedulers.mainThread());
-            if (null != owner) ob.as(AutoDisposeUtil.bindLifecycle(owner));
-            countDownRx = ob.subscribe(new Consumer<Long>() {
-                @Override
-                public void accept(Long aLong) throws Exception {
-                    v.setText(String.format(cdHintTxt, cdTime - aLong));
-                }
-            }, new Consumer<Throwable>() {
-                @Override
-                public void accept(Throwable throwable) throws Exception {
-                    LogUtil.i("倒计时模式下定时器的错误：" + throwable.getMessage());
-                    initCountDown();
-                }
-            }, new Action() {
-                @Override
-                public void run() throws Exception {
+        if (model == 1) {
+            v.setEnabled(false);
+            timer = new TimerSup(timerSup -> {
+                if(timerSup == null) return;
+                if (timerSup.count >= cdTime) {
                     stopCountDown();
                     v.setText(cdReGetTxt);
-                }
-            }, new Consumer<Disposable>() {
-                @Override
-                public void accept(Disposable disposable) throws Exception {
-                    v.setEnabled(false);
-                }
-            });
+                } else
+                    v.setText(String.format(cdHintTxt, cdTime - timerSup.count));
+            }, 0, 1000).schedule(owner);
         }
     }
 
 
     public void stopCountDown() {
         v.setEnabled(true);
-        if (null != countDownRx) countDownRx.dispose();
+        if(null != timer) timer.cancel();
     }
 
     ///////////////////////////////////////

@@ -33,9 +33,13 @@ dependencies {
     api "androidx.constraintlayout:constraintlayout:${cfg.constraintlayout}"// 推荐该布局 (性能/便捷)
     api "com.google.android.material:material:${cfg.material}"
 
-    api "io.reactivex.rxjava2:rxjava:2.2.6"
-    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'
+    api "androidx.lifecycle:lifecycle-runtime:2.1.0"
+    api "androidx.lifecycle:lifecycle-common-java8:2.1.0"
+
+    //api "io.reactivex.rxjava2:rxjava:2.2.6"
+    //api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'
+
 
     /////////////// 前人种树 ////////////////
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45-androidx'
