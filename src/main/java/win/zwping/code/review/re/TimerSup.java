@@ -14,7 +14,7 @@ import java.util.TimerTask;
 
 import static win.zwping.code.utils.HandlerUtil.runOnUiThread;
 
-/*** 绑定生命周期的计时器 ***/
+/*** 绑定生命周期的简单计时器 ***/
 public class TimerSup {
 
     private Timer timer;
