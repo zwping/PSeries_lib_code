@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
+
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 
@@ -47,7 +48,9 @@ public final class AcUtil implements IUtil.INativeUtil {
      * 启动Activity
      *
      * @param clz The activity class.
+     * @deprecated code simplification {@link #startAc(Class)}
      */
+    @Deprecated
     public static void startActivity(@NonNull final Class<?> clz) {
         Context context = getActivityOrApp();
         startActivity(context, null, context.getPackageName(), clz.getName(), null);
@@ -62,6 +65,11 @@ public final class AcUtil implements IUtil.INativeUtil {
     public static void startActivity(@NonNull final Class<?> clz, @Nullable final Bundle options) {
         Context context = getActivityOrApp();
         startActivity(context, null, context.getPackageName(), clz.getName(), options);
+    }
+
+    public static void startAc(@NonNull final Class<?> clz) {
+        Context context = getActivityOrApp();
+        startActivity(context, null, context.getPackageName(), clz.getName(), null);
     }
 
     /**
@@ -150,9 +158,17 @@ public final class AcUtil implements IUtil.INativeUtil {
      *
      * @param extras The Bundle of extras to add to this intent.
      * @param clz    The activity class.
+     * @deprecated code simplification {@link #startAc(Bundle, Class)}
      */
+    @Deprecated
     public static void startActivity(@NonNull final Bundle extras,
                                      @NonNull final Class<?> clz) {
+        Context context = getActivityOrApp();
+        startActivity(context, extras, context.getPackageName(), clz.getName(), null);
+    }
+
+    public static void startAc(@NonNull final Bundle extras,
+                               @NonNull final Class<?> clz) {
         Context context = getActivityOrApp();
         startActivity(context, extras, context.getPackageName(), clz.getName(), null);
     }
