@@ -345,14 +345,15 @@ public final class AppUtil  implements IUtil.INativeUtil{
      * @return {@code true}: yes<br>{@code false}: no
      */
     public static boolean isAppForeground() {
-        ActivityManager am =
-                (ActivityManager) Util.getApp().getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager am = (ActivityManager) Util.getApp().getSystemService(Context.ACTIVITY_SERVICE);
         if (am == null) return false;
         List<ActivityManager.RunningAppProcessInfo> info = am.getRunningAppProcesses();
         if (info == null || info.size() == 0) return false;
         for (ActivityManager.RunningAppProcessInfo aInfo : info) {
             if (aInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                return aInfo.processName.equals(Util.getApp().getPackageName());
+                if (aInfo.processName.equals(Util.getApp().getPackageName())) {
+                    return true;
+                }
             }
         }
         return false;
