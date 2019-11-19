@@ -1,6 +1,7 @@
 package win.zwping.code.review.pi;
 
 import android.annotation.SuppressLint;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.PagerAdapter;
@@ -33,6 +35,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
     public interface IPViewPager {
         PViewPager setAdapterView(List<View> list);
+        PViewPager setAdapterView(List<View> list, @Nullable TabLayout tabLayout, @Nullable final List<CharSequence> txts);
 
         PViewPager setAdapterFm(@NonNull FragmentManager fm, @NonNull final List<Fragment> fms);
 
@@ -56,7 +59,8 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         return this;
     }
 
-    public void setAdapterView(final List<View> list) {
+    public void setAdapterView(final List<View> list, @Nullable TabLayout tabLayout, @Nullable final List<CharSequence> txts) {
+        if (null != tabLayout) tabLayout.setupWithViewPager(v);
         v.setAdapter(new PagerAdapter() {
 
             @Override
@@ -80,6 +84,13 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
             public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
                 container.removeView(list.get(position));
             }
+
+            @Nullable
+            @Override
+            public CharSequence getPageTitle(int position) {
+                if (isNotEmpty(list)) return txts.get(position);
+                else return super.getPageTitle(position);
+            }
         });
     }
 
@@ -94,7 +105,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         }
 
         if (null != tabLayout) tabLayout.setupWithViewPager(v);
-        v.setAdapter(new FragmentStatePagerAdapter(fm) {
+        v.setAdapter(new FragmentStatePagerAdapter(fm,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -112,6 +123,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
                 if (isNotEmpty(list)) return list.get(position);
                 else return super.getPageTitle(position);
             }
+
         });
     }
 
@@ -120,7 +132,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
             LogUtil.i("参数有误");
             return;
         }
-        v.setAdapter(new FragmentStatePagerAdapter(fm) {
+        v.setAdapter(new FragmentStatePagerAdapter(fm,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {

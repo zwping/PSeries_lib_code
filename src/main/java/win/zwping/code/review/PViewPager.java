@@ -37,7 +37,12 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
 
     @Override
     public PViewPager setAdapterView(List<View> list) {
-        helper.setAdapterView(list);
+        setAdapterView(list,null,null);
+        return this;
+    }
+    @Override
+    public PViewPager setAdapterView(List<View> list, @Nullable TabLayout tabLayout, @Nullable final List<CharSequence> txts) {
+        helper.setAdapterView(list,tabLayout,txts);
         return this;
     }
 
