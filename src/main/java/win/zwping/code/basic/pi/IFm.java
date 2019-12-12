@@ -2,10 +2,12 @@ package win.zwping.code.basic.pi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.gyf.barlibrary.ImmersionBar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -40,6 +42,12 @@ public class IFm {
     public interface IBasicLazy {
         // 是否支持拉加载
         boolean setIsLazy();
+
+        void initData(Bundle bundle);
+
+        View setContentView(@NonNull LayoutInflater inflater);
+
+        void onCreateViewLazy(@Nullable Bundle savedInstanceState);
     }
 
     public interface IBasic {

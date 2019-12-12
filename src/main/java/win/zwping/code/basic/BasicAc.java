@@ -2,10 +2,14 @@ package win.zwping.code.basic;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
+
 import com.gyf.barlibrary.ImmersionBar;
+
 import win.zwping.code.basic.helper.BasicKeyBoardAc;
 import win.zwping.code.basic.pi.IAc;
+import win.zwping.code.comm.CommCallback;
 import win.zwping.code.utils.ToastUtil;
 
 /**
@@ -17,6 +21,7 @@ import win.zwping.code.utils.ToastUtil;
  */
 public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
 
+
     @Override
     public void initData(@Nullable Intent intent) {
 
@@ -26,7 +31,7 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         initData(getIntent()); // before of super.onCreate(savedInstanceState)
         super.onCreate(savedInstanceState);
-        setContentView(bindLayout());
+        if (0 != bindLayout()) setContentView(bindLayout());
         initView(savedInstanceState);
         getWindow().getDecorView().findViewById(android.R.id.content).post(this::doBusiness);
     }

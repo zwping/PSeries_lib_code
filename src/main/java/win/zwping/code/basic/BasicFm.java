@@ -1,10 +1,15 @@
 package win.zwping.code.basic;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.gyf.barlibrary.ImmersionBar;
-import win.zwping.code.basic.helper.BasicLazyFm;
+
+import win.zwping.code.basic.helper.BasicXLazyFm;
 import win.zwping.code.basic.pi.IFm;
 import win.zwping.code.utils.ToastUtil;
 
@@ -15,20 +20,37 @@ import win.zwping.code.utils.ToastUtil;
  * <p>    note：
  * <p> @author：zwp on 2019-02-21 16:56:32 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
-public abstract class BasicFm extends BasicLazyFm implements IFm.IBasic {
-
-    protected View mContextView;
+public abstract class BasicFm extends BasicXLazyFm implements IFm.IBasic {
 
     @Override
-    protected void onCreateViewLazy(final Bundle savedInstanceState) {
-        super.onCreateViewLazy(savedInstanceState);
-        setContentView(mContextView = inflater.inflate(bindLayout(), null));
-        if (null != mContextView)
-            mContextView.post(() -> {
-                initView(savedInstanceState);
-                doBusiness();
-            });
+    public void initData(Bundle bundle) {
+
     }
+
+    @Override
+    public View setContentView(@NonNull LayoutInflater inflater) {
+        return inflater.inflate(bindLayout(), null);
+    }
+
+    @Override
+    public void onCreateViewLazy(@Nullable Bundle savedInstanceState) {
+        mContentView.post(() -> {
+            initView(savedInstanceState);
+            doBusiness();
+        });
+    }
+
+//    @Override
+//    protected void onCreateViewLazy(final Bundle savedInstanceState) {
+//        super.onCreateViewLazy(savedInstanceState);
+//        if (bindLayout() != 0)
+//            setContentView(mContextView = inflater.inflate(bindLayout(), null));
+//        if (null != mContextView)
+//            mContextView.post(() -> {
+//                initView(savedInstanceState);
+//                doBusiness();
+//            });
+//    }
 
 
     private ImmersionBar imBar;
@@ -48,4 +70,5 @@ public abstract class BasicFm extends BasicLazyFm implements IFm.IBasic {
     public void showToast(@Nullable final Object o) {
         ToastUtil.showShort(o + "");
     }
+
 }
