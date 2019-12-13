@@ -150,7 +150,7 @@ public class PRecyclerView extends RecyclerView implements PRvHelper.IPRv {
 
     //</editor-fold>
 
-    // 需要注意recyclerView 嵌套在ScrollView 中无限加载loadMore
+    // 需要注意recyclerView 嵌套在ScrollView 中无限加载Bug loadMore
     @Override
     public PRecyclerView setOnLoadMoreListener(BaseQuickAdapter.RequestLoadMoreListener requestLoadMoreListener) {
         setOnLoadMoreListener(2, requestLoadMoreListener);
