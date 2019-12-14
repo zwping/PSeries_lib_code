@@ -11,6 +11,7 @@ import com.gyf.barlibrary.ImmersionBar;
 
 import win.zwping.code.basic.helper.BasicXLazyFm;
 import win.zwping.code.basic.pi.IFm;
+import win.zwping.code.comm.CommCallback;
 import win.zwping.code.utils.ToastUtil;
 
 /**
@@ -40,18 +41,20 @@ public abstract class BasicFm extends BasicXLazyFm implements IFm.IBasic {
         });
     }
 
-//    @Override
-//    protected void onCreateViewLazy(final Bundle savedInstanceState) {
-//        super.onCreateViewLazy(savedInstanceState);
-//        if (bindLayout() != 0)
-//            setContentView(mContextView = inflater.inflate(bindLayout(), null));
-//        if (null != mContextView)
-//            mContextView.post(() -> {
-//                initView(savedInstanceState);
-//                doBusiness();
-//            });
-//    }
+    @Override
+    public void setSafeClickLis(@Nullable View view, View.OnClickListener onClickListener) {
+        if (view == null) return;
+        view.setOnClickListener(v -> {
+            if (normalClick()) onClickListener.onClick(v);
+        });
+    }
 
+    @Nullable
+    @Override
+    public <V extends View> V findViewById(int id) {
+        if (mContentView != null) return mContentView.findViewById(id);
+        return null;
+    }
 
     private ImmersionBar imBar;
 

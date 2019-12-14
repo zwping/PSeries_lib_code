@@ -4,12 +4,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import android.view.View;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
+
 import win.zwping.code.review.pi.PIvHelper;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
+import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 
 /**
  * <p>describe：
@@ -36,7 +39,7 @@ public class PImageView extends AppCompatImageView implements PIvHelper.IPIv {
 
     @Override
     public PImageView displayImage(String url) {
-        helper.display(url);
+        if (isNotEmpty(url)) helper.display(url);
         return this;
     }
 

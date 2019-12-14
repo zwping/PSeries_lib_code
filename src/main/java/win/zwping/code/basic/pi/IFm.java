@@ -10,6 +10,8 @@ import com.gyf.barlibrary.ImmersionBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import win.zwping.code.comm.CommCallback;
+
 /**
  * <p>describe：this Fm of the public interface
  * <p>    note：
@@ -61,6 +63,11 @@ public class IFm {
         void doBusiness();
 
         /////////////// 需要抽象实现的 /////////////////
+
+        @Nullable
+        <V extends View> V findViewById(int id);
+
+        void setSafeClickLis(@Nullable View view, View.OnClickListener onClickListener);
 
         // 解决沉浸式问题 https://github.com/gyf-dev/ImmersionBar
         ImmersionBar getImBar();
