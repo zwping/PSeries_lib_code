@@ -28,10 +28,15 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
     }
 
     @Override
+    public void setContentView() {
+        if (0 != bindLayout()) setContentView(bindLayout());
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         initData(getIntent()); // before of super.onCreate(savedInstanceState)
         super.onCreate(savedInstanceState);
-        if (0 != bindLayout()) setContentView(bindLayout());
+        setContentView();
         initView(savedInstanceState);
         getWindow().getDecorView().findViewById(android.R.id.content).post(this::doBusiness);
     }

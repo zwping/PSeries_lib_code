@@ -39,6 +39,8 @@ public class IAc {
 
         int bindLayout();
 
+        void setContentView();
+
         void initView(@Nullable Bundle savedInstanceState);
 
         void doBusiness();
