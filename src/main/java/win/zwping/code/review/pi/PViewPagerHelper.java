@@ -105,17 +105,6 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         }
 
         if (null != tabLayout) tabLayout.setupWithViewPager(v);
-        v.setAdapter(new PagerAdapter() {
-            @Override
-            public int getCount() {
-                return fms.size();
-            }
-
-            @Override
-            public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-                return false;
-            }
-        });
         v.setAdapter(new FragmentStatePagerAdapter(fm,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override

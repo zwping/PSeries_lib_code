@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+
 import win.zwping.code.basic.IUtil;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
@@ -109,8 +111,8 @@ public final class ViewUtil implements IUtil.INativeUtil {
 
     /*** 设置View的宽高 ***/
     public static void setViewPostWH(@Nullable final View view, final int wDp, final int hDp) {
-        if(null == view)return;
-        setViewWHPx(view, dp2px(view.getContext(),wDp), dp2px(view.getContext(),hDp));
+        if (null == view) return;
+        setViewWHPx(view, dp2px(view.getContext(), wDp), dp2px(view.getContext(), hDp));
     }
 
     public static void setViewPostWHPx(@Nullable final View view, final int wPx, final int hPx) {
@@ -123,7 +125,7 @@ public final class ViewUtil implements IUtil.INativeUtil {
 
     public static void setViewWH(@Nullable final View view, final int wDp, final int hDp) {
         if (null == view) return;
-        setViewWHPx(view, dp2px(view.getContext(), wDp), dp2px(view.getContext(),hDp));
+        setViewWHPx(view, dp2px(view.getContext(), wDp), dp2px(view.getContext(), hDp));
     }
 
     public static void setViewWHPx(@Nullable final View view, final int wPx, final int hPx) {
@@ -146,6 +148,18 @@ public final class ViewUtil implements IUtil.INativeUtil {
         for (View view : views) {
             if (view != null) view.setVisibility(View.VISIBLE);
         }
+    }
+
+    /**
+     * 设置空的点击事件
+     * 点击事件屏蔽
+     * @param views
+     */
+    public static void setNullClickLis(View... views) {
+        for (View view : views)
+            if (view != null)
+                view.setOnClickListener(v -> {
+                });
     }
 
 }
