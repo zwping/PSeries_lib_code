@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application>
+    <application
+        android:networkSecurityConfig="@xml/network_config"
+        >
 
         <provider
             android:name="win.zwping.code.Util$FileProvider4PSeries"
