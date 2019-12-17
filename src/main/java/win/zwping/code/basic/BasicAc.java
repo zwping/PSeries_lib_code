@@ -2,6 +2,7 @@ package win.zwping.code.basic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 
@@ -39,6 +40,15 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
         setContentView();
         initView(savedInstanceState);
         getWindow().getDecorView().findViewById(android.R.id.content).post(this::doBusiness);
+    }
+
+
+    @Override
+    public void setSafeClickLis(@Nullable View view, View.OnClickListener onClickListener) {
+        if (view == null) return;
+        view.setOnClickListener(v -> {
+            if (normalClick()) onClickListener.onClick(v);
+        });
     }
 
     private ImmersionBar imBar;

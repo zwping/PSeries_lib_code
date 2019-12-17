@@ -2,6 +2,7 @@ package win.zwping.code.basic.pi;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.gyf.barlibrary.ImmersionBar;
 
@@ -44,6 +45,8 @@ public class IAc {
         void initView(@Nullable Bundle savedInstanceState);
 
         void doBusiness();
+
+        void setSafeClickLis(@Nullable View view, View.OnClickListener onClickListener);
 
         /////////////// 需要抽象实现的 /////////////////
 

@@ -2,7 +2,9 @@ package win.zwping.code.review;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -10,7 +12,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
+
 import win.zwping.code.review.pi.PViewPagerHelper;
 
 import java.util.List;
@@ -37,12 +41,13 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
 
     @Override
     public PViewPager setAdapterView(List<View> list) {
-        setAdapterView(list,null,null);
+        setAdapterView(list, null, null);
         return this;
     }
+
     @Override
     public PViewPager setAdapterView(List<View> list, @Nullable TabLayout tabLayout, @Nullable final List<CharSequence> txts) {
-        helper.setAdapterView(list,tabLayout,txts);
+        helper.setAdapterView(list, tabLayout, txts);
         return this;
     }
 
@@ -94,6 +99,24 @@ public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPage
     public PViewPager addOnPageChangeListener(OnPageSelected onPageSelected, @Nullable OnPageScrolled onPageScrolled, @Nullable OnPageScrollStateChanged onPageScrollStateChanged) {
         helper.addOnPageChangeListener(onPageSelected, onPageScrolled, onPageScrollStateChanged);
         return this;
+    }
+
+    @Override
+    public PViewPager setIsSlide(Boolean isSlide) {
+        helper.banSlide = isSlide;
+        return this;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        if (helper.banSlide) return false;
+        return super.onTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (helper.banSlide) return false;
+        return super.onInterceptTouchEvent(ev);
     }
 
     @Override

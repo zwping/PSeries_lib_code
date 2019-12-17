@@ -54,6 +54,9 @@
         <attr name="p_loadingView" />
         <attr name="p_errorView" />
     </declare-styleable>
+    <declare-styleable name="PViewPager">
+        <attr name="p_ban_slide" format="boolean"/>
+    </declare-styleable>
 
     <declare-styleable name="EtWordCountLayout">
         <attr name="p_inputCountEnable" />

@@ -1,10 +1,12 @@
 package win.zwping.code.review.pi;
 
 import android.annotation.SuppressLint;
+import android.content.res.TypedArray;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,7 +16,10 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
+
+import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PViewPager;
 import win.zwping.code.utils.LifecycleUtil;
@@ -35,6 +40,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
     public interface IPViewPager {
         PViewPager setAdapterView(List<View> list);
+
         PViewPager setAdapterView(List<View> list, @Nullable TabLayout tabLayout, @Nullable final List<CharSequence> txts);
 
         PViewPager setAdapterFm(@NonNull FragmentManager fm, @NonNull final List<Fragment> fms);
@@ -49,13 +55,25 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
         PViewPager addOnPageChangeListener(PViewPager.OnPageSelected onPageSelected);
 
-        PViewPager addOnPageChangeListener(PViewPager.OnPageSelected onPageSelected,@Nullable PViewPager.OnPageScrolled onPageScrolled,@Nullable PViewPager.OnPageScrollStateChanged onPageScrollStateChanged);
+        PViewPager addOnPageChangeListener(PViewPager.OnPageSelected onPageSelected, @Nullable PViewPager.OnPageScrolled onPageScrolled, @Nullable PViewPager.OnPageScrollStateChanged onPageScrollStateChanged);
 
+        PViewPager setIsSlide(Boolean isSlide);
     }
+
+    /*** 禁止滑动 ***/
+    public boolean banSlide;
 
     @Override
     public PViewPagerHelper initAttrs(PViewPager view, @Nullable AttributeSet attrs) {
         v = view;
+        if (null != attrs) {
+            TypedArray array = v.getContext().obtainStyledAttributes(attrs, R.styleable.PViewPager);
+            try {
+                banSlide = array.getBoolean(R.styleable.PViewPager_p_ban_slide, false);
+            } finally {
+                array.recycle();
+            }
+        }
         return this;
     }
 
@@ -105,7 +123,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         }
 
         if (null != tabLayout) tabLayout.setupWithViewPager(v);
-        v.setAdapter(new FragmentStatePagerAdapter(fm,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        v.setAdapter(new FragmentStatePagerAdapter(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -132,7 +150,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
             LogUtil.i("参数有误");
             return;
         }
-        v.setAdapter(new FragmentStatePagerAdapter(fm,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        v.setAdapter(new FragmentStatePagerAdapter(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -183,12 +201,12 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
         });
     }
 
-    public void addOnPageChangeListener(final PViewPager.OnPageSelected onPageSelected,@Nullable final PViewPager.OnPageScrolled onPageScrolled,@Nullable final PViewPager.OnPageScrollStateChanged onPageScrollStateChanged) {
+    public void addOnPageChangeListener(final PViewPager.OnPageSelected onPageSelected, @Nullable final PViewPager.OnPageScrolled onPageScrolled, @Nullable final PViewPager.OnPageScrollStateChanged onPageScrollStateChanged) {
         v.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (null != onPageScrolled)
-                    onPageScrolled.onPageScrolled(new PViewPager.OnPageScrolledEn(position,positionOffset,positionOffsetPixels));
+                    onPageScrolled.onPageScrolled(new PViewPager.OnPageScrolledEn(position, positionOffset, positionOffsetPixels));
             }
 
             @Override
@@ -198,7 +216,8 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                if (null != onPageScrollStateChanged) onPageScrollStateChanged.onPageScrollStateChanged(state);
+                if (null != onPageScrollStateChanged)
+                    onPageScrollStateChanged.onPageScrollStateChanged(state);
             }
         });
     }
@@ -211,7 +230,7 @@ public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> impl
 
 
     private Boolean isAutoPlay = false;
-//    private Disposable timerRx;
+    //    private Disposable timerRx;
     private int time;
     private Lifecycle lifecycle;
 
