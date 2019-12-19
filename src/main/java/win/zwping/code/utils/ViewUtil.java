@@ -143,6 +143,10 @@ public final class ViewUtil implements IUtil.INativeUtil {
         }
     }
 
+    public static void setGone(View view,Boolean visibility){
+        if(view != null) view.setVisibility(visibility ? View.VISIBLE : View.GONE);
+    }
+
     /*** 设置显示 ***/
     public static void setVisible(View... views) {
         for (View view : views) {

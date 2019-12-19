@@ -14,8 +14,10 @@ import android.text.style.*;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.annotation.*;
 import androidx.core.content.ContextCompat;
+
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 import win.zwping.code.review.re.LinkMovementMethod;
