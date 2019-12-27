@@ -8,7 +8,6 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -19,8 +18,14 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.*;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.annotation.RequiresPermission;
+
 import win.zwping.code.R;
+import win.zwping.code.comm.CommCallback;
 import win.zwping.code.cview.OverScrollLayout;
 import win.zwping.code.cview.SwitchPageStateLayout;
 import win.zwping.code.review.webview.BasicWebView;
@@ -31,7 +36,6 @@ import win.zwping.code.review.webview.OnReceivedErrorListener;
 import win.zwping.code.review.webview.OnReceivedSslErrorListener;
 import win.zwping.code.review.webview.OnReceivedTitleListener;
 import win.zwping.code.review.webview.OnUrlLoadingListener;
-import win.zwping.code.utils.LogUtil;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static win.zwping.code.utils.CollectionUtil.split;
@@ -195,6 +199,8 @@ public class PWebView extends FrameLayout {
         private OnReceivedTitleListener onReceivedTitleListener;
         private OnProgressChangedListener onProgressChangedListener;
 
+        private CommCallback<BasicWebView> onWebViewClickListener;
+
         Builder(BasicWebView webView, PWebView pWebView) {
             this.webView = webView;
             this.pWebView = pWebView;
@@ -285,6 +291,11 @@ public class PWebView extends FrameLayout {
             return this;
         }
 
+        public Builder setOnWebViewClickListener(CommCallback<BasicWebView> listener) {
+            this.webView.setWebViewClickListener(listener);
+            return this;
+        }
+
         ////////////////////////////////////
         private void addListener() {
             webView.setWebViewClient(new WebViewClient() {
@@ -306,6 +317,7 @@ public class PWebView extends FrameLayout {
                         onPageFinishedListener.onPageFinished(view, url);
                     if (isEmpty(webView.getTag()))
                         pWebView.switchWebViewSps.showContent();
+                    super.onPageFinished(view, url);
                 }
 
                 //处理https请求

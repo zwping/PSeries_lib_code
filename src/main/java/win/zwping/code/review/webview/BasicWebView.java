@@ -19,10 +19,15 @@ import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import win.zwping.code.R;
+import win.zwping.code.comm.CommCallback;
 import win.zwping.code.utils.LogUtil;
 
+import static android.view.KeyEvent.ACTION_DOWN;
+import static android.view.KeyEvent.ACTION_UP;
 import static android.view.KeyEvent.KEYCODE_BACK;
+import static android.view.KeyEvent.KEYCODE_MOVE_END;
 import static android.webkit.WebSettings.TextSize.LARGEST;
 import static win.zwping.code.utils.EmptyUtil.isEmpty;
 
@@ -55,6 +60,8 @@ public class BasicWebView extends WebView {
 
     private OnReceivedTitleListener onReceivedTitleListener;
     private OnProgressChangedListener onProgressChangedListener;
+
+    private CommCallback<BasicWebView> onWebViewClickListener;
     //</editor-fold>
     //<editor-fold desc="构造函数">
 
@@ -110,6 +117,7 @@ public class BasicWebView extends WebView {
             public void onPageFinished(WebView view, String url) {
                 if (null != onPageFinishedListener)
                     onPageFinishedListener.onPageFinished(view, url);
+                super.onPageFinished(view, url);
             }
 
             //处理https请求
@@ -148,6 +156,7 @@ public class BasicWebView extends WebView {
                 if (null != onProgressChangedListener)
                     onProgressChangedListener.onProgressChanged(view, newProgress);
             }
+
         });
     }
 
@@ -160,8 +169,22 @@ public class BasicWebView extends WebView {
         super.onMeasure(widthMeasureSpec, mExpandSpec);
     }
 
+    private long touchTime = 0L;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (null != onWebViewClickListener)
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_UP:
+                    if (System.currentTimeMillis() - touchTime < 300)
+                        onWebViewClickListener.callback(this);
+                    break;
+                case MotionEvent.ACTION_DOWN:
+                    touchTime = System.currentTimeMillis();
+                    break;
+                default:
+                    break;
+            }
         if (null != nestedCoordinatorLayoutProxy)
             return nestedCoordinatorLayoutProxy.onTouchEvent(event);
         return super.onTouchEvent(event);
@@ -282,6 +305,11 @@ public class BasicWebView extends WebView {
 
     public BasicWebView setOnUrlLoadingListener(OnUrlLoadingListener listener) {
         this.onUrlLoadingListener = listener;
+        return this;
+    }
+
+    public BasicWebView setWebViewClickListener(CommCallback<BasicWebView> listener) {
+        this.onWebViewClickListener = listener;
         return this;
     }
 
