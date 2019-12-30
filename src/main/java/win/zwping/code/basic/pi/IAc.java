@@ -1,5 +1,6 @@
 package win.zwping.code.basic.pi;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 
+import win.zwping.code.basic.BasicAc;
 import win.zwping.code.comm.CommCallback;
 
 /**
@@ -54,5 +56,9 @@ public class IAc {
         ImmersionBar getImBar();
 
         void showToast(@Nullable Object o);
+
+        void runOnUiThreadDelay(int delay, CommCallback<BasicAc> callback);
+
+        void runOnUiThreadDelay(CommCallback<BasicAc> callback);
     }
 }

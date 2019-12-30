@@ -11,6 +11,7 @@
         android:src="@mipmap/page_state_empty" />
 
     <TextView
+        android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp10"

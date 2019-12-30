@@ -1,5 +1,6 @@
 package win.zwping.code.basic;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import win.zwping.code.basic.helper.BasicKeyBoardAc;
 import win.zwping.code.basic.pi.IAc;
 import win.zwping.code.comm.CommCallback;
+import win.zwping.code.utils.HandlerUtil;
 import win.zwping.code.utils.ToastUtil;
 
 /**
@@ -71,4 +73,15 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
         ToastUtil.showShort(o + "");
     }
 
+    @Override
+    public void runOnUiThreadDelay(int delay, CommCallback<BasicAc> callback) {
+        HandlerUtil.runOnUiThreadDelay(() -> {
+            if (isChangeUi()) callback.callback(this);
+        }, delay);
+    }
+
+    @Override
+    public void runOnUiThreadDelay(CommCallback<BasicAc> callback) {
+        runOnUiThreadDelay(200, callback);
+    }
 }

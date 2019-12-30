@@ -12,6 +12,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import win.zwping.code.basic.helper.BasicXLazyFm;
 import win.zwping.code.basic.pi.IFm;
 import win.zwping.code.comm.CommCallback;
+import win.zwping.code.utils.HandlerUtil;
 import win.zwping.code.utils.ToastUtil;
 
 /**
@@ -74,4 +75,15 @@ public abstract class BasicFm extends BasicXLazyFm implements IFm.IBasic {
         ToastUtil.showShort(o + "");
     }
 
+    @Override
+    public void runOnUiThreadDelay(int delay, CommCallback<BasicFm> callback) {
+        HandlerUtil.runOnUiThreadDelay(() -> {
+            if (isChangeUi()) callback.callback(this);
+        }, delay);
+    }
+
+    @Override
+    public void runOnUiThreadDelay(CommCallback<BasicFm> callback) {
+        runOnUiThreadDelay(200, callback);
+    }
 }

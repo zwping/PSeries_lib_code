@@ -10,6 +10,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import win.zwping.code.basic.BasicFm;
 import win.zwping.code.comm.CommCallback;
 
 /**
@@ -73,6 +74,10 @@ public class IFm {
         ImmersionBar getImBar();
 
         void showToast(@Nullable Object o);
+
+        void runOnUiThreadDelay(int delay, CommCallback<BasicFm> callback);
+
+        void runOnUiThreadDelay(CommCallback<BasicFm> callback);
     }
 
 }

@@ -7,6 +7,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresPermission;
 
@@ -84,6 +85,9 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
         }
         if (getChildCount() > 1) {
             //removeViews(1, getChildCount() - 1);
+            View view = mInflater.inflate(R.layout.child_page_state_empty_layout, this, false);
+            ((TextView)view.findViewById(R.id.title_tv)).setText("SwitchPageStatesLayout can host only one direct child");
+            addView(view);
             throw new IllegalStateException("SwitchPageStatesLayout can host only one direct child");
         }
         View view = getChildAt(0);
