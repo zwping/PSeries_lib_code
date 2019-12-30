@@ -7,17 +7,20 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.SectionEntity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
+
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PRecyclerView;
@@ -267,7 +270,10 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             } else {
                 v.addData(data);
                 if (data.size() % perPageNum != 0) v.getAdapterSup().loadMoreEnd();
-                else v.getAdapterSup().loadMoreComplete();
+                else {
+                    // v.getAdapterSup().loadMoreComplete(); // 去除所有加载完成的loadMoreView
+                    v.getAdapterSup().loadMoreEnd(true);
+                }
             }
         }
     }
@@ -288,7 +294,7 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             } else {
                 v.setNewData(data);
                 if (data.size() % perPageNum != 0) {
-                    v.getAdapterSup().addFooterView(getFootView());
+                    // v.getAdapterSup().addFooterView(getFootView());
                     if (null != refreshLayout) refreshLayout.setEnableLoadMore(false);
                 }
             }
@@ -296,12 +302,12 @@ public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
             if (null != refreshLayout && refreshLayout.getState() == RefreshState.Loading)
                 refreshLayout.finishLoadMore();
             if (empty) {
-                v.getAdapterSup().addFooterView(getFootView());
+                // v.getAdapterSup().addFooterView(getFootView());
                 if (null != refreshLayout) refreshLayout.setEnableLoadMore(false);
             } else {
                 v.addData(data);
                 if (data.size() % perPageNum != 0) {
-                    v.getAdapterSup().addFooterView(getFootView());
+                    // v.getAdapterSup().addFooterView(getFootView());
                     if (null != refreshLayout) refreshLayout.setEnableLoadMore(false);
                 }
             }
