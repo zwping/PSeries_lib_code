@@ -637,7 +637,7 @@ public final class LogUtil implements IUtil.INativeUtil {
         private boolean mSingleTagSwitch = true;  // The single tag of log.
         private int mConsoleFilter = V;     // The console's filter of log.
         private int mFileFilter = V;     // The file's filter of log.
-        private int mStackDeep = 1;     // The stack's deep of log.
+        private int mStackDeep = 5;     // The stack's deep of log.
         private int mStackOffset = 0;     // The stack's offset of log.
         private int mSaveDays = -1;    // The save days of log.
 
