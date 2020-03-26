@@ -31,6 +31,12 @@ public class TimerSup {
         this.delay = delay;
     }
 
+    /**
+     *
+     * @param callback
+     * @param delay milliseconds
+     * @param period milliseconds
+     */
     public TimerSup(CommCallback<TimerSup> callback, long delay, long period) {
         this.callback = callback;
         this.delay = delay;
