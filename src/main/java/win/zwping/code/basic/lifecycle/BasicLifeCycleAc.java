@@ -1,7 +1,9 @@
 package win.zwping.code.basic.lifecycle;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import win.zwping.code.basic.pi.IAc;
@@ -55,7 +57,7 @@ public class BasicLifeCycleAc extends AppCompatActivity implements IAc.IBasicLif
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         // outState.putParcelable(TAG,xx); // 系统回收保存数据
     }
