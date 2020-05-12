@@ -8,8 +8,11 @@ import android.graphics.drawable.Drawable;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
+
 import win.zwping.code.Util;
 import win.zwping.code.basic.IUtil;
 
@@ -20,12 +23,14 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：
  * <p> @author：zwp on 2018/5/10 0010 mail：1101558280@qq.com web: http://www.zwping.win </p>
  */
-public final class ResourceUtil  implements IUtil.INativeUtil{
+public final class ResourceUtil implements IUtil.INativeUtil {
 
     public static int getColor(@ColorRes int colorId) {
         return ContextCompat.getColor(Util.getApp(), colorId);
     }
-    public static int getColor(Context context, @ColorRes int colorId) {
+
+    public static int getColor(@Nullable Context context, @ColorRes int colorId) {
+        if (context == null) return -1;
         return ContextCompat.getColor(context, colorId);
     }
 
