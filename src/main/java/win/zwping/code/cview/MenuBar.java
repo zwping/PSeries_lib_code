@@ -5,9 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
 import win.zwping.code.R;
 import win.zwping.code.cview.pi.IMenuBar;
 import win.zwping.code.review.PEditText;
