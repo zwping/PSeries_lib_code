@@ -7,6 +7,7 @@
     <color name="page_state_white">#ffffff</color>
     <color name="page_state_text_gray">#8a8a8a</color>
     <color name="page_state_loading_dialog_message">#595959</color>
+    <color name="web_view_bg">#fff</color>
 </resources><!-- 101个色值
 0% — 00
 1%	03	11%	1C	21%	36	31%	4F	41%	69	51%	03	61%	1C	71%	36	81%	4F	91%	69
