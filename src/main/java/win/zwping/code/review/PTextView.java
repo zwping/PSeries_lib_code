@@ -1,6 +1,7 @@
 package win.zwping.code.review;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.Shader;
@@ -14,6 +15,8 @@ import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -254,6 +257,10 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
     }
     //</editor-fold>
 
+    public PTextView setDrawableTint(@ColorInt int color) {
+        setCompoundDrawableTintList(ColorStateList.valueOf(color));
+        return this;
+    }
 
     @Override
     public PTextView setVStateBgColor(ViewStateColor stateColor) {

@@ -5,13 +5,17 @@ import android.content.res.TypedArray;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+
+import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
+
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PImageView;
@@ -41,6 +45,8 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
         PImageView setRoundRect(int radiusDp);
 
         PImageView setGone(boolean visible);
+
+        PImageView setTint(@ColorInt int color);
     }
 
     //</editor-fold>
@@ -80,8 +86,10 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
     private void glide(RequestBuilder<Drawable> builder) {
         builder.apply(getOptions()).into(v);
         if (option.roundRect || option.roundRectRadius != 0) {
-            if (0 != option.loadingId) builder.thumbnail(loadTransform(option.loadingId, option.roundRectRadius));
-            if (0 != option.errorId) builder.thumbnail(loadTransform(option.errorId, option.roundRectRadius));
+            if (0 != option.loadingId)
+                builder.thumbnail(loadTransform(option.loadingId, option.roundRectRadius));
+            if (0 != option.errorId)
+                builder.thumbnail(loadTransform(option.errorId, option.roundRectRadius));
         }
         builder.into(v);
     }

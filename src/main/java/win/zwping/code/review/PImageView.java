@@ -1,6 +1,7 @@
 package win.zwping.code.review;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.util.AttributeSet;
 
 import android.view.View;
@@ -72,6 +73,12 @@ public class PImageView extends AppCompatImageView implements PIvHelper.IPIv {
     @Override
     public PImageView setGone(boolean visible) {
         setVisibility(visible ? View.VISIBLE : View.GONE);
+        return this;
+    }
+
+    @Override
+    public PImageView setTint(int color) {
+        setImageTintList(ColorStateList.valueOf(color));
         return this;
     }
 }
