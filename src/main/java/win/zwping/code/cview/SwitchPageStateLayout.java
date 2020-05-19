@@ -27,7 +27,7 @@ import static android.Manifest.permission.ACCESS_NETWORK_STATE;
  * <p>    note：实现 加载中View、空数据View、网络出错View、异常出错View、自定义View、内容View 随意切换
  * <p>    note：架构描述{@link ISwitchPageLayout}
  * <p>    note：
- * <p> @author：zwp on 2017/12/19 0019 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/19 0019 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLayout {
 

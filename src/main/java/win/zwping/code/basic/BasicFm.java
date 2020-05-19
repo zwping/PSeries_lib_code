@@ -20,7 +20,7 @@ import win.zwping.code.utils.ToastUtil;
  * <p>    note：
  * <p>    note：整个basicFm的架构{@link IFm}
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:56:32 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:56:32 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public abstract class BasicFm extends BasicXLazyFm implements IFm.IBasic {
 

@@ -28,7 +28,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-03-27 16:55:39 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-27 16:55:39 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PBtnHelper extends IHelper<PBtnHelper, PButton> {
 

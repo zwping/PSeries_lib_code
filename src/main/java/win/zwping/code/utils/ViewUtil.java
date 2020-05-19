@@ -16,7 +16,7 @@ import static win.zwping.code.utils.ConversionUtil.px2dp;
 /**
  * <p>describe：View 工具类
  * <p>    note：
- * <p>  author：zwp on 2018-07-09 16:27:21 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2018-07-09 16:27:21 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ViewUtil implements IUtil.INativeUtil {
 

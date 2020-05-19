@@ -39,7 +39,7 @@ import static android.Manifest.permission.WRITE_SETTINGS;
  * <p>    note：getActionBarHeight
  * <p>    note：getNotificationBarVisibility
  * <p>    note：
- * <p> @author：zwp on 2018/3/13 0013 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/13 0013 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ScreenUtil implements IUtil.INativeUtil {
 

@@ -29,7 +29,7 @@ import static android.Manifest.permission.INTERNET;
  * <p>    note：isDeviceRooted / getSDKVersionName / getSDKVersionCode / getAndroidID / getMacAddress
  * <p>    note：getManufacturer / getModel / getABIS / shutdown / reboot
  * <p>    note：
- * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class DeviceUtil implements IUtil.INativeUtil {
 

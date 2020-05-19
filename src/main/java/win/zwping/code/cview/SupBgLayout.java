@@ -25,7 +25,7 @@ import static win.zwping.code.utils.ConversionUtil.dp2px;
  * <p>    note：基于ConstraintLayout，在xml就可以控制 边界 角度
  * <p>    note：架构描述{@link ISupBgLayout}
  * <p>    note：
- * <p> @author：zwp on 2018/3/20 0020 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/20 0020 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class SupBgLayout extends ConstraintLayout implements ISupBgLayout {
 

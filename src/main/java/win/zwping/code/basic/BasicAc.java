@@ -20,7 +20,7 @@ import win.zwping.code.utils.ToastUtil;
  * <p>    note：
  * <p>    note：整个basicAc的架构{@link IAc}
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:10:35 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:10:35 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
 

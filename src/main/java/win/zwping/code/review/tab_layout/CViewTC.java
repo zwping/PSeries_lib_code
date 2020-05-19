@@ -20,7 +20,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmptys;
 /**
  * <p>describe：使用代码动态更新TabLayout
  * <p>    note：
- * <p> @author：zwp on 2019-03-12 10:19:55 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-12 10:19:55 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class CViewTC<B> implements IPTabL.ICViewTC<B>, TabLayout.OnTabSelectedListener {
     private LayoutInflater inflater;

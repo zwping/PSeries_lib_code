@@ -15,7 +15,7 @@ import androidx.annotation.RequiresApi;
 /**
  * <p>describe：View主要方法
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:57:51 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:57:51 mail：1101558280@qq.com web: https://www.zwping.com </p>
  * @deprecated 描述功能的作用，Widget的最上级，派生了无数Widget，在这记录一些主要的方法
  */
 @Deprecated

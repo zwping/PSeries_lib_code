@@ -24,7 +24,7 @@ import java.util.List;
  * <p>    note：
  * <p>    note：禁止滑动 / 循环滚动
  * <p>    note：
- * <p> @author：zwp on 2019-02-14 11:17:31 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-14 11:17:31 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PViewPager extends ViewPager implements PViewPagerHelper.IPViewPager {
 

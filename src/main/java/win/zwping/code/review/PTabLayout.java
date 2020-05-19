@@ -13,7 +13,7 @@ import win.zwping.code.review.tab_layout.*;
  * <p>describe：
  * <p>    note：代码控制customView样式
  * <p>    note：
- * <p> @author：zwp on 2019-02-13 14:10:04 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-13 14:10:04 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PTabLayout extends TabLayout implements IPTabL {
     public PTabLayout(Context context) {

@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 /**
  * <p>describe：Application生命周期
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:30:00 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:30:00 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class BasicLifeCycleApp extends Application {
 

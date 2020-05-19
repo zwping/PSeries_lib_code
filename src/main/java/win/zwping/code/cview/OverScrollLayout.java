@@ -13,7 +13,7 @@ import win.zwping.code.R;
  * <p>    note：
  * <p>    note：todo 横向越界回弹
  * <p>    note：
- * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class OverScrollLayout extends SmartRefreshLayout {
 

@@ -6,7 +6,7 @@ package win.zwping.code.constant;
  * <p>    note：
  * <p>    note：https://deerchao.net/tutorials/regex/regex.htm#mission
  * <p>    note：
- * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class RegexConstants {
 

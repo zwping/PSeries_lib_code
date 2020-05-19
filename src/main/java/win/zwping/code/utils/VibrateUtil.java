@@ -15,7 +15,7 @@ import static android.Manifest.permission.VIBRATE;
  * <p>    note：
  * <p>    note：vibrate / cancel
  * <p>    note：
- * <p> @author：zwp on 2019/2/26 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019/2/26 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class VibrateUtil implements IUtil.INativeUtil {
 

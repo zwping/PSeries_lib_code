@@ -27,7 +27,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：writeFile / readFile
  * <p>    note：bufferSize
  * <p>    note：
- * <p> @author：zwp on 2018/5/29 0029 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/5/29 0029 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class FileIOUtil  implements IUtil.INativeUtil{
 

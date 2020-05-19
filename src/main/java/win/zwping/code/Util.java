@@ -26,7 +26,7 @@ import win.zwping.code.utils.KeyboardUtil;
  * <p>    note：init / getApp / getTopActivity / isAppForeground
  * <p>    note：getApplicationByReflect / getActivityLifecycle / getActivityList
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:24:32 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:24:32 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class Util {
 

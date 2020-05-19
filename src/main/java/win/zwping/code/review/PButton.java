@@ -15,7 +15,7 @@ import win.zwping.code.review.pi.ViewStateColorSwitchHelper;
  * <p>describe：
  * <p>    note：
  * <p>    note：
- * <p> @author：zwp on 2019-01-03 14:31:00 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-01-03 14:31:00 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PButton extends AppCompatButton implements PBtnHelper.IPBtn, ViewStateColorSwitchHelper.IVSwitchStatus<PButton> {
 

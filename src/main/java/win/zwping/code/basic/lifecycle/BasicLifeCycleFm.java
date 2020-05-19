@@ -18,7 +18,7 @@ import win.zwping.code.basic.pi.IFm;
  * <p>    note：isChangeUi / fastClick
  * <p>    note：整个basicFm的架构{@link IFm}
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:30:51 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:30:51 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class BasicLifeCycleFm extends Fragment implements IFm.IBasicLifeCycle {
 

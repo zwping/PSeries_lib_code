@@ -23,7 +23,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
  * <p>    note：
  * <p>    note：
  * <p>    note：
- * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class SDCardUtil implements IUtil.INativeUtil {
 

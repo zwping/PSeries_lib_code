@@ -39,7 +39,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 /**
  * <p>describe：
  * <p>    note：控制图片大小及位置
- * <p> @author：zwp on 2017/11/22 0022 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/11/22 0022 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PTextView extends AppCompatTextView implements ViewStateColorSwitchHelper.IVSwitchStatus<PTextView>, LinkMovementMethod.OnChildSpanClickListener {
 

@@ -15,7 +15,7 @@ import win.zwping.code.utils.DrawableUtil;
 /**
  * <p>describe：视图状态颜色（文字 / 背景）控制
  * <p>    note：
- * <p> @author：zwp on 2019-04-04 16:47:51 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-04 16:47:51 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class ViewStateColor {
 

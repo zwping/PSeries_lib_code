@@ -23,7 +23,7 @@ import win.zwping.code.constant.TimeConstants;
  * <p>    note：getChineseWeek / getUSWeek / getWeekIndex / getWeekOfMonth / getWeekOfYear
  * <p>    note：getChineseZodiac / getZodiac
  * <p>    note：
- * <p> @author：zwp on 2018/3/16 0016 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/16 0016 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class TimeUtil implements IUtil.INativeUtil {
 

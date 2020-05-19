@@ -27,7 +27,7 @@ import static win.zwping.code.utils.ConversionUtil.dp2px;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-11 13:57:53 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-11 13:57:53 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PIvHelper extends IHelper<PIvHelper, PImageView> {
 

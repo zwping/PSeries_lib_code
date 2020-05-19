@@ -29,7 +29,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
  * </pre>
  * <p>    note：
  * <p>    note：建议：固定高度
- * <p> @author：zwp on 2017/11/24 0024 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/11/24 0024 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class EtWordCountLayout extends RelativeLayout {
 

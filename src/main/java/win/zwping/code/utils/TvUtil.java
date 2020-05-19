@@ -13,7 +13,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
  * <p>    note：
  * <p>    note：setText / setEmpty
  * <p>    note：
- * <p>  author：zwp on 2017/9/22 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2017/9/22 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class TvUtil implements IUtil.INativeUtil {
 

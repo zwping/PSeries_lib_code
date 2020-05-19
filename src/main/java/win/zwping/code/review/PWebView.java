@@ -46,7 +46,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
  * <p>describe：
  * <p>    note：
  * <p>    note：https://juejin.im/post/58a037df86b599006b3fade4
- * <p> @author：zwp on 2019-01-04 16:28:14 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-01-04 16:28:14 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PWebView extends FrameLayout {
 

@@ -32,7 +32,7 @@ import static android.graphics.BlurMaskFilter.Blur;
 /**
  * <p>describe：SpannableString 相关工具类
  * <p>    note：
- * <p> @author：zwp on 2017/12/2 0002 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/2 0002 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class SpanUtil implements IUtil.INativeUtil {
 

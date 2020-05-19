@@ -27,7 +27,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2018/3/28 0028 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/28 0028 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class CrashUtil implements IUtil.INativeUtil {
 

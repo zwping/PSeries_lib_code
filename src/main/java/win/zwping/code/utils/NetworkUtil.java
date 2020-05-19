@@ -34,7 +34,7 @@ import static android.Manifest.permission.MODIFY_PHONE_STATE;
  * <p>    note：getWifiEnabled / setWifiEnabled / isWifiConnected / isWifiAvailable
  * <p>    note：getNetworkOperatorName / getNetworkType / getIPAddress / getDomainAddress
  * <p>    note：
- * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class NetworkUtil implements IUtil.INativeUtil {
 

@@ -21,7 +21,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：
  * <p>    note：split / splitList / splitLength  / covStrings
  * <p>    note：
- * <p>  author：zwp on 2018-06-11 14:26:46 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2018-06-11 14:26:46 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class CollectionUtil implements IUtil.INativeUtil {
 

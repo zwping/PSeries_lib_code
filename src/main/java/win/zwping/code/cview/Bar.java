@@ -24,7 +24,7 @@ import static win.zwping.code.utils.ConversionUtil.px2dp;
  * <p>    note：
  * <p>    note：架构描述{@link IBar}
  * <p>    note：
- * <p> @author：zwp on 2019-03-22 16:59:12 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-22 16:59:12 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class Bar extends ConstraintLayout implements IBar {
 

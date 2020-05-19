@@ -18,7 +18,7 @@ import win.zwping.code.review.PTextView;
 /**
  * <p>describe：视图简单的状态颜色切换助手 -- 复杂的请使用shape xml
  * <p>    note：
- * <p> @author：zwp on 2019-03-29 15:11:29 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-29 15:11:29 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class ViewStateColorSwitchHelper extends IHelper<ViewStateColorSwitchHelper, View> {
 

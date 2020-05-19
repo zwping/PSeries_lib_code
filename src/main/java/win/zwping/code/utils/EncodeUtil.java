@@ -18,7 +18,7 @@ import static android.text.TextUtils.isEmpty;
  * <p>    note：getEncoding
  * <p>    note：urlEncode / urlDecode / base64Encode / base64Decode / htmlEncode / htmlDecode
  * <p>    note：
- * <p> @author：zwp on 2017/12/28 0028 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/28 0028 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class EncodeUtil implements IUtil.INativeUtil {
 

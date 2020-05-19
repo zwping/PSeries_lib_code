@@ -61,7 +61,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：config / dir  filePrefix  logSwitch  consoleSwitch  globalTag  headSwitch borderSwitch singleTagSwitch filter saveDay
  * <p>    note：v d i w e a file json xml
  * <p>    note：
- * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class LogUtil implements IUtil.INativeUtil {
 

@@ -22,7 +22,7 @@ import win.zwping.code.review.PProgressBar;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-10 16:33:38 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-10 16:33:38 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PProgressBarHelper extends IHelper<PProgressBarHelper, PProgressBar> {
 

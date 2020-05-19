@@ -13,7 +13,7 @@ import static win.zwping.code.constant.MemoryConstants.MB;
 /**
  * <p>describe：内存常量，控制输入安全
  * <p>    note：
- * <p> @author：zwp on 2018/3/30 0030 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/30 0030 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 @IntDef({BYTE, KB, MB, GB})
 @Retention(RetentionPolicy.SOURCE)

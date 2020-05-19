@@ -40,7 +40,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-09 14:43:22 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-09 14:43:22 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PRvHelper extends IHelper<PRvHelper, PRecyclerView> {
 

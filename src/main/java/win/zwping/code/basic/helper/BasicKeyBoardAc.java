@@ -16,7 +16,7 @@ import win.zwping.code.utils.KeyboardUtil;
  * <p>    note：mAutoHideKeyboard
  * <p>    note：整个basicAc的架构{@link IAc}
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:57:16 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:57:16 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class BasicKeyBoardAc extends BasicLifeCycleAc implements IAc.IBasicKeyBoard {
 

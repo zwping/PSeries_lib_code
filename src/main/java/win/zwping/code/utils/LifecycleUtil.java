@@ -7,7 +7,7 @@ import androidx.lifecycle.LifecycleOwner;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-16 14:01:40 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-16 14:01:40 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class LifecycleUtil {
 

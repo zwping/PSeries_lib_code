@@ -8,7 +8,7 @@ import android.content.Intent;
  * <p>    note：
  * <p>    note：使用方法
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:54:45 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:54:45 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public abstract class BasicLifeCycleService extends Service {
 

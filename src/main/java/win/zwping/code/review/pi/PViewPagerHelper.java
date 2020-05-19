@@ -34,7 +34,7 @@ import static win.zwping.code.utils.EmptyUtil.isNotEmpty;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-03-19 10:18:40 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-19 10:18:40 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PViewPagerHelper extends IHelper<PViewPagerHelper, PViewPager> implements LifecycleUtil.OnLifecycleListener {
 

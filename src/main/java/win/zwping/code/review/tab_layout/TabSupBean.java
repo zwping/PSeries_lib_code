@@ -8,7 +8,7 @@ import com.google.android.material.tabs.TabLayout;
 /**
  * <p>describe：Tab 的超级 Bean，当使用kt调用时，即可见到super bean
  * <p>    note：
- * <p> @author：zwp on 2019-03-18 15:17:00 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-18 15:17:00 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class TabSupBean<T> {
 

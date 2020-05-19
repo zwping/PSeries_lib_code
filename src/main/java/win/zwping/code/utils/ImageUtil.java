@@ -31,7 +31,7 @@ import java.io.*;
  * <p>    note：save / isImage / getImageType
  * <p>    note：compress
  * <p>    note：
- * <p> @author：zwp on 2018/3/30 0030 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/30 0030 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ImageUtil implements IUtil.INativeUtil {
 

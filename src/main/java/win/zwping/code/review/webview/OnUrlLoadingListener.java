@@ -6,7 +6,7 @@ import android.webkit.WebViewClient;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-01-05 13:34:40 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-01-05 13:34:40 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public interface OnUrlLoadingListener {
 

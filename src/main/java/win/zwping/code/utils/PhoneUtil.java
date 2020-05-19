@@ -25,7 +25,7 @@ import static android.Manifest.permission.SEND_SMS;
  * <p>    note：isPhone
  * <p>    note：getDeviceId / getSerial / getIMEI / getMEID / getIMSI / getPhoneType
  * <p>    note：
- * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/12 0012 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class PhoneUtil  implements IUtil.INativeUtil{
 

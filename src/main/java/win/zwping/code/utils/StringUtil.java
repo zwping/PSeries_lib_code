@@ -15,7 +15,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：upperFirstLetter / lowerFirstLetter / reverse / toDBC / toSBC
  * <p>    note：changeSafetyPhone / changeNicePhone / changeSafetyIDCard / niceMoney / niceBigMoney
  * <p>    note：
- * <p> @author：zwp on 2017/12/9 0009 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/9 0009 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class StringUtil implements IUtil.INativeUtil {
 

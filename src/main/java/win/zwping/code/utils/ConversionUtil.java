@@ -41,7 +41,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmptysII;
  * <p>    note：getDistance
  * <p>    note：getTransitionOj
  * <p>    note：
- * <p>  author：zwp on 2017/9/21 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2017/9/21 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ConversionUtil implements IUtil.INativeUtil {
 

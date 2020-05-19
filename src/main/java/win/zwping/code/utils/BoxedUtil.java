@@ -15,7 +15,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：
  * <p>    note：bundle
  * <p>    note：
- * <p>  author：zwp on 2018-06-22 17:11:31 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2018-06-22 17:11:31 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class BoxedUtil implements IUtil.INativeUtil {
 

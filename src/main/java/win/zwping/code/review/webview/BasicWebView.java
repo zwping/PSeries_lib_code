@@ -37,7 +37,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：4.4之前使用webKit内核、后使用chromium内核
  * <p>    note：了解该类重写的方法，后使用其它第三方webView也大同小异。eg：https://x5.tencent.com/tbs/
  * <p>    note：
- * <p> @author：zwp on 2017/11/14 0014 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/11/14 0014 mail：1101558280@qq.com web: https://www.zwping.com </p>
  * <p>
  **/
 public class BasicWebView extends WebView {

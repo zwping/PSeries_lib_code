@@ -31,7 +31,7 @@ import static win.zwping.code.utils.EmptyUtil.*;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-01 14:30:37 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-01 14:30:37 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PEtHelper extends IHelper<PEtHelper, PEditText> {
 

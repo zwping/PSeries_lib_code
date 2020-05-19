@@ -27,7 +27,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：toggleSoftInput / getDecorViewInvisibleHeight / getContentViewInvisibleHeight / registerSoftInputChangedListener
  * <p>    note：fixSoftInputLeaks / fixAndroidBug5497
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 17:13:56 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 17:13:56 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class KeyboardUtil implements IUtil.INativeUtil {
 

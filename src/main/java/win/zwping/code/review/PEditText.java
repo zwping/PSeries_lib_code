@@ -25,7 +25,7 @@ import static win.zwping.code.utils.ConversionUtil.dp2px;
  * <p>describe：
  * <p>    note：右下角计数控件{@link win.zwping.code.cview.EtWordCountLayout}
  * <p>    note：
- * <p> @author：zwp on 2017/11/20 0020 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/11/20 0020 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PEditText extends AppCompatEditText implements ViewStateColorSwitchHelper.IVSwitchStatus<PEditText>, PEtHelper.IPEt {
 

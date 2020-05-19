@@ -8,7 +8,7 @@ import win.zwping.code.constant.ViewState;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019/4/3 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019/4/3 mail：1101558280@qq.com web: https://www.zwping.com </p>
  * <p>
  **/
 public final class DrawableUtil implements IUtil.INativeUtil {

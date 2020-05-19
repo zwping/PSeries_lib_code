@@ -8,7 +8,7 @@ import win.zwping.code.cview.SwitchPageStateLayout;
 /**
  * <p>describe：this SwitchPageState of the public interface
  * <p>    note：
- * <p> @author：zwp on 2019-03-15 11:33:25 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-15 11:33:25 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public interface ISwitchPageLayout {
 

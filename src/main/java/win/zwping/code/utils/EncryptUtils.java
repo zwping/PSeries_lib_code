@@ -32,7 +32,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：
  * <p>    note：md2 / sha1 / sha256 / sha384 / sha512 / hmac / des / 3des / aes / rsa
  * <p>    note：
- * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class EncryptUtils implements IUtil.INativeUtil {
 

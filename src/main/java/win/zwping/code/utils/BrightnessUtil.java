@@ -16,7 +16,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：isAutoBrightnessEnabled / setAutoBrightnessEnabled
  * <p>    note：getBrightness / setBrightness / setWindowBrightness / getWindowBrightness
  * <p>    note：
- * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/21 0021 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class BrightnessUtil implements IUtil.INativeUtil {
 

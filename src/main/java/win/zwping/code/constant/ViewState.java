@@ -15,7 +15,7 @@ import static win.zwping.code.constant.ViewState.Unable;
 /**
  * <p>describe：视图状态，控制输入安全
  * <p>    note：
- * <p> @author：zwp on 2019-04-04 11:04:46 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-04 11:04:46 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 
 @IntDef({Selected, Normal, Unable, Pressed, Checked, Focused})

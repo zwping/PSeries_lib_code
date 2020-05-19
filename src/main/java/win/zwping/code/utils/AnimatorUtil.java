@@ -15,7 +15,7 @@ import win.zwping.code.basic.IUtil;
 /**
  * <p>describe：Animator动画工具类
  * <p>    note：
- * <p>  author：zwp on 2017/6/22 0022 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p>  author：zwp on 2017/6/22 0022 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 
 public final class AnimatorUtil implements IUtil.INativeUtil {

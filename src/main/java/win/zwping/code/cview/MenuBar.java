@@ -27,7 +27,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
  * <p>    note：
  * <p>    note：架构描述{@link IMenuBar}
  * <p>    note：
- * <p> @author：zwp on 2019-03-22 16:59:07 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-22 16:59:07 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class MenuBar extends ConstraintLayout implements IMenuBar {
     private PImageView titleIconPiv;

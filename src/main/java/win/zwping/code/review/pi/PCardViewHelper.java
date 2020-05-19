@@ -12,7 +12,7 @@ import win.zwping.code.review.PCardView;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-01 13:43:30 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-01 13:43:30 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PCardViewHelper extends IHelper<PCardViewHelper, PCardView> {
 

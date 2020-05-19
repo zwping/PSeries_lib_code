@@ -26,7 +26,7 @@ import win.zwping.code.review.rv.OnConvertListener;
  *     0、每个封装的控件不做过多的功能，所以几乎没有容错，用最简单的代码实现最基本的功能，且可扩充(BRVAH)
  *     1、xml中可配置 布局管理器 /  去除焦点 / 禁止竖 横向滑动 / 布局ID
  * </pre>
- * <p> @author：zwp on 2017/12/2 0002 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/2 0002 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PRecyclerView extends RecyclerView implements PRvHelper.IPRv {
 

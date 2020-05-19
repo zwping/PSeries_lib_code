@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-03-20 08:58:05 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-20 08:58:05 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class ItemDecoration extends RecyclerView.ItemDecoration {
 

@@ -12,7 +12,7 @@ import static win.zwping.code.utils.ConversionUtil.dp2px;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-09 15:43:38 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-09 15:43:38 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PProgressBar extends ProgressBar implements PProgressBarHelper.IProgressBar {
 

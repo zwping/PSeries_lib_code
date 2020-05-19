@@ -14,7 +14,7 @@ import static win.zwping.code.constant.TimeConstants.SEC;
 /**
  * <p>describe：时间 常量，控制输入安全
  * <p>    note：
- * <p> @author：zwp on 2018/3/16 0016 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/16 0016 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 @IntDef({MSEC, SEC, MIN, HOUR, DAY})
 @Retention(RetentionPolicy.SOURCE)

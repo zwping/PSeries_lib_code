@@ -36,7 +36,7 @@ import java.lang.reflect.Field;
 /**
  * <p>describe：Toast 工具类
  * <p>    note：
- * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class ToastUtil {
 

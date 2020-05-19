@@ -18,7 +18,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：
  * <p>    note：getAllRunningService / startService / stopService / bindService / unbindService / isServiceRunning
  * <p>    note：
- * <p> @author：zwp on 2017/11/4 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/11/4 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ServiceUtil implements IUtil.INativeUtil {
 

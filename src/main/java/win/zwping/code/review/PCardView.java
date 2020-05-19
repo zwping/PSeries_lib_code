@@ -14,7 +14,7 @@ import win.zwping.code.review.pi.PCardViewHelper;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-04-01 13:28:55 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-04-01 13:28:55 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class PCardView extends CardView implements PCardViewHelper.IVSwitchStatus {
 

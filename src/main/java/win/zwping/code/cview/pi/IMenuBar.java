@@ -11,7 +11,7 @@ import win.zwping.code.review.PTextView;
 /**
  * <p>describe：自定义菜单栏公共接口
  * <p>    note：
- * <p> @author：zwp on 2019-03-27 11:44:21 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-27 11:44:21 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public interface IMenuBar {
 

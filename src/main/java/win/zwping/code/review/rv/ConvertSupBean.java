@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-03-18 17:16:27 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-18 17:16:27 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class ConvertSupBean<T> {
     private BaseViewHolder helper;

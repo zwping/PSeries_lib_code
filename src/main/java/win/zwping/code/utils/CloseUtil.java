@@ -10,7 +10,7 @@ import win.zwping.code.basic.IUtil;
  * <p>    note：
  * <p>    note：closeIo / closeIOQuietly
  * <p>    note：
- * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/3/9 0009 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class CloseUtil implements IUtil.INativeUtil {
 

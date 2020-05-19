@@ -16,7 +16,7 @@ import win.zwping.code.comm.CommCallback;
 /**
  * <p>describe：this Fm of the public interface
  * <p>    note：
- * <p> @author：zwp on 2019-03-12 16:53:09 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-12 16:53:09 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class IFm {
 

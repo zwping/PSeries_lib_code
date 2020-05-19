@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * <p>describe：重写LinkMovementMethod，fix 点击子项textView的OnClickListener也响应
  * <p>    note：
- * <p> @author：zwp on 2017/12/6 0006 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2017/12/6 0006 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class LinkMovementMethod extends android.text.method.LinkMovementMethod {
 

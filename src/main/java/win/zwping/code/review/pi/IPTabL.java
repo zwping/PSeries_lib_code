@@ -11,7 +11,7 @@ import win.zwping.code.review.tab_layout.*;
 /**
  * <p>describe：
  * <p>    note：
- * <p> @author：zwp on 2019-03-18 14:45:59 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-03-18 14:45:59 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public interface IPTabL {
 

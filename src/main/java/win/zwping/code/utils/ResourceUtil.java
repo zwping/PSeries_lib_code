@@ -21,7 +21,7 @@ import static win.zwping.code.utils.EmptyUtil.isEmpty;
 /**
  * <p>describe：资源相关工具
  * <p>    note：
- * <p> @author：zwp on 2018/5/10 0010 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2018/5/10 0010 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public final class ResourceUtil implements IUtil.INativeUtil {
 
@@ -40,6 +40,11 @@ public final class ResourceUtil implements IUtil.INativeUtil {
 
     public static Drawable getDrawable(@DrawableRes int res) {
         return Util.getApp().getResources().getDrawable(res);
+    }
+
+    public static Drawable getDrawable(@Nullable Context context, @DrawableRes int res) {
+        if (context == null) return null;
+        return context.getResources().getDrawable(res);
     }
 
     public static Bitmap getBitmap(@DrawableRes int res) {

@@ -14,7 +14,7 @@ import win.zwping.code.basic.pi.IAc;
  * <p>    note：isChangeUi / normalClick
  * <p>    note：整个basicAc的架构{@link IAc}
  * <p>    note：
- * <p> @author：zwp on 2019-02-21 16:28:15 mail：1101558280@qq.com web: http://www.zwping.win </p>
+ * <p> @author：zwp on 2019-02-21 16:28:15 mail：1101558280@qq.com web: https://www.zwping.com </p>
  */
 public class BasicLifeCycleAc extends AppCompatActivity implements IAc.IBasicLifeCycle {
 
