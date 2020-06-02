@@ -22,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
+
 import win.zwping.code.BuildConfig;
 import win.zwping.code.R;
 import win.zwping.code.comm.ViewStateColor;
@@ -212,7 +213,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
     /*** 简化代码，直接在xml中预填%s ***/
     public PTextView setFormat(Object... args) {
-        if(isEmptys(args)) return this;
+        if (isEmptys(args)) return this;
         if (tempFormatValue == null) tempFormatValue = getContent();
         setText(String.format(tempFormatValue, args));
         return this;
@@ -242,7 +243,7 @@ public class PTextView extends AppCompatTextView implements ViewStateColorSwitch
 
         @Override
         public Drawable getDrawable(String source) {
-            int path = context.getResources().getIdentifier(source, "drawable", BuildConfig.APPLICATION_ID);
+            int path = context.getResources().getIdentifier(source, "drawable", context.getPackageName());
             Drawable drawable = ContextCompat.getDrawable(context, path);
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
             return drawable;
