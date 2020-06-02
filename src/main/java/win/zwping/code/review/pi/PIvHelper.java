@@ -19,10 +19,12 @@ import com.bumptech.glide.request.RequestOptions;
 import win.zwping.code.R;
 import win.zwping.code.basic.IHelper;
 import win.zwping.code.review.PImageView;
+import win.zwping.code.utils.ResourceUtil;
 
 import java.security.MessageDigest;
 
 import static win.zwping.code.utils.ConversionUtil.dp2px;
+import static win.zwping.code.utils.ResourceUtil.getDrawable;
 
 /**
  * <p>describe：
@@ -80,7 +82,7 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
     }
 
     public void display(int id) {
-        glide(Glide.with(v.getContext()).load(id));
+        glide(Glide.with(v.getContext()).load(getDrawable(v.getContext(), id)));
     }
 
     private void glide(RequestBuilder<Drawable> builder) {
@@ -96,15 +98,17 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
 
     private RequestOptions getOptions() {
         RequestOptions options = new RequestOptions();
-        if (0 != option.loadingId) options.placeholder(option.loadingId);
-        if (0 != option.errorId) options.error(option.errorId);
+        if (0 != option.loadingId)
+            options.placeholder(getDrawable(v.getContext(), option.loadingId));
+        if (0 != option.errorId)
+            options.error(getDrawable(v.getContext(), option.errorId));
         if (option.circle) options.circleCrop();
         if (option.roundRect || option.roundRectRadius != 0)
             options.centerCrop().transform(new GlideRoundTransform(option.roundRectRadius == 0 ? dp2px(v.getContext(), 2) : option.roundRectRadius));
         return options;
     }
 
-    public class Option {
+    public static class Option {
         public int loadingId;
         public int errorId;
         public boolean circle = false;
@@ -118,15 +122,15 @@ public class PIvHelper extends IHelper<PIvHelper, PImageView> {
     /*** 解决glide 占位图 圆角失效 ***/
     private RequestBuilder<Drawable> loadTransform(@DrawableRes int placeholderId, int radius) {
         return Glide.with(v.getContext())
-                .load(placeholderId)
+                .load(getDrawable(v.getContext(), placeholderId))
                 .apply(new RequestOptions().centerCrop()
                         .transform(new GlideRoundTransform(radius)));
     }
 
     /*** 解决glide 圆角与centerCrop冲突Bug ***/
-    public class GlideRoundTransform extends CenterCrop {
+    public static class GlideRoundTransform extends CenterCrop {
 
-        private float radius = 0f;
+        private float radius;
 
         GlideRoundTransform(int dp) {
             radius = dp;

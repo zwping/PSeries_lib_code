@@ -3,11 +3,14 @@ package win.zwping.code.cview;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
+
 import win.zwping.code.R;
 import win.zwping.code.review.PImageView;
 import win.zwping.code.review.PTextView;
+import win.zwping.code.utils.ToastUtil;
 
 /**
  * <p>describe：
@@ -32,6 +35,8 @@ public class EmptyView extends RelativeLayout {
         inflate(context, R.layout.child_empty_view, this);
         emptyIv = findViewById(R.id.empty_v);
         titleTv = findViewById(R.id.empty_tv);
+
+        setEmptyResId(R.mipmap.empty_icon);
     }
 
     public EmptyView setTitle(CharSequence txt) {
@@ -45,7 +50,7 @@ public class EmptyView extends RelativeLayout {
     }
 
     public EmptyView setEmptyResId(@DrawableRes int resId) {
-        emptyIv.displayResourceImage(resId);
+        emptyIv.setImageResource(resId);
         return this;
     }
 
