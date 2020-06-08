@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.gyf.barlibrary.ImmersionBar;
+import com.gyf.immersionbar.ImmersionBar;
 
 import win.zwping.code.basic.helper.BasicXLazyFm;
 import win.zwping.code.basic.pi.IFm;
@@ -67,7 +67,7 @@ public abstract class BasicFm extends BasicXLazyFm implements IFm.IBasic {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (null != imBar) imBar.destroy();
+        // if (null != imBar) imBar.destroy(this);
     }
 
     @Override

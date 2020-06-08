@@ -7,7 +7,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.gyf.barlibrary.ImmersionBar;
+
+import com.gyf.immersionbar.ImmersionBar;
 
 import win.zwping.code.basic.helper.BasicKeyBoardAc;
 import win.zwping.code.basic.pi.IAc;
@@ -58,7 +59,7 @@ public abstract class BasicAc extends BasicKeyBoardAc implements IAc.IBasic {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (null != imBar) imBar.destroy();
+        // if (null != imBar) imBar.destroy(this,);
     }
 
     ////////////////////////////////////////

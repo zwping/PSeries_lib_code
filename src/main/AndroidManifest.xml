@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="win.zwping.code">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:networkSecurityConfig="@xml/network_config"
-        >
+    <application android:networkSecurityConfig="@xml/network_config">
 
         <provider
             android:name="win.zwping.code.Util$FileProvider4PSeries"
@@ -18,5 +16,13 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/p_provider_paths" />
         </provider>
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
     </application>
 </manifest>

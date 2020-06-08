@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.gyf.barlibrary.ImmersionBar;
-
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+
+import com.gyf.immersionbar.ImmersionBar;
 
 import win.zwping.code.basic.BasicAc;
 import win.zwping.code.comm.CommCallback;
