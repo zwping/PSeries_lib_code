@@ -6,8 +6,11 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+
 import androidx.core.widget.NestedScrollView;
+
 import win.zwping.code.R;
+import win.zwping.code.comm.CommCallback;
 
 /**
  * <p>describe：
@@ -54,6 +57,18 @@ public class PScrollView extends NestedScrollView {
                 fullScroll(FOCUS_DOWN);
             }
         });
+    }
+
+    public PScrollView setOnLoadMoreLis(CommCallback callback) {
+        setOnScrollChangeListener(new OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if (scrollY == (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight())) {
+                    callback.callback(null);
+                }
+            }
+        });
+        return this;
     }
 
     @Override
