@@ -77,6 +77,17 @@
         <attr name="p_cusView" />
         <attr name="p_default_show_loading" />
     </declare-styleable>
+
+    <attr name="_loadingLayoutId" format="reference" />
+    <attr name="_emptyLayoutId" format="reference" />
+    <attr name="_errorLayoutId" format="reference" />
+    <attr name="_default_show_loading" format="boolean" />
+    <declare-styleable name="StateLayout">
+        <attr name="_loadingLayoutId" />
+        <attr name="_emptyLayoutId" />
+        <attr name="_errorLayoutId" />
+        <attr name="_default_show_loading" />
+    </declare-styleable>
     <attr name="p_progress_radius" format="dimension" />
     <attr name="p_progress_background_color" format="color" />
     <attr name="p_progress_color" format="color" />

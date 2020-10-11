@@ -28,7 +28,9 @@ import static android.Manifest.permission.ACCESS_NETWORK_STATE;
  * <p>    note：架构描述{@link ISwitchPageLayout}
  * <p>    note：
  * <p> @author：zwp on 2017/12/19 0019 mail：1101558280@qq.com web: https://www.zwping.com </p>
+ * @deprecated {@link StateLayout} 功能更强大, 逻辑更简单
  */
+@Deprecated
 public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLayout {
 
     //<editor-fold desc="内部参数">
@@ -86,7 +88,7 @@ public class SwitchPageStateLayout extends FrameLayout implements ISwitchPageLay
         if (getChildCount() > 1) {
             //removeViews(1, getChildCount() - 1);
             View view = mInflater.inflate(R.layout.child_page_state_empty_layout, this, false);
-            ((TextView)view.findViewById(R.id.title_tv)).setText("SwitchPageStatesLayout can host only one direct child");
+            ((TextView)view.findViewById(R.id.tv_state_empty_txt)).setText("SwitchPageStatesLayout can host only one direct child");
             addView(view);
             throw new IllegalStateException("SwitchPageStatesLayout can host only one direct child");
         }

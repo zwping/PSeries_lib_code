@@ -333,7 +333,7 @@ public class PWebView extends FrameLayout {
                     webView.setTag("WebView");
                     if (null != onReceivedErrorListener)
                         onReceivedErrorListener.onReceivedError(view, request, error);
-                    TextView tv = pWebView.switchWebViewSps.getErrorView().findViewById(R.id.error_tv);
+                    TextView tv = pWebView.switchWebViewSps.getErrorView().findViewById(R.id.tv_state_empty_txt);
                     if (isNotEmpty(tv) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                         tv.setText(String.format("网页加载失败(%s)", error.getErrorCode()));
                     if (pWebView.enableErrorView) pWebView.switchWebViewSps.showErrorOfSmart();

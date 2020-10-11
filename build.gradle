@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 //apply plugin: 'com.github.dcendents.android-maven'
 //group='com.github.zwping'
@@ -32,22 +33,24 @@ android {
 }
 
 dependencies {
-    api "androidx.appcompat:appcompat:1.1.0"
-    api "androidx.constraintlayout:constraintlayout:1.1.3"// 推荐该布局 (性能/便捷)
-    api "com.google.android.material:material:1.2.0"
+    api "androidx.appcompat:appcompat:1.2.0"
+    api "com.google.android.material:material:1.2.1"
+    api "androidx.constraintlayout:constraintlayout:2.0.2"
 
+    ///////////////  kotlin的支持, 现代派语言/代码简洁/逻辑清晰  ///////////////
+    api "androidx.core:core-ktx:+"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
+    ///////////////  lifecycle感知, 解耦关键                  ///////////////
     api "androidx.lifecycle:lifecycle-runtime:2.2.0"
     api "androidx.lifecycle:lifecycle-common-java8:2.2.0"
 
-    //api "io.reactivex.rxjava2:rxjava:2.2.6"
-    //api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    //api 'com.uber.autodispose:autodispose-android-archcomponents:1.1.0'
-
-
-    /////////////// 前人种树 ////////////////
+    /////////////// 前人种树 code_lib中不允许出现官方以外的框架 ////////////////
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-7' // 智能下拉刷新框架
     api 'com.gyf.immersionbar:immersionbar:3.0.0'  // 状态栏 导航栏兼容
     api 'com.github.bumptech.glide:glide:4.9.0'
     // annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+}
+repositories {
+    mavenCentral()
 }
