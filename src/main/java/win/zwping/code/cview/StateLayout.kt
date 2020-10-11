@@ -107,7 +107,7 @@ class StateLayout @JvmOverloads constructor(
 
     class ViewAdjustBuilder(private val loadingView: View, private val emptyView: View, private val errorView: View) {
         /**
-         * 视图调整, 支持三个状态View的内容修改
+         * 视图调整  没有过多细化的API, 直接将整个View暴露, 随意怎么整
          */
         fun viewAdjust(lis: (loadingView: View?, emptyView: View?, errorView: View?) -> Unit) {
             lis.invoke(loadingView, emptyView, errorView)

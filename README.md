@@ -30,10 +30,10 @@ class Activity {
         ...
         Http.Requests(
             { success -> 
-                stateLayout?.showContent()
+                stateLayout?.showContentView()
             },
             { error -> 
-                stateLayout?.showError()
+                stateLayout?.showErrorView()
             }
         )
     }
@@ -64,13 +64,20 @@ class Activity{
         ...
         stateLayout.init{ loadData() }
         // 部分界面需要显示不同的状态布局
-        // stateLayout.init({ loadData() }, customLoadingLayoutId...)
+        // stateLayout
+            .init(
+                { loadData() }, 
+                customLoadingLayoutId...
+            )
+            .viewAdjust{loadingView, emptyView, errorView -> 
+                // 部分界面状态布局需要显示不同的内容, 在这可以高度定制化调整
+            }
     }
     ...
-    stateLayout.showContent()
-    stateLayout.showContent()
-    stateLayout.showContent()
-    stateLayout.showContent()
+    stateLayout.showContentView()
+    stateLayout.showLoadingView()
+    stateLayout.showEmptyView(txt) // txt为空则为默认文字
+    stateLayout.showErrorView(txt)
 }
 
 ```
